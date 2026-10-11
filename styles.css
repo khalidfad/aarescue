@@ -291,6 +291,20 @@ figcaption b{display:block;color:var(--t);font-size:.9rem}
 @keyframes fill{from{width:30%}to{width:92%}}
 
 
+
+/* services dropdown (matches the original site's menu) */
+.dd{position:relative}
+.ddb{display:flex;align-items:center;gap:5px;padding:28px 0;background:none;border:0;color:inherit;font:inherit;font-weight:500;opacity:.9;cursor:pointer;white-space:nowrap}
+.ddb:hover,.dd.open .ddb{opacity:1}
+.ddb .ic{width:1em;height:1em;transition:transform .25s var(--e)}
+.ddb[aria-expanded=true] .ic{transform:rotate(180deg)}
+.mega{position:absolute;left:-22px;top:calc(100% - 8px);width:min(620px,90vw);display:grid;grid-template-columns:1fr 1fr;gap:2px 10px;padding:14px;border-radius:20px;background:rgba(14,14,16,.97);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);box-shadow:0 30px 60px -20px rgba(0,0,0,.85);white-space:normal;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .2s,transform .3s var(--e),visibility .2s}
+.dd.open .mega,.dd:hover .mega,.dd:focus-within .mega{opacity:1;visibility:visible;transform:none}
+.mega a{display:block;padding:10px 12px;border-radius:12px;font-size:.84rem;font-weight:500;line-height:1.35;color:rgba(255,255,255,.86);transition:background .2s,color .2s,transform .2s}
+.mega a:hover{background:rgba(255,196,0,.12);color:var(--y);transform:translateX(3px)}
+.mega .all{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1);border-radius:0;color:var(--y);font-weight:700}
+.mega .all .ic{width:1.1em;height:1.1em}
+
 /* haulage showcase, fleet banner, gallery */
 .wh{padding:112px 0;background:#fff}
 .wh .pic{padding-bottom:34px}
@@ -321,13 +335,19 @@ em.dy{color:#E0A800}
 .pg{grid-template-columns:repeat(3,1fr)}
 .pl.hot{transform:none}.pl.hot:hover{transform:translateY(-6px)}
 }
-@media(max-width:1280px){
+@media(max-width:1100px){
 .mb{display:block}
-nav{position:fixed;inset:0;z-index:80;flex-direction:column;justify-content:center;align-items:flex-start;gap:6px;padding:90px 32px 40px;background:var(--bk);font-size:1.7rem;font-weight:800;letter-spacing:-.03em;opacity:0;visibility:hidden;transform:translateY(-16px);transition:opacity .3s,transform .4s var(--e),visibility .3s}
+nav{position:fixed;inset:0;z-index:80;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:6px;padding:96px 28px 60px;overflow-y:auto;background:var(--bk);font-size:1.7rem;font-weight:800;letter-spacing:-.03em;opacity:0;visibility:hidden;transform:translateY(-16px);transition:opacity .3s,transform .4s var(--e),visibility .3s}
 nav.open{opacity:1;visibility:visible;transform:none}
 nav>a{padding:6px 0}
 .nr{flex-direction:column;align-items:stretch;width:100%;max-width:340px;margin:26px 0 0;gap:12px;font-size:.95rem;letter-spacing:0}
-.ph{font-size:1.1rem;margin-bottom:4px}
+.dd{width:100%}
+.ddb{width:100%;justify-content:space-between;padding:6px 0;font-size:inherit;font-weight:inherit;letter-spacing:inherit;opacity:1}
+.mega{position:static;display:none;width:auto;opacity:1;visibility:visible;transform:none;grid-template-columns:1fr;gap:0;padding:4px 0 12px 4px;background:none;border:0;box-shadow:none;-webkit-backdrop-filter:none;backdrop-filter:none}
+.dd:hover .mega,.dd:focus-within .mega{display:none}
+.dd.open .mega{display:grid}
+.mega a{padding:9px 6px;font-size:1rem;font-weight:500;letter-spacing:0}
+.mega .all{margin-top:4px}
 .nr .b{min-height:52px;font-size:.95rem}
 }
 @media(max-width:1100px){

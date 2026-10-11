@@ -14,11 +14,19 @@
     mb.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     mbUse.setAttribute('href', open ? '#i-x' : '#i-menu');
     document.body.style.overflow = open ? 'hidden' : '';
-    if (open) hd.classList.remove('hide');
+    if (open) hd.classList.remove('hide'); else setDD(false);
   }
   mb.addEventListener('click', function () { setMenu(!nav.classList.contains('open')); });
+
+  /* Services dropdown: hover/focus handled in CSS; click toggles for touch and keyboard */
+  var dd = $('.dd'), ddb = $('.ddb');
+  function setDD(open) { dd.classList.toggle('open', open); ddb.setAttribute('aria-expanded', open); }
+  ddb.addEventListener('click', function () { setDD(!dd.classList.contains('open')); });
+  document.addEventListener('click', function (e) { if (!dd.contains(e.target)) setDD(false); });
+  dd.addEventListener('mouseenter', function () { ddb.setAttribute('aria-expanded', 'true'); });
+  dd.addEventListener('mouseleave', function () { ddb.setAttribute('aria-expanded', dd.classList.contains('open')); });
   nav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setMenu(false); setDD(false); } });
 
   /* ---------- Scroll-driven effects (one rAF loop) ---------- */
   var prog = $('.prog i'), fab = $('#fab'), hi = $('#hbg');
