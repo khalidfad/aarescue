@@ -31,7 +31,7 @@ em{font-style:normal;color:var(--y)}
 /* header */
 .hd{position:fixed;inset:0 0 auto;z-index:70;color:#fff;transition:transform .4s var(--e)}
 .hd:before{content:"";position:absolute;inset:0;background:rgba(10,10,11,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(255,255,255,.08);opacity:0;transition:opacity .3s}
-.hd.sc:before{opacity:1}
+.hd.is-scrolled:before{opacity:1}
 .hd.hide{transform:translateY(-100%)}
 .hd .w{position:relative;display:flex;align-items:center;justify-content:space-between;gap:18px;height:78px}
 .lg img{height:44px;width:auto;border-radius:10px}

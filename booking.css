@@ -1,5 +1,5 @@
 /* Haulage booking page (loads after styles.css) */
-body.sub .fab{display:none}
+body.subpage .fab{display:none}
 .phero{position:relative;overflow:hidden;background:var(--bk);color:#fff;padding:140px 0 120px}
 .pc{position:relative}
 .phero .hbg img{object-position:30% 60%}
@@ -44,8 +44,8 @@ body.sub .fab{display:none}
 .kk{display:block;margin-bottom:10px;color:#C99100;font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
 .ph2 h2{font-size:clamp(1.6rem,3vw,2.1rem);font-weight:900;letter-spacing:-.04em;outline:0}
 .ph2 p{margin-top:8px;color:var(--m)}
-.sb{margin:34px 0 16px;font-size:1.05rem;letter-spacing:-.02em}
-.sb i,.fd i,.lb i{font-style:normal;color:#98A2B3;font-weight:500}
+.shd{margin:34px 0 16px;font-size:1.05rem;letter-spacing:-.02em}
+.shd i,.fd i,.lb i{font-style:normal;color:#98A2B3;font-weight:500}
 
 .gr2{display:grid;grid-template-columns:1fr 1fr;gap:20px 18px}
 .c2{grid-column:1/-1}
@@ -196,3 +196,5 @@ body.sub .fab{display:none}
 .va button{width:36px;height:36px}
 }
 @media(prefers-reduced-motion:reduce){.pn.in,.vc,.ok{animation:none!important}}
+
+[hidden]{display:none!important}

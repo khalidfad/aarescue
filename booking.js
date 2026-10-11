@@ -235,7 +235,7 @@
     if (step === 1) {
       if (!$('#ved').hidden) {
         if (pristine() && state.vehicles.length) showEditor(false);
-        else if (!saveVeh()) return false;
+        else if (!saveVeh()) { $('#stepMsg').textContent = 'Please complete the vehicle details to continue.'; return false; }
       }
       if (!state.vehicles.length) { setErr('vehicles', 'Add at least one vehicle to continue.'); bad.push('vehicles'); }
       else setErr('vehicles', '');
