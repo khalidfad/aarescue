@@ -1,0 +1,22 @@
+/* Coming soon page (loads after styles.css) */
+body.subpage .fab{display:none}
+.cs{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;overflow:hidden;background:var(--bk);color:#fff;padding:140px 0 100px}
+.cs .hbg img{object-position:68% 50%}
+.cs .hbg:after{background:radial-gradient(60% 55% at 50% 45%,rgba(10,10,11,.55),rgba(10,10,11,.92) 80%),linear-gradient(180deg,rgba(10,10,11,.55),#0A0A0B 98%)}
+.csc{position:relative;max-width:760px}
+.cs h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:900;letter-spacing:-.045em;line-height:1.02}
+.cs .sub{max-width:560px;margin:22px auto 8px}
+.cs .badge{margin-bottom:24px}
+.cs .cta,.cs .chips{justify-content:center}
+.cs .cta{margin-top:26px}
+.cs .chips{margin-top:34px}
+.cs .chips a:hover{color:var(--y)}
+.road2{position:relative;width:min(520px,100%);height:56px;margin:34px auto 0}
+.road2 i{position:absolute;left:0;right:0;top:50%;height:4px;margin-top:-2px;border-radius:4px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.34) 0 26px,transparent 26px 52px);animation:rd 1.2s linear infinite}
+.tk2{position:absolute;top:4px;left:0;width:48px;height:48px;padding:11px;border-radius:14px;background:var(--y);color:#111;stroke-width:2;box-shadow:0 14px 30px -10px rgba(255,196,0,.7);animation:cruise 6s ease-in-out infinite alternate}
+@keyframes rd{to{background-position-x:-52px}}
+@keyframes cruise{from{left:0}to{left:calc(100% - 48px)}}
+.js .cs h1,.js .cs .road2{opacity:0;animation:fu .9s var(--e) .2s forwards}
+.js .cs .road2{animation-delay:.55s}
+@media(max-width:680px){.cs{padding:120px 0 80px}.cs .cta .b{flex:1 1 100%}}
+@media(prefers-reduced-motion:reduce){.road2 i,.tk2{animation:none!important}.tk2{left:calc(50% - 24px)}}
