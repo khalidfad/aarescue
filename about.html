@@ -3,17 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About Us | AA Rescue</title>
-<meta name="description" content="AA Rescue is a multi-service organisation founded in 2003, giving comfort and safety to Nigerian motorists.">
+<title>About us | AA Rescue</title>
+<meta name="description" content="AA Rescue is a multi-service organisation founded in 2003, giving comfort, removing distress and protecting Nigerians on the road.">
 <meta name="theme-color" content="#0A0A0B">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="pages.css">
+<link rel="stylesheet" href="booking.css">
+<link rel="stylesheet" href="inner.css">
 <script src="script.js" defer></script>
-<script src="pages.js" defer></script>
+<script src="forms.js" defer></script>
 </head>
 <body class="subpage">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -49,6 +50,16 @@
 <symbol id="i-tw" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
 <symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7h.01M12 17v-7M12 13c0-4 5-4 5 0v4"/></symbol>
 <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></symbol>
+<symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M3 12h7M14 12h7M12 14v7"/></symbol>
+<symbol id="i-gps" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></symbol>
+<symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
 </defs></svg>
 
 <div class="prog" aria-hidden="true"><i></i></div>
@@ -57,55 +68,63 @@
 <a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue"></a>
 <nav id="nav" aria-label="Main">
 <a href="index.html">Home</a>
-<a href="about.html">About Us</a>
+<a href="about.html" aria-current="page">About Us</a>
 <div class="dd"><button class="ddb" aria-expanded="false" aria-controls="mega">Services<svg class="ic"><use href="#i-chev"/></svg></button>
-<div class="mega" id="mega"><a href="vehicle-recovery.html">Vehicular Recovery and Rescue Services</a><a href="drivers-outsourcing.html">Drivers Outsourcing</a><a href="learner-driver-training.html">Learner Driver's Training</a><a href="testing-certification.html">Testing and Certification of Drivers</a><a href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a href="goods-logistics.html">General Goods and Equipment Logistics</a><a href="corporate-transportation.html">Corporate Transportation</a><a href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a href="https://licence.aarescuenigeria.com">Licensing</a><a href="https://jobs.aarescuenigeria.com">Job Portal</a><a href="fleet-management.html">Fleet Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all" href="services.html">View all services<svg class="ic"><use href="#i-arrow"/></svg></a></div></div>
-<a href="https://licence.aarescuenigeria.com">Licensing</a>
-<a href="https://blog.aarescuenigeria.com">Blog</a>
+<div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a href="drivers-outsourcing.html">Drivers Outsourcing</a><a href="learner-driver-training.html">Learner Driver's Training</a><a href="driver-testing-certification.html">Testing and Certification of Drivers</a><a href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a href="logistics.html">General Goods and Equipment Logistics</a><a href="corporate-transport.html">Corporate Transportation</a><a href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a href="coming-soon.html?page=Licensing">Licensing</a><a href="https://jobs.aarescuenigeria.com">Job Portal</a><a href="fleet-management.html">Fleet Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all" href="services.html">View all services<svg class="ic"><use href="#i-arrow"/></svg></a></div></div>
+<a href="coming-soon.html?page=Licensing">Licensing</a>
+<a href="coming-soon.html?page=Blog">Blog</a>
 <a href="contact.html">Contact Us</a>
 <span class="nr"><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make Payment</a></span>
 </nav>
 <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
 </div></header>
 
-
 <main id="top">
 <section class="phero">
-<div class="hbg" id="hbg" aria-hidden="true"><img src="img/haul-cars.webp" width="1080" height="810" alt="" fetchpriority="high"></div>
+<div class="hbg" id="hbg" aria-hidden="true"><img src="img/haul-aa.webp" width="1080" height="810" alt="" fetchpriority="high"></div>
 <div class="w pc">
 <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><b aria-current="page">About Us</b></nav>
-<p class="badge"><svg class="ic"><use href="#i-award"/></svg>Since 2003</p>
-<h1>Putting people first on Nigeria&#x27;s roads</h1>
-<p class="sub">A multi-service company founded in 2003 to bring comfort, remove distress and protect Nigerians on the road.</p>
-<div class="cta"><a class="b by lg2" href="services.html">Our services<svg class="ic"><use href="#i-arrow"/></svg></a><a class="b bg2 lg2" href="contact.html">Contact us<svg class="ic"><use href="#i-arrow"/></svg></a></div>
+<p class="badge"><svg class="ic"><use href="#i-bolt"/></svg>Since 2003</p>
+<h1>About AA Rescue</h1>
+<p class="sub">A multi-service organisation giving comfort, removing distress and protecting the Nigerian populace on the road.</p>
+<div class="cta"><a class="b by lg2" href="services.html">Explore our services</a><a class="b bg2 lg2" href="contact.html">Contact us</a></div>
 </div>
-</section><section class="wh" id="story"><div class="w sp"><div class="tx" data-r><small>WHO WE ARE</small><h2>A pioneer in rescue and driver training</h2><p>AA Rescue began with prompt emergency roadside assistance for stranded motorists. We are a pioneer of modern driving training and automobile rescue in Nigeria, and we have grown into a company that serves individuals, families and corporate organisations.</p>
-<a class="b by lg2" href="contact.html">Work with us<svg class="ic"><use href="#i-arrow"/></svg></a></div>
-<div data-r><p style="font-weight:700;margin-bottom:14px">What we do</p><ul class="ck"><li><svg class="ic"><use href="#i-check"/></svg>Emergency automobile rescue assistance</li><li><svg class="ic"><use href="#i-check"/></svg>Learner driver training (driving school)</li><li><svg class="ic"><use href="#i-check"/></svg>Defensive and advanced driving training</li><li><svg class="ic"><use href="#i-check"/></svg>General logistics</li><li><svg class="ic"><use href="#i-check"/></svg>Intercity vehicular haulage</li><li><svg class="ic"><use href="#i-check"/></svg>Drivers recruitment and outsourcing</li><li><svg class="ic"><use href="#i-check"/></svg>Corporate transport and road traffic consultancy</li></ul></div></div></section>
-<section class="dk"><div class="w"><ul class="st5 s4" data-stagger><li class="card" data-r><b>2003</b><span>Founded</span></li><li class="card" data-r><b>17</b><span>Branches in Nigeria</span></li><li class="card" data-r><b>24/7</b><span>Dispatch</span></li><li class="card" data-r><b>12</b><span>Services</span></li></ul></div></section>
-<section class="sec lt" id="values"><div class="w"><div class="sh" data-r><small>PURPOSE</small><h2>Mission, vision and values</h2></div>
-<div class="vals" data-stagger><div class="fcard" data-r><span class="ib l"><svg class="ic"><use href="#i-nav"/></svg></span><h3>Mission</h3><p>To instil and engrave the right motoring culture in Nigeria.</p></div>
-<div class="fcard" data-r><span class="ib l"><svg class="ic"><use href="#i-search"/></svg></span><h3>Vision</h3><p>To greatly enhance safety and give comfort to motorists, applying our peculiar skills through every commercial and social landscape.</p></div>
-<div class="fcard" data-r><span class="ib l"><svg class="ic"><use href="#i-award"/></svg></span><h3>Core values</h3><ul class="tags"><li>God centred</li><li>Innovative</li><li>Customer focused</li><li>Learning</li><li>Resilience</li><li>Team spirit</li></ul></div></div></div></section>
-<section class="sec"><div class="w"><div class="sh" data-r><small>TEAM</small><h2>Over 17 branches across Nigeria</h2><p>A dynamic board, strategic management and passionate people serve you nationwide.</p></div>
-<div class="ctr"><a class="b by lg2" href="contact.html#branches">Find a branch<svg class="ic"><use href="#i-pin"/></svg></a></div></div></section><section class="ybn"><div class="w"><h2><svg class="ic"><use href="#i-bolt"/></svg>Roadside emergency?</h2><p>Dispatch is open 7 days a week, 24 hours a day, including major holidays.</p>
-<a class="b bk lg2" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Call 0802 555 1111</a></div></section>
+</section><section class="lt" style="padding-top:96px"><div class="w ab">
+<div data-r><small style="color:#C99100;font-size:.7rem;font-weight:800;letter-spacing:.16em;display:block;margin-bottom:12px">WHO WE ARE</small><h2>Prompt help for stranded motorists, and so much more</h2>
+<p>AA Rescue is a multi-service organisation founded in 2003 with the prime focus of giving comfort, removing distress and protecting the Nigerian populace by providing prompt emergency roadside assistance to stranded motorists in cases of vehicular breakdowns and accidents.</p>
+<p>The company is a pioneer in modern driving training and automobile rescue in Nigeria. It has grown into an organisation of note, offering a variety of services that impact the quality of life of the Nigerian polity, including:</p>
+<ul class="chk2"><li><svg class="ic"><use href="#i-checkc"/></svg><a href="recovery.html">Emergency Automobile Rescue Assistance</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="learner-driver-training.html">Learner Driver Training (Driving School)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="defensive-driving-training.html">Capacity building for Drivers and Executives (Defensive and Advanced Driving Training)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="logistics.html">General Logistics</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="haul-vehicle.html">Intercity Vehicular Haulage</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="drivers-outsourcing.html">Drivers Recruitment for companies and individuals (Drivers Outsourcing)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="corporate-transport.html">Corporate Transport and general road traffic and motoring consultancy</a></li></ul></div>
+<div class="pic" data-r><div class="pf"><img src="img/hq-fleet.webp" width="900" height="378" alt="AA Rescue executive fleet" loading="lazy"></div></div>
+</div></section>
+<section class="dk"><div class="w"><div class="abs" data-stagger><div data-r><b>2003</b><span>Year founded</span></div><div data-r><b data-n="17" data-s="+">17+</b><span>Branches spread around Nigeria</span></div><div data-r><b>24/7</b><span>Open every day, including major holidays</span></div></div>
+<p style="max-width:720px;margin:36px auto 0;text-align:center;color:rgba(255,255,255,.6)" data-r>For us it is about putting people’s interest first by offering and delivering excellent services. We achieve this through hard work, a dynamic Board of Directors, strategic management and passionate personnel.</p></div></section>
+<section class="lt"><div class="w"><div class="sh" data-r><small>WHAT DRIVES US</small><h2>Mission and vision</h2></div>
+<div class="mvg" data-stagger><div data-r><small>OUR MISSION</small><h3>The right motoring culture</h3><p>To instil and engrave the right motoring culture in Nigeria.</p></div><div data-r><small>OUR VISION</small><h3>Safety and comfort for motorists</h3><p>To greatly enhance safety and give comfort to motorists, applying our peculiar skills through every commercial and social landscape.</p></div></div></div></section>
+<section class="dk"><div class="w"><div class="sh" data-r><small>OUR CORE VALUES</small><h2>What we stand for</h2></div>
+<div class="vals" data-stagger><div data-r><span class="ib"><svg class="ic"><use href="#i-heart"/></svg></span>God Centered</div><div data-r><span class="ib"><svg class="ic"><use href="#i-bolt"/></svg></span>Innovative</div><div data-r><span class="ib"><svg class="ic"><use href="#i-users"/></svg></span>Customer Focused</div><div data-r><span class="ib"><svg class="ic"><use href="#i-grad"/></svg></span>Learning</div><div data-r><span class="ib"><svg class="ic"><use href="#i-shield"/></svg></span>Resilience</div><div data-r><span class="ib"><svg class="ic"><use href="#i-award"/></svg></span>Team Spirit</div></div></div></section>
 </main>
+
+<section class="ybn"><div class="w">
+<h2><svg class="ic"><use href="#i-phone"/></svg>Prefer to talk to someone?</h2>
+<p>Our team is on the phone 24 hours a day, 7 days a week, including major holidays.</p>
+<a class="b bk lg2" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>0802 555 1111</a>
+</div></section>
+
 <footer class="ft"><div class="w">
 <div class="fg">
 <div class="fb0"><a class="lg" href="index.html"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue" loading="lazy"></a><p>Nigeria's most trusted roadside assistance and mobility solutions company since 2003.</p>
 <ul class="fc"><li><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+2348025551111">0802 555 1111</a></li><li><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:info@aarescuenigeria.com">info@aarescuenigeria.com</a></li><li><svg class="ic"><use href="#i-pin"/></svg>13/15 Castle Rock Avenue, off Lekki-Epe Expressway, Jakande Roundabout, Lekki, Lagos</li></ul>
 <div class="so"><a href="https://www.facebook.com/aarescuenigeria/" aria-label="Facebook"><svg class="ic"><use href="#i-fb"/></svg></a><a href="https://twitter.com/AARescueNigeria" aria-label="X"><svg class="ic"><use href="#i-tw"/></svg></a><a href="https://www.instagram.com/aarescuenigeria/" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a><a href="#" aria-label="LinkedIn"><svg class="ic"><use href="#i-in"/></svg></a></div></div>
-<div><h3>About</h3><a href="about.html">Our Story</a><a href="about.html#story">Leadership Team</a><a href="contact.html">Press &amp; Media</a><a href="about.html#values">Awards</a><a href="https://jobs.aarescuenigeria.com">Careers</a></div>
-<div><h3>Services</h3><a href="vehicle-recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet Management</a><a href="drivers-academy.html">Driving School</a><a href="drivers-outsourcing.html">Driver Outsourcing</a><a href="https://licence.aarescuenigeria.com">Vehicle Licensing</a></div>
-<div><h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a href="corporate-transportation.html">Corporate Transport</a><a href="drivers-outsourcing.html">Driver Hire</a><a href="goods-logistics.html">Logistics</a><a href="haul-vehicle.html">Haulage</a></div>
-<div><h3>Support</h3><a href="contact.html#faq">FAQs</a><a href="make-payment.html">Make Payment</a><a href="contact.html">Report an Issue</a><a href="contact.html#branches">Branch Locator</a><a href="tel:+2348025551111">Emergency Line</a></div>
+<div><h3>About</h3><a href="about.html">Our Story</a><a href="#">Leadership Team</a><a href="#">Press &amp; Media</a><a href="#">Awards</a><a href="#">Careers</a></div>
+<div><h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet Management</a><a href="drivers-academy.html">Driving School</a><a href="drivers-outsourcing.html">Driver Outsourcing</a><a href="coming-soon.html?page=Licensing">Vehicle Licensing</a></div>
+<div><h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a href="corporate-transport.html">Corporate Transport</a><a href="drivers-outsourcing.html">Driver Hire</a><a href="logistics.html">Logistics</a><a href="haul-vehicle.html">Haulage</a></div>
+<div><h3>Support</h3><a href="#">FAQs</a><a href="make-payment.html">Make Payment</a><a href="contact.html">Report an Issue</a><a href="#">Branch Locator</a><a href="tel:+2348025551111">Emergency Line</a></div>
 </div>
 <div class="nl"><div><h3>Stay up to date</h3><p>Receive news, offers, and safety tips from AA Rescue.</p></div><form id="nlf" novalidate><label class="sr" for="nle">Email address</label><input id="nle" type="email" placeholder="Enter your email" autocomplete="email"><button class="b by" type="submit">Subscribe</button><p id="nlm" role="status" aria-live="polite"></p></form></div>
 <p class="cp"><span>&copy; <span id="y">2026</span> AA Rescue Limited. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></span></p>
 </div></footer>
 
-<a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Emergency Rescue</a>
 
+<a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Emergency Rescue</a>
 </body>
 </html>
