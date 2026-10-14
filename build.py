@@ -16,7 +16,7 @@ LINK = {'About Us':'about.html','Services':'services.html','Contact Us':'contact
  'General Goods and Equipment Logistics':'goods-logistics.html','Corporate Transportation':'corporate-transportation.html',
  'Drivers Academy':'drivers-academy.html','Fleet Management':'fleet-management.html','Vehicle Tracking':'vehicle-tracking.html'}
 FOOT = {'Our Story':'about.html#story','Leadership Team':'about.html#story','Press &amp; Media':'contact.html','Awards':'about.html#values',
- 'Careers':'https://jobs.aarescuenigeria.com','FAQs':'contact.html#faq','Branch Locator':'contact.html#branches'}
+ 'Careers':'apply-driver.html','FAQs':'contact.html#faq','Branch Locator':'contact.html#branches'}
 
 def relink(s):
     s = re.sub(r'href="coming-soon\.html\?page=([^"]+)"', lambda m: 'href="%s"' % LINK.get(unquote(m.group(1)), 'services.html'), s)
@@ -158,7 +158,7 @@ for s in SV: service_page(s)
 # --- Services index
 extra = [dict(slug='haul-vehicle', title='Vehicle Haulage', icon='i-truck', short='Multi-loader and flatbed trucks move your vehicles across the country. Book online.'),
          dict(slug='', title='Licensing', icon='i-doc', short='Vehicle papers, driver\'s licence and International Driving Permit.', ext='https://licence.aarescuenigeria.com'),
-         dict(slug='', title='Job Portal', icon='i-search', short='Find driver and personnel roles with AA Rescue.', ext='https://jobs.aarescuenigeria.com')]
+         dict(slug='', title='Job Portal', icon='i-search', short='Find driver and personnel roles with AA Rescue.', ext='apply-driver.html')]
 def card(x):
     href = x.get('ext') or x['slug'] + '.html'
     return f'<a class="fcard" data-r href="{href}"><span class="ib l">{ic(x["icon"])}</span><h3>{E(x["title"])}</h3><p>{E(x["short"])}</p><span class="more">Learn more{ic("i-arrow")}</span></a>'
