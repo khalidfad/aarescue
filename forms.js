@@ -92,7 +92,8 @@
     var conds = $$('[data-show]', form);
     function applyShow() {
       conds.forEach(function (c) {
-        var p = c.dataset.show.split('='), v = val(p[0]), on = p[1] === '*' ? v !== '' : v.split('|').indexOf(p[1]) > -1;
+        var p = c.dataset.show.split('='), v = val(p[0]), alts = p.slice(1).join('=').split('||');
+        var on = alts[0] === '*' ? v !== '' : alts.some(function (x) { return v.split('|').indexOf(x) > -1; });
         c.hidden = !on;
         $$('input,select,textarea', c).forEach(function (i) { i.disabled = !on; });
       });
@@ -145,8 +146,8 @@
       if (f.focus) f.focus({ preventScroll: true });
       t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
     }
-    form.addEventListener('input', function (e) { var fd = e.target.closest('.fd'); if (fd && $('.err', fd) && $('.err', fd).textContent) setErr(fd, ''); });
-    form.addEventListener('change', function (e) { var fd = e.target.closest('.fd'); if (fd && $('.err', fd) && $('.err', fd).textContent) setErr(fd, ''); });
+    form.addEventListener('input', function (e) { if (msg && msg.textContent) msg.textContent = ''; var fd = e.target.closest('.fd'); if (fd && $('.err', fd) && $('.err', fd).textContent) setErr(fd, ''); });
+    form.addEventListener('change', function (e) { if (msg && msg.textContent && e.target.type !== 'file') msg.textContent = ''; var fd = e.target.closest('.fd'); if (fd && $('.err', fd) && $('.err', fd).textContent) setErr(fd, ''); });
 
     /* steps */
     var prog = $('.fprog', form), back = $('.fback', form), next = $('.fnext', form), sub = $('.fsubmit', form);
@@ -242,6 +243,20 @@
       box.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
     }
     var sb = $('button[type=submit]', form); if (sb) sb.dataset.label = sb.innerHTML;
+  });
+
+  /* links that preselect a choice in a form: <a href="#form" data-pick="Value" data-field="service" data-form="lic"> */
+  $$('[data-pick]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var f = document.getElementById(a.dataset.form || 'lic'); if (!f) return;
+      var r = null;
+      $$('input[name="' + (a.dataset.field || 'service') + '"]', f).forEach(function (i) { if (i.value === a.dataset.pick) r = i; });
+      if (!r) return;
+      e.preventDefault();
+      r.checked = true; r.dispatchEvent(new Event('change', { bubbles: true }));
+      var nx = $('.fnext', f); if (nx) nx.click();
+      f.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
   });
 
   /* services filter */
