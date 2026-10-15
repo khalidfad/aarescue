@@ -444,3 +444,7 @@ html{scroll-behavior:auto}
 .ccl li.noimg span{display:block}
 @media(max-width:680px){.ccl li{width:140px;padding:0 14px}.cc{padding:22px 0 24px}}
 @media(prefers-reduced-motion:reduce){.cct2{animation:none;width:auto;overflow-x:auto}.ccl[aria-hidden]{display:none}.ccp{display:none}}
+
+/* Job application button (own class, does not touch the .bd card layout) */
+.b.bjob{background:#16A34A;border-color:#16A34A;color:#fff}
+.b.bjob:hover{background:#15803D;border-color:#15803D}

@@ -16,8 +16,23 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
     <link rel="preload" as="image" href="img/haul-cars.webp" type="image/webp">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles2.css">
     <script src="script.js" defer></script>
+<style id="cc-base">
+/* Client logo carousel base styles. :where() keeps specificity at zero so your own .cc rules always win. */
+:where(.cc){padding:30px 0;background:#fff;border-block:1px solid var(--l,#E7EAF0)}
+:where(.cc .cch){display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+:where(.cc .cct){font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--m,#5B6475)}
+:where(.cc .ccp){display:grid;place-items:center;width:38px;height:38px;border:1.5px solid var(--l,#E7EAF0);border-radius:50%;background:#fff;color:inherit;cursor:pointer}
+:where(.cc .ccv){overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+:where(.cc .cct2){display:flex;width:max-content;animation:ccmarq 40s linear infinite}
+:where(.cc .cct2.is-paused){animation-play-state:paused}
+:where(.cc .ccl){display:flex;align-items:center;gap:60px;padding-right:60px;margin:0;list-style:none}
+:where(.cc .ccl li){display:flex;align-items:center;flex:none}
+:where(.cc .ccl img){display:block;height:46px;width:auto;max-width:170px;object-fit:contain}
+:where(.cc .ccl li span){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@keyframes ccmarq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){:where(.cc .cct2){animation:none}}
+</style>
 </head>
 
 <body>
@@ -135,7 +150,9 @@
                 <path fill="currentColor" stroke="none"
                     d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z" />
             </symbol>
-        </defs>
+        <symbol id="i-pause" viewBox="0 0 24 24">
+                <path d="M8 5v14M16 5v14" />
+            </symbol></defs>
     </svg>
 
     <div class="prog" aria-hidden="true"><i></i></div>
@@ -244,30 +261,75 @@
             <a class="scr" href="#impact" aria-label="Scroll down"><i></i></a>
         </section>
 
-        <div class="mq" aria-label="Trusted by leading organisations">
-            <div class="mt">
-                <ul>
-                    <li><img src="img/clients/uba.svg" alt="UBA" data-n="UBA" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/ecobank.svg" alt="Ecobank" data-n="Ecobank" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/samsung.svg" alt="Samsung" data-n="Samsung" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/chevron.svg" alt="Chevron" data-n="Chevron" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/stanbic-ibtc.svg" alt="Stanbic IBTC" data-n="Stanbic IBTC" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/old-mutual.svg" alt="Old Mutual" data-n="Old Mutual" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/totalenergies.svg" alt="TotalEnergies" data-n="TotalEnergies" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/dangote.svg" alt="Dangote" data-n="Dangote" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                </ul>
-                <ul aria-hidden="true">
-                    <li><img src="img/clients/uba.svg" alt="" data-n="UBA" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/ecobank.svg" alt="" data-n="Ecobank" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/samsung.svg" alt="" data-n="Samsung" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/chevron.svg" alt="" data-n="Chevron" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/stanbic-ibtc.svg" alt="" data-n="Stanbic IBTC" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/old-mutual.svg" alt="" data-n="Old Mutual" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/totalenergies.svg" alt="" data-n="TotalEnergies" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                    <li><img src="img/clients/dangote.svg" alt="" data-n="Dangote" height="30" loading="lazy" onerror="this.replaceWith(this.dataset.n)"></li>
-                </ul>
+        <section class="cc" aria-label="Our clients and partners">
+            <div class="w cch">
+                <p class="cct">Trusted by leading organisations</p><button type="button" class="ccp"
+                    aria-pressed="false" aria-label="Pause logo carousel"><svg class="ic">
+                        <use href="#i-pause" /></svg></button>
             </div>
-        </div>
+            <div class="ccv">
+                <div class="cct2">
+                    <ul class="ccl">
+                        <li><img src="img/clients/uba.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/uba_logo.jpg" alt="UBA"
+                                height="46"><span>UBA</span></li>
+                        <li><img src="img/clients/ecobank.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/Eco-Bank-Logo.jpg"
+                                alt="Ecobank" height="46"><span>Ecobank</span></li>
+                        <li><img src="img/clients/samsung.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/samsung-logo.jpg"
+                                alt="Samsung" height="46"><span>Samsung</span></li>
+                        <li><img src="img/clients/chevron.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/chevron%20logo.jpg"
+                                alt="Chevron" height="46"><span>Chevron</span></li>
+                        <li><img src="img/clients/stanbic-ibtc.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/Stanbic-Bank-Logo.jpg"
+                                alt="Stanbic IBTC" height="46"><span>Stanbic IBTC</span></li>
+                        <li><img src="img/clients/old-mutual.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/old%20mutual%20logo.jpg"
+                                alt="Old Mutual" height="46"><span>Old Mutual</span></li>
+                        <li><img src="img/clients/julius-berger.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/julius-berger-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="Julius Berger" height="46"><span>Julius Berger</span></li>
+                        <li><img src="img/clients/dangote.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/Dangote-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="Dangote" height="46"><span>Dangote</span></li>
+                        <li><img src="img/clients/luxsit.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/luxsit-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="Luxsit" height="46"><span>Luxsit</span></li>
+                    </ul>
+                    <ul class="ccl" aria-hidden="true">
+                        <li><img src="img/clients/uba.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/uba_logo.jpg" alt=""
+                                height="46"><span>UBA</span></li>
+                        <li><img src="img/clients/ecobank.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/Eco-Bank-Logo.jpg" alt=""
+                                height="46"><span>Ecobank</span></li>
+                        <li><img src="img/clients/samsung.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/samsung-logo.jpg" alt=""
+                                height="46"><span>Samsung</span></li>
+                        <li><img src="img/clients/chevron.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/chevron%20logo.jpg" alt=""
+                                height="46"><span>Chevron</span></li>
+                        <li><img src="img/clients/stanbic-ibtc.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/Stanbic-Bank-Logo.jpg"
+                                alt="" height="46"><span>Stanbic IBTC</span></li>
+                        <li><img src="img/clients/old-mutual.jpg"
+                                data-fallback="https://www.aarescuenigeria.com/img/partners/old%20mutual%20logo.jpg"
+                                alt="" height="46"><span>Old Mutual</span></li>
+                        <li><img src="img/clients/julius-berger.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/julius-berger-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="" height="46"><span>Julius Berger</span></li>
+                        <li><img src="img/clients/dangote.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/Dangote-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="" height="46"><span>Dangote</span></li>
+                        <li><img src="img/clients/luxsit.png"
+                                data-fallback="https://licences.aarescuenigeria.com/wp-content/uploads/elementor/thumbs/luxsit-q6hzbnw56w499bg4f0pj1grtsqdgcc2ktaw5t5f6fw.png"
+                                alt="" height="46"><span>Luxsit</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
         <section class="dk" id="impact">
             <div class="w">
@@ -716,6 +778,21 @@
 
     <a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic">
             <use href="#i-phone" /></svg>Emergency Rescue</a>
+<script>
+(function(){
+  var sec=document.querySelector('.cc'); if(!sec) return;
+  function fb(img){ if(img.dataset.fbd||!img.dataset.fallback) return; img.dataset.fbd='1'; img.src=img.dataset.fallback; }
+  [].forEach.call(sec.querySelectorAll('img[data-fallback]'),function(img){
+    img.addEventListener('error',function(){fb(img)});
+    if(img.complete&&img.naturalWidth===0) fb(img);
+  });
+  var btn=sec.querySelector('.ccp'), track=sec.querySelector('.cct2'), paused=false;
+  if(btn&&track) btn.addEventListener('click',function(){
+    paused=!paused; track.classList.toggle('is-paused',paused);
+    btn.setAttribute('aria-pressed',paused); btn.setAttribute('aria-label',paused?'Play logo carousel':'Pause logo carousel');
+  });
+})();
+</script>
 </body>
 
 </html>
