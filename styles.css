@@ -426,21 +426,10 @@ html{scroll-behavior:auto}
 .hd.is-scrolled .mega .all{color:#8A6500;border-top-color:#E8EBF0}
 }
 
-/* clients carousel */
-.cc{background:#fff;border-bottom:1px solid var(--l);padding:26px 0 30px}
-.cch{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-.cct{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--m)}
-.ccp{display:grid;place-items:center;width:34px;height:34px;border:1.5px solid var(--l);border-radius:50%;background:#fff;color:var(--t);cursor:pointer;transition:border-color .2s,background .2s}
-.ccp:hover{border-color:var(--y);background:#FFF9E3}
-.ccv{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.cct2{display:flex;width:max-content;animation:mq 45s linear infinite}
-.cc:hover .cct2,.cc:focus-within .cct2,.cc.paused .cct2{animation-play-state:paused}
-.ccl{display:flex;flex:none;align-items:center}
-.ccl li{display:grid;place-items:center;flex:none;width:176px;height:68px;padding:0 22px}
-.ccl img{max-height:46px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;mix-blend-mode:multiply;transition:filter .3s,opacity .3s}
-.ccl li:hover img{filter:none;opacity:1}
-.ccl li span{display:none;font-size:1.05rem;font-weight:800;line-height:1.1;text-align:center;color:#8795AA}
-.ccl li.noimg img{display:none}
-.ccl li.noimg span{display:block}
-@media(max-width:680px){.ccl li{width:140px;padding:0 14px}.cc{padding:22px 0 24px}}
-@media(prefers-reduced-motion:reduce){.cct2{animation:none;width:auto;overflow-x:auto}.ccl[aria-hidden]{display:none}.ccp{display:none}}
+/* Job application button (own class, does not touch .bd card layout) */
+.b.bjob{background:#16A34A;border-color:#16A34A;color:#fff}
+.b.bjob:hover{background:#15803D;border-color:#15803D}
+
+/* Client logos in the marquee: monochrome, blends into the yellow band */
+.mq li{display:inline-flex;align-items:center}
+.mq li img{display:block;height:30px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1) contrast(1.15);mix-blend-mode:multiply}
