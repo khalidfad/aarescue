@@ -182,5 +182,25 @@
     nlm.textContent = 'Thanks! You are on the list.'; nle.value = '';
   });
 
+  /* ---------- Clients carousel: local logo first, then the existing-site logo, then the client's name ---------- */
+  $$('.cc').forEach(function (cc) {
+    $$('.ccl img', cc).forEach(function (img) {
+      var li = img.parentNode, tried = false;
+      function fail() {
+        if (!tried && img.dataset.fallback) { tried = true; img.src = img.dataset.fallback; }
+        else li.classList.add('noimg');
+      }
+      img.addEventListener('error', fail);
+      if (img.complete && img.naturalWidth === 0) fail();
+    });
+    var btn = $('.ccp', cc);
+    if (btn) btn.addEventListener('click', function () {
+      var p = cc.classList.toggle('paused');
+      btn.setAttribute('aria-pressed', p);
+      btn.setAttribute('aria-label', p ? 'Play logo carousel' : 'Pause logo carousel');
+      $('use', btn).setAttribute('href', p ? '#i-play' : '#i-pause');
+    });
+  });
+
   var y = $('#y'); if (y) y.textContent = new Date().getFullYear();
 })();
