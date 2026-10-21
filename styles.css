@@ -448,3 +448,13 @@ html{scroll-behavior:auto}
 /* Job application button (own class, does not touch the .bd card layout) */
 .b.bjob{background:#16A34A;border-color:#16A34A;color:#fff}
 .b.bjob:hover{background:#15803D;border-color:#15803D}
+
+/* membership: nav login button, homepage hero line, homepage membership section */
+.b.blg{background:rgba(127,127,127,.18);border-color:transparent;color:inherit}.b.blg:hover{background:var(--y);color:#111}
+@media(min-width:1101px) and (max-width:1320px){nav{gap:14px;font-size:.8rem}.nr{gap:8px}.nr .b{padding:.4rem .7rem;font-size:.75rem}}
+.hmem{margin-top:22px;font-size:.88rem;color:rgba(255,255,255,.7)}.hmem a{color:var(--y);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.mhome{padding:112px 0;background:#fff}.mhome .tx small{color:#D69E00}.mhome .cta{margin-top:4px}
+.mcard{justify-self:center;width:min(420px,100%);aspect-ratio:1.586;display:flex;flex-direction:column;justify-content:space-between;padding:26px;border-radius:24px;color:#fff;background:radial-gradient(circle at 85% 0,rgba(255,196,0,.35),transparent 55%),#0A0A0B;box-shadow:0 40px 70px -30px rgba(0,0,0,.6);transform:rotate(-3deg);transition:transform .5s var(--e)}
+.mcard:hover{transform:rotate(0)}.mcard b{font-size:1.7rem;font-weight:900;letter-spacing:.04em}.mcard p{margin-top:-14px;color:rgba(255,255,255,.7)}
+.mc,.mc2{display:flex;justify-content:space-between;gap:10px;font-size:.7rem;font-weight:800;letter-spacing:.1em}.mc .ic{color:var(--y);width:1.8em;height:1.8em}.mc2{color:var(--y)}
+@media(max-width:680px){.mhome{padding:80px 0}}

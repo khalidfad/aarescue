@@ -17,22 +17,102 @@
     <link rel="preload" as="image" href="img/haul-cars.webp" type="image/webp">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-<style id="cc-base">
-/* Client logo carousel base styles. :where() keeps specificity at zero so your own .cc rules always win. */
-:where(.cc){padding:30px 0;background:#fff;border-block:1px solid var(--l,#E7EAF0)}
-:where(.cc .cch){display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
-:where(.cc .cct){font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--m,#5B6475)}
-:where(.cc .ccp){display:grid;place-items:center;width:38px;height:38px;border:1.5px solid var(--l,#E7EAF0);border-radius:50%;background:#fff;color:inherit;cursor:pointer}
-:where(.cc .ccv){overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-:where(.cc .cct2){display:flex;width:max-content;animation:ccmarq 40s linear infinite}
-:where(.cc .cct2.is-paused){animation-play-state:paused}
-:where(.cc .ccl){display:flex;align-items:center;gap:60px;padding-right:60px;margin:0;list-style:none}
-:where(.cc .ccl li){display:flex;align-items:center;flex:none}
-:where(.cc .ccl img){display:block;height:46px;width:auto;max-width:170px;object-fit:contain}
-:where(.cc .ccl li span){position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-@keyframes ccmarq{to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){:where(.cc .cct2){animation:none}}
-</style>
+    <style id="cc-base">
+        /* Client logo carousel base styles. :where() keeps specificity at zero so your own .cc rules always win. */
+        :where(.cc) {
+            padding: 30px 0;
+            background: #fff;
+            border-block: 1px solid var(--l, #E7EAF0)
+        }
+
+        :where(.cc .cch) {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 20px
+        }
+
+        :where(.cc .cct) {
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--m, #5B6475)
+        }
+
+        :where(.cc .ccp) {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border: 1.5px solid var(--l, #E7EAF0);
+            border-radius: 50%;
+            background: #fff;
+            color: inherit;
+            cursor: pointer
+        }
+
+        :where(.cc .ccv) {
+            overflow: hidden;
+            -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent)
+        }
+
+        :where(.cc .cct2) {
+            display: flex;
+            width: max-content;
+            animation: ccmarq 40s linear infinite
+        }
+
+        :where(.cc .cct2.is-paused) {
+            animation-play-state: paused
+        }
+
+        :where(.cc .ccl) {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding-right: 60px;
+            margin: 0;
+            list-style: none
+        }
+
+        :where(.cc .ccl li) {
+            display: flex;
+            align-items: center;
+            flex: none
+        }
+
+        :where(.cc .ccl img) {
+            display: block;
+            height: 46px;
+            width: auto;
+            max-width: 170px;
+            object-fit: contain
+        }
+
+        :where(.cc .ccl li span) {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0)
+        }
+
+        @keyframes ccmarq {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            :where(.cc .cct2) {
+                animation: none
+            }
+        }
+    </style>
+    <script src="member.js" defer></script>
 </head>
 
 <body>
@@ -150,9 +230,40 @@
                 <path fill="currentColor" stroke="none"
                     d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z" />
             </symbol>
-        <symbol id="i-pause" viewBox="0 0 24 24">
+            <symbol id="i-pause" viewBox="0 0 24 24">
                 <path d="M8 5v14M16 5v14" />
-            </symbol></defs>
+            </symbol>
+            <symbol id="i-user" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 21c1-5 15-5 16 0" />
+            </symbol>
+            <symbol id="i-lock" viewBox="0 0 24 24">
+                <rect x="5" y="11" width="14" height="10" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+            </symbol>
+            <symbol id="i-eye" viewBox="0 0 24 24">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+            </symbol>
+            <symbol id="i-card" viewBox="0 0 24 24">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <path d="M2 10h20M6 15h4" />
+            </symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12h14" />
+            </symbol>
+            <symbol id="i-logout" viewBox="0 0 24 24">
+                <path d="M9 4H5v16h4M16 8l4 4-4 4M20 12H9" />
+            </symbol>
+            <symbol id="i-receipt" viewBox="0 0 24 24">
+                <path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6" />
+            </symbol>
+            <symbol id="i-gps" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 1v3M12 20v3M1 12h3M20 12h3" />
+            </symbol>
+        </defs>
     </svg>
 
     <div class="prog" aria-hidden="true"><i></i></div>
@@ -174,17 +285,20 @@
                             href="logistics.html">General Goods and Equipment Logistics</a><a
                             href="corporate-transport.html">Corporate Transportation</a><a
                             href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
-                            href="licensing.html">Licensing</a><a
-                            href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
+                            href="licensing.html">Licensing</a><a href="careers.html">Job Portal</a><a
+                            href="fleet-management.html">Fleet
                             Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
                             href="services.html">View all services<svg class="ic">
                                 <use href="#i-arrow" /></svg></a></div>
                 </div>
                 <a href="licensing.html">Licensing</a>
+                <a href="membership.html">Membership</a>
                 <a href="coming-soon.html?page=Blog">Blog</a>
                 <a href="contact.html">Contact Us</a>
-                <span class="nr"><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
-                        href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
+                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic">
+                            <use href="#i-user" /></svg>Login</a><a class="b bjob" href="careers.html">Apply for a
+                        Job</a><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo"
+                        href="make-payment.html">Make
                         Payment</a></span>
             </nav>
             <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
@@ -213,6 +327,8 @@
                         <a class="b bg2 lg2" href="book-car.html">Book Your Car<svg class="ic">
                                 <use href="#i-arrow" /></svg></a>
                     </div>
+                    <p class="hmem">New here? <a href="signup.html">Become a member</a> &middot; Already a member? <a
+                            href="login.html">Log in</a></p>
                     <ul class="chips">
                         <li><svg class="ic">
                                 <use href="#i-clock" /></svg>24/7 Support</li>
@@ -557,6 +673,35 @@
             </div>
         </section>
 
+        <section class="mhome" id="membership">
+            <div class="w sp">
+                <div class="tx" data-r><small>AA RESCUE MEMBERSHIP</small>
+                    <h2>Join once.<br><em class="dy">Be covered all year.</em></h2>
+                    <p>Register your vehicles, get a member ID and a set number of rescues every year, plus a dashboard
+                        for your history, renewals and vehicle documents.</p>
+                    <ul class="ck">
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg>Priority 24/7 dispatch in Lagos, Abuja and Port Harcourt
+                        </li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg>Rescue history, renewals and vehicle reminders in one
+                            place</li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg>Member rates on driving school, haulage and licensing</li>
+                    </ul>
+                    <div class="cta"><a class="b by lg2" href="signup.html">Sign up<svg class="ic">
+                                <use href="#i-arrow" /></svg></a><a class="b bk lg2" href="login.html"><svg class="ic">
+                                <use href="#i-user" /></svg>Log in</a><a class="b bl2 lg2" href="membership.html">View
+                            plans</a></div>
+                </div>
+                <div class="mcard" data-r>
+                    <div class="mc"><span>AA RESCUE &middot; MEMBER</span><svg class="ic">
+                            <use href="#i-shield" /></svg></div><b>AAR-100245</b>
+                    <p>Adaeze Okonkwo</p>
+                    <div class="mc2"><span>Standard plan</span><span>24/7 &middot; 0802 555 1111</span></div>
+                </div>
+            </div>
+        </section>
         <section class="dk" id="enterprise">
             <div class="w">
                 <div class="sh" data-r><small>ENTERPRISE</small>
@@ -754,6 +899,7 @@
                 </div>
                 <div>
                     <h3>Support</h3><a href="contact.html#faq">FAQs</a><a href="make-payment.html">Make Payment</a><a
+                        href="membership.html">Membership</a><a href="login.html">Member Login</a><a
                         href="contact.html">Report an Issue</a><a href="contact.html#branches">Branch Locator</a><a
                         href="tel:+2348025551111">Emergency Line</a>
                 </div>
@@ -778,21 +924,33 @@
 
     <a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic">
             <use href="#i-phone" /></svg>Emergency Rescue</a>
-<script>
-(function(){
-  var sec=document.querySelector('.cc'); if(!sec) return;
-  function fb(img){ if(img.dataset.fbd||!img.dataset.fallback) return; img.dataset.fbd='1'; img.src=img.dataset.fallback; }
-  [].forEach.call(sec.querySelectorAll('img[data-fallback]'),function(img){
-    img.addEventListener('error',function(){fb(img)});
-    if(img.complete&&img.naturalWidth===0) fb(img);
-  });
-  var btn=sec.querySelector('.ccp'), track=sec.querySelector('.cct2'), paused=false;
-  if(btn&&track) btn.addEventListener('click',function(){
-    paused=!paused; track.classList.toggle('is-paused',paused);
-    btn.setAttribute('aria-pressed',paused); btn.setAttribute('aria-label',paused?'Play logo carousel':'Pause logo carousel');
-  });
-})();
-</script>
+    <script>
+        (function () {
+            var sec = document.querySelector('.cc');
+            if (!sec) return;
+
+            function fb(img) {
+                if (img.dataset.fbd || !img.dataset.fallback) return;
+                img.dataset.fbd = '1';
+                img.src = img.dataset.fallback;
+            }
+            [].forEach.call(sec.querySelectorAll('img[data-fallback]'), function (img) {
+                img.addEventListener('error', function () {
+                    fb(img)
+                });
+                if (img.complete && img.naturalWidth === 0) fb(img);
+            });
+            var btn = sec.querySelector('.ccp'),
+                track = sec.querySelector('.cct2'),
+                paused = false;
+            if (btn && track) btn.addEventListener('click', function () {
+                paused = !paused;
+                track.classList.toggle('is-paused', paused);
+                btn.setAttribute('aria-pressed', paused);
+                btn.setAttribute('aria-label', paused ? 'Play logo carousel' : 'Pause logo carousel');
+            });
+        })();
+    </script>
 </body>
 
 </html>

@@ -1,130 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>About us | AA Rescue</title>
-<meta name="description" content="AA Rescue is a multi-service organisation founded in 2003, giving comfort, removing distress and protecting Nigerians on the road.">
-<meta name="theme-color" content="#0A0A0B">
-<script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="booking.css">
-<link rel="stylesheet" href="inner.css">
-<script src="script.js" defer></script>
-<script src="forms.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About us | AA Rescue</title>
+    <meta name="description"
+        content="AA Rescue is a multi-service organisation founded in 2003, giving comfort, removing distress and protecting Nigerians on the road.">
+    <meta name="theme-color" content="#0A0A0B">
+    <script>
+        document.documentElement.classList.add('js')
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="booking.css">
+    <link rel="stylesheet" href="inner.css">
+    <script src="script.js" defer></script>
+    <script src="forms.js" defer></script>
+<script src="member.js" defer></script>
 </head>
+
 <body class="subpage">
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
-<symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
-<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
-<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
-<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h12v11H2zM14 10h4l4 3v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
-<symbol id="i-car" viewBox="0 0 24 24"><path d="M3 17v-5l2-5h14l2 5v5M3 17h18M3 17v2h3v-2M18 17v2h3v-2M7 13h.01M17 13h.01"/></symbol>
-<symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
-<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c.5-5 12.5-5 14 0M16 5a3.5 3.5 0 0 1 0 7M18 14c2 .5 3.500 2.500 4 6"/></symbol>
-<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></symbol>
-<symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.500 14L7 22l5-3 5 3-1.500-8"/></symbol>
-<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
-<symbol id="i-bldg" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
-<symbol id="i-head" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></symbol>
-<symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></symbol>
-<symbol id="i-hist" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.700M3 4v5h5M12 8v5l3 2"/></symbol>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
-<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
-<symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3L2 20h20zM12 10v4M12 17h.01"/></symbol>
-<symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></symbol>
-<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
-<symbol id="i-tw" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
-<symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7h.01M12 17v-7M12 13c0-4 5-4 5 0v4"/></symbol>
-<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z"/></symbol>
-<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
-<symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></symbol>
-<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
-<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-<symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
-<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></symbol>
-<symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M3 12h7M14 12h7M12 14v7"/></symbol>
-<symbol id="i-gps" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></symbol>
-<symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol>
-<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-</defs></svg>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-phone" viewBox="0 0 24 24">
+                <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+            </symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24">
+                <path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+            </symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 2" />
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 7l9 6 9-6" />
+            </symbol>
+            <symbol id="i-chev" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6" />
+            </symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+            </symbol>
+            <symbol id="i-menu" viewBox="0 0 24 24">
+                <path d="M4 7h16M4 12h16M4 17h16" />
+            </symbol>
+            <symbol id="i-x" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6L6 18" />
+            </symbol>
+            <symbol id="i-check" viewBox="0 0 24 24">
+                <path d="M5 12l5 5 9-10" />
+            </symbol>
+            <symbol id="i-checkc" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M8 12l3 3 5-6" />
+            </symbol>
+            <symbol id="i-truck" viewBox="0 0 24 24">
+                <path d="M2 6h12v11H2zM14 10h4l4 3v4h-8" />
+                <circle cx="6" cy="18" r="2" />
+                <circle cx="17" cy="18" r="2" />
+            </symbol>
+            <symbol id="i-car" viewBox="0 0 24 24">
+                <path d="M3 17v-5l2-5h14l2 5v5M3 17h18M3 17v2h3v-2M18 17v2h3v-2M7 13h.01M17 13h.01" />
+            </symbol>
+            <symbol id="i-grad" viewBox="0 0 24 24">
+                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5" />
+            </symbol>
+            <symbol id="i-chart" viewBox="0 0 24 24">
+                <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+            </symbol>
+            <symbol id="i-users" viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3.5" />
+                <path d="M2 20c.5-5 12.5-5 14 0M16 5a3.5 3.5 0 0 1 0 7M18 14c2 .5 3.500 2.500 4 6" />
+            </symbol>
+            <symbol id="i-doc" viewBox="0 0 24 24">
+                <path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7" />
+            </symbol>
+            <symbol id="i-box" viewBox="0 0 24 24">
+                <path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10" />
+            </symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24">
+                <path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z" />
+            </symbol>
+            <symbol id="i-award" viewBox="0 0 24 24">
+                <circle cx="12" cy="9" r="6" />
+                <path d="M8.500 14L7 22l5-3 5 3-1.500-8" />
+            </symbol>
+            <symbol id="i-bolt" viewBox="0 0 24 24">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+            </symbol>
+            <symbol id="i-bldg" viewBox="0 0 24 24">
+                <rect x="5" y="3" width="14" height="18" rx="1" />
+                <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" />
+            </symbol>
+            <symbol id="i-head" viewBox="0 0 24 24">
+                <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+                <rect x="3" y="14" width="4" height="6" rx="1.500" />
+                <rect x="17" y="14" width="4" height="6" rx="1.500" />
+            </symbol>
+            <symbol id="i-nav" viewBox="0 0 24 24">
+                <path d="M3 11l18-8-8 18-2-8z" />
+            </symbol>
+            <symbol id="i-hist" viewBox="0 0 24 24">
+                <path d="M3 12a9 9 0 1 0 3-6.700M3 4v5h5M12 8v5l3 2" />
+            </symbol>
+            <symbol id="i-search" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M20 20l-4-4" />
+            </symbol>
+            <symbol id="i-dl" viewBox="0 0 24 24">
+                <path d="M12 4v11M7 11l5 5 5-5M5 20h14" />
+            </symbol>
+            <symbol id="i-warn" viewBox="0 0 24 24">
+                <path d="M12 3L2 20h20zM12 10v4M12 17h.01" />
+            </symbol>
+            <symbol id="i-fb" viewBox="0 0 24 24">
+                <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" />
+            </symbol>
+            <symbol id="i-ig" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <path d="M17.500 6.500h.01" />
+            </symbol>
+            <symbol id="i-tw" viewBox="0 0 24 24">
+                <path d="M4 4l16 16M20 4L4 20" />
+            </symbol>
+            <symbol id="i-in" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="3" />
+                <path d="M8 10v7M8 7h.01M12 17v-7M12 13c0-4 5-4 5 0v4" />
+            </symbol>
+            <symbol id="i-star" viewBox="0 0 24 24">
+                <path fill="currentColor" stroke="none"
+                    d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z" />
+            </symbol>
+            <symbol id="i-upload" viewBox="0 0 24 24">
+                <path d="M12 16V4M7 9l5-5 5 5M4 20h16" />
+            </symbol>
+            <symbol id="i-file" viewBox="0 0 24 24">
+                <path d="M6 3h9l4 4v14H6zM14 3v5h5" />
+            </symbol>
+            <symbol id="i-lock" viewBox="0 0 24 24">
+                <rect x="5" y="11" width="14" height="10" rx="2" />
+                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+            </symbol>
+            <symbol id="i-plus" viewBox="0 0 24 24">
+                <path d="M12 5v14M5 12h14" />
+            </symbol>
+            <symbol id="i-card" viewBox="0 0 24 24">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <path d="M2 10h20M6 15h4" />
+            </symbol>
+            <symbol id="i-heart" viewBox="0 0 24 24">
+                <path d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z" />
+            </symbol>
+            <symbol id="i-wheel" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" />
+                <circle cx="12" cy="12" r="2" />
+                <path d="M3 12h7M14 12h7M12 14v7" />
+            </symbol>
+            <symbol id="i-gps" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+                <circle cx="12" cy="12" r="8" />
+                <path d="M12 1v3M12 20v3M1 12h3M20 12h3" />
+            </symbol>
+            <symbol id="i-brief" viewBox="0 0 24 24">
+                <rect x="3" y="7" width="18" height="13" rx="2" />
+                <path d="M9 7V5h6v2M3 13h18" />
+            </symbol>
+            <symbol id="i-eye" viewBox="0 0 24 24">
+                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                <circle cx="12" cy="12" r="3" />
+            </symbol>
+        <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></symbol></defs>
+    </svg>
 
-<div class="prog" aria-hidden="true"><i></i></div>
+    <div class="prog" aria-hidden="true"><i></i></div>
 
-<header class="hd" id="hd"><div class="w">
-<a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue"></a>
-<nav id="nav" aria-label="Main">
-<a href="index.html">Home</a>
-<a href="about.html" aria-current="page">About Us</a>
-<div class="dd"><button class="ddb" aria-expanded="false" aria-controls="mega">Services<svg class="ic"><use href="#i-chev"/></svg></button>
-<div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a href="drivers-outsourcing.html">Drivers Outsourcing</a><a href="learner-driver-training.html">Learner Driver's Training</a><a href="driver-testing-certification.html">Testing and Certification of Drivers</a><a href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a href="logistics.html">General Goods and Equipment Logistics</a><a href="corporate-transport.html">Corporate Transportation</a><a href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a href="licensing.html">Licensing</a><a href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all" href="services.html">View all services<svg class="ic"><use href="#i-arrow"/></svg></a></div></div>
-<a href="licensing.html">Licensing</a>
+    <header class="hd" id="hd">
+        <div class="w">
+            <a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62"
+                    alt="AA Rescue"></a>
+            <nav id="nav" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html" aria-current="page">About Us</a>
+                <div class="dd"><button class="ddb" aria-expanded="false" aria-controls="mega">Services<svg class="ic">
+                            <use href="#i-chev" /></svg></button>
+                    <div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a
+                            href="drivers-outsourcing.html">Drivers Outsourcing</a><a
+                            href="learner-driver-training.html">Learner Driver's Training</a><a
+                            href="driver-testing-certification.html">Testing and Certification of Drivers</a><a
+                            href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a
+                            href="logistics.html">General Goods and Equipment Logistics</a><a
+                            href="corporate-transport.html">Corporate Transportation</a><a
+                            href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
+                            href="licensing.html">Licensing</a><a
+                            href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
+                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
+                            href="services.html">View all services<svg class="ic">
+                                <use href="#i-arrow" /></svg></a></div>
+                </div>
+                <a href="licensing.html">Licensing</a>
+                <a href="membership.html">Membership</a>
 <a href="coming-soon.html?page=Blog">Blog</a>
-<a href="contact.html">Contact Us</a>
-<span class="nr"><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make Payment</a></span>
-</nav>
-<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
-</div></header>
+                <a href="contact.html">Contact Us</a>
+                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
+                        href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
+                        Payment</a></span>
+            </nav>
+            <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
+                    <use href="#i-menu" /></svg></button>
+        </div>
+    </header>
 
-<main id="top">
-<section class="phero">
-<div class="hbg" id="hbg" aria-hidden="true"><img src="img/haul-aa.webp" width="1080" height="810" alt="" fetchpriority="high"></div>
-<div class="w pc">
-<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><b aria-current="page">About Us</b></nav>
-<p class="badge"><svg class="ic"><use href="#i-bolt"/></svg>Since 2003</p>
-<h1>About AA Rescue</h1>
-<p class="sub">A multi-service organisation giving comfort, removing distress and protecting the Nigerian populace on the road.</p>
-<div class="cta"><a class="b by lg2" href="services.html">Explore our services</a><a class="b bg2 lg2" href="contact.html">Contact us</a></div>
-</div>
-</section><section class="lt" style="padding-top:96px"><div class="w ab">
-<div data-r><small style="color:#C99100;font-size:.7rem;font-weight:800;letter-spacing:.16em;display:block;margin-bottom:12px">WHO WE ARE</small><h2>Prompt help for stranded motorists, and so much more</h2>
-<p>AA Rescue is a multi-service organisation founded in 2003 with the prime focus of giving comfort, removing distress and protecting the Nigerian populace by providing prompt emergency roadside assistance to stranded motorists in cases of vehicular breakdowns and accidents.</p>
-<p>The company is a pioneer in modern driving training and automobile rescue in Nigeria. It has grown into an organisation of note, offering a variety of services that impact the quality of life of the Nigerian polity, including:</p>
-<ul class="chk2"><li><svg class="ic"><use href="#i-checkc"/></svg><a href="recovery.html">Emergency Automobile Rescue Assistance</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="learner-driver-training.html">Learner Driver Training (Driving School)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="defensive-driving-training.html">Capacity building for Drivers and Executives (Defensive and Advanced Driving Training)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="logistics.html">General Logistics</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="haul-vehicle.html">Intercity Vehicular Haulage</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="drivers-outsourcing.html">Drivers Recruitment for companies and individuals (Drivers Outsourcing)</a></li><li><svg class="ic"><use href="#i-checkc"/></svg><a href="corporate-transport.html">Corporate Transport and general road traffic and motoring consultancy</a></li></ul></div>
-<div class="pic" data-r><div class="pf"><img src="img/hq-fleet.webp" width="900" height="378" alt="AA Rescue executive fleet" loading="lazy"></div></div>
-</div></section>
-<section class="dk"><div class="w"><div class="abs" data-stagger><div data-r><b>2003</b><span>Year founded</span></div><div data-r><b data-n="17" data-s="+">17+</b><span>Branches spread around Nigeria</span></div><div data-r><b>24/7</b><span>Open every day, including major holidays</span></div></div>
-<p style="max-width:720px;margin:36px auto 0;text-align:center;color:rgba(255,255,255,.6)" data-r>For us it is about putting people’s interest first by offering and delivering excellent services. We achieve this through hard work, a dynamic Board of Directors, strategic management and passionate personnel.</p></div></section>
-<section class="lt"><div class="w"><div class="sh" data-r><small>WHAT DRIVES US</small><h2>Mission and vision</h2></div>
-<div class="mvg" data-stagger><div data-r><small>OUR MISSION</small><h3>The right motoring culture</h3><p>To instil and engrave the right motoring culture in Nigeria.</p></div><div data-r><small>OUR VISION</small><h3>Safety and comfort for motorists</h3><p>To greatly enhance safety and give comfort to motorists, applying our peculiar skills through every commercial and social landscape.</p></div></div></div></section>
-<section class="dk"><div class="w"><div class="sh" data-r><small>OUR CORE VALUES</small><h2>What we stand for</h2></div>
-<div class="vals" data-stagger><div data-r><span class="ib"><svg class="ic"><use href="#i-heart"/></svg></span>God Centered</div><div data-r><span class="ib"><svg class="ic"><use href="#i-bolt"/></svg></span>Innovative</div><div data-r><span class="ib"><svg class="ic"><use href="#i-users"/></svg></span>Customer Focused</div><div data-r><span class="ib"><svg class="ic"><use href="#i-grad"/></svg></span>Learning</div><div data-r><span class="ib"><svg class="ic"><use href="#i-shield"/></svg></span>Resilience</div><div data-r><span class="ib"><svg class="ic"><use href="#i-award"/></svg></span>Team Spirit</div></div></div></section>
-</main>
+    <main id="top">
+        <section class="phero">
+            <div class="hbg" id="hbg" aria-hidden="true"><img src="img/haul-aa.webp" width="1080" height="810" alt=""
+                    fetchpriority="high"></div>
+            <div class="w pc">
+                <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span
+                        aria-hidden="true">/</span><b aria-current="page">About Us</b></nav>
+                <p class="badge"><svg class="ic">
+                        <use href="#i-bolt" /></svg>Since 2003</p>
+                <h1>About AA Rescue</h1>
+                <p class="sub">A multi-service organisation giving comfort, removing distress and protecting the
+                    Nigerian populace on the road.</p>
+                <div class="cta"><a class="b by lg2" href="services.html">Explore our services</a><a class="b bg2 lg2"
+                        href="contact.html">Contact us</a></div>
+            </div>
+        </section>
+        <section class="lt" style="padding-top:96px">
+            <div class="w ab">
+                <div data-r><small
+                        style="color:#C99100;font-size:.7rem;font-weight:800;letter-spacing:.16em;display:block;margin-bottom:12px">WHO
+                        WE ARE</small>
+                    <h2>Prompt help for stranded motorists, and so much more</h2>
+                    <p>AA Rescue is a multi-service organisation founded in 2003 with the prime focus of giving comfort,
+                        removing distress and protecting the Nigerian populace by providing prompt emergency roadside
+                        assistance to stranded motorists in cases of vehicular breakdowns and accidents.</p>
+                    <p>The company is a pioneer in modern driving training and automobile rescue in Nigeria. It has
+                        grown into an organisation of note, offering a variety of services that impact the quality of
+                        life of the Nigerian polity, including:</p>
+                    <ul class="chk2">
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="recovery.html">Emergency Automobile Rescue
+                                Assistance</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="learner-driver-training.html">Learner Driver
+                                Training (Driving School)</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="defensive-driving-training.html">Capacity
+                                building for Drivers and Executives (Defensive and Advanced Driving Training)</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="logistics.html">General Logistics</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="haul-vehicle.html">Intercity Vehicular
+                                Haulage</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="drivers-outsourcing.html">Drivers Recruitment for
+                                companies and individuals (Drivers Outsourcing)</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-checkc" /></svg><a href="corporate-transport.html">Corporate Transport and
+                                general road traffic and motoring consultancy</a></li>
+                    </ul>
+                </div>
+                <div class="pic" data-r>
+                    <div class="pf"><img src="img/hq-fleet.webp" width="900" height="378"
+                            alt="AA Rescue executive fleet" loading="lazy"></div>
+                </div>
+            </div>
+        </section>
+        <section class="dk">
+            <div class="w">
+                <div class="abs" data-stagger>
+                    <div data-r><b>2003</b><span>Year founded</span></div>
+                    <div data-r><b data-n="17" data-s="+">17+</b><span>Branches spread around Nigeria</span></div>
+                    <div data-r><b>24/7</b><span>Open every day, including major holidays</span></div>
+                </div>
+                <p style="max-width:720px;margin:36px auto 0;text-align:center;color:rgba(255,255,255,.6)" data-r>For us
+                    it is about putting people’s interest first by offering and delivering excellent services. We
+                    achieve this through hard work, a dynamic Board of Directors, strategic management and passionate
+                    personnel.</p>
+            </div>
+        </section>
+        <section class="lt">
+            <div class="w">
+                <div class="sh" data-r><small>WHAT DRIVES US</small>
+                    <h2>Mission and vision</h2>
+                </div>
+                <div class="mvg" data-stagger>
+                    <div data-r><small>OUR MISSION</small>
+                        <h3>The right motoring culture</h3>
+                        <p>To instil and engrave the right motoring culture in Nigeria.</p>
+                    </div>
+                    <div data-r><small>OUR VISION</small>
+                        <h3>Safety and comfort for motorists</h3>
+                        <p>To greatly enhance safety and give comfort to motorists, applying our peculiar skills through
+                            every commercial and social landscape.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="dk">
+            <div class="w">
+                <div class="sh" data-r><small>OUR CORE VALUES</small>
+                    <h2>What we stand for</h2>
+                </div>
+                <div class="vals" data-stagger>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-heart" /></svg></span>God Centered</div>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-bolt" /></svg></span>Innovative</div>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-users" /></svg></span>Customer Focused</div>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-grad" /></svg></span>Learning</div>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-shield" /></svg></span>Resilience</div>
+                    <div data-r><span class="ib"><svg class="ic">
+                                <use href="#i-award" /></svg></span>Team Spirit</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<section class="ybn"><div class="w">
-<h2><svg class="ic"><use href="#i-phone"/></svg>Prefer to talk to someone?</h2>
-<p>Our team is on the phone 24 hours a day, 7 days a week, including major holidays.</p>
-<a class="b bk lg2" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>0802 555 1111</a>
-</div></section>
+    <section class="ybn">
+        <div class="w">
+            <h2><svg class="ic">
+                    <use href="#i-phone" /></svg>Prefer to talk to someone?</h2>
+            <p>Our team is on the phone 24 hours a day, 7 days a week, including major holidays.</p>
+            <a class="b bk lg2" href="tel:+2348025551111"><svg class="ic">
+                    <use href="#i-phone" /></svg>0802 555 1111</a>
+        </div>
+    </section>
 
-<footer class="ft"><div class="w">
-<div class="fg">
-<div class="fb0"><a class="lg" href="index.html"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue" loading="lazy"></a><p>Nigeria's most trusted roadside assistance and mobility solutions company since 2003.</p>
-<ul class="fc"><li><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+2348025551111">0802 555 1111</a></li><li><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:info@aarescuenigeria.com">info@aarescuenigeria.com</a></li><li><svg class="ic"><use href="#i-pin"/></svg>13/15 Castle Rock Avenue, off Lekki-Epe Expressway, Jakande Roundabout, Lekki, Lagos</li></ul>
-<div class="so"><a href="https://www.facebook.com/aarescuenigeria/" aria-label="Facebook"><svg class="ic"><use href="#i-fb"/></svg></a><a href="https://twitter.com/AARescueNigeria" aria-label="X"><svg class="ic"><use href="#i-tw"/></svg></a><a href="https://www.instagram.com/aarescuenigeria/" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a><a href="#" aria-label="LinkedIn"><svg class="ic"><use href="#i-in"/></svg></a></div></div>
-<div><h3>About</h3><a href="about.html">Our Story</a><a href="#">Leadership Team</a><a href="#">Press &amp; Media</a><a href="#">Awards</a><a href="#">Careers</a></div>
-<div><h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet Management</a><a href="drivers-academy.html">Driving School</a><a href="drivers-outsourcing.html">Driver Outsourcing</a><a href="licensing.html">Vehicle Licensing</a></div>
-<div><h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a href="corporate-transport.html">Corporate Transport</a><a href="drivers-outsourcing.html">Driver Hire</a><a href="logistics.html">Logistics</a><a href="haul-vehicle.html">Haulage</a></div>
-<div><h3>Support</h3><a href="#">FAQs</a><a href="make-payment.html">Make Payment</a><a href="contact.html">Report an Issue</a><a href="#">Branch Locator</a><a href="tel:+2348025551111">Emergency Line</a></div>
-</div>
-<div class="nl"><div><h3>Stay up to date</h3><p>Receive news, offers, and safety tips from AA Rescue.</p></div><form id="nlf" novalidate><label class="sr" for="nle">Email address</label><input id="nle" type="email" placeholder="Enter your email" autocomplete="email"><button class="b by" type="submit">Subscribe</button><p id="nlm" role="status" aria-live="polite"></p></form></div>
-<p class="cp"><span>&copy; <span id="y">2026</span> AA Rescue Limited. All rights reserved.</span><span><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></span></p>
-</div></footer>
+    <footer class="ft">
+        <div class="w">
+            <div class="fg">
+                <div class="fb0"><a class="lg" href="index.html"><img src="img/logo.jpg" width="100" height="62"
+                            alt="AA Rescue" loading="lazy"></a>
+                    <p>Nigeria's most trusted roadside assistance and mobility solutions company since 2003.</p>
+                    <ul class="fc">
+                        <li><svg class="ic">
+                                <use href="#i-phone" /></svg><a href="tel:+2348025551111">0802 555 1111</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-mail" /></svg><a
+                                href="mailto:info@aarescuenigeria.com">info@aarescuenigeria.com</a></li>
+                        <li><svg class="ic">
+                                <use href="#i-pin" /></svg>13/15 Castle Rock Avenue, off Lekki-Epe Expressway, Jakande
+                            Roundabout, Lekki, Lagos</li>
+                    </ul>
+                    <div class="so"><a href="https://www.facebook.com/aarescuenigeria/" aria-label="Facebook"><svg
+                                class="ic">
+                                <use href="#i-fb" /></svg></a><a href="https://twitter.com/AARescueNigeria"
+                            aria-label="X"><svg class="ic">
+                                <use href="#i-tw" /></svg></a><a href="https://www.instagram.com/aarescuenigeria/"
+                            aria-label="Instagram"><svg class="ic">
+                                <use href="#i-ig" /></svg></a><a href="#" aria-label="LinkedIn"><svg class="ic">
+                                <use href="#i-in" /></svg></a></div>
+                </div>
+                <div>
+                    <h3>About</h3><a href="about.html">Our Story</a><a href="#">Leadership Team</a><a href="#">Press
+                        &amp; Media</a><a href="#">Awards</a><a href="#">Careers</a>
+                </div>
+                <div>
+                    <h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet
+                        Management</a><a href="drivers-academy.html">Driving School</a><a
+                        href="drivers-outsourcing.html">Driver Outsourcing</a><a href="licensing.html">Vehicle
+                        Licensing</a>
+                </div>
+                <div>
+                    <h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a
+                        href="corporate-transport.html">Corporate Transport</a><a href="drivers-outsourcing.html">Driver
+                        Hire</a><a href="logistics.html">Logistics</a><a href="haul-vehicle.html">Haulage</a>
+                </div>
+                <div>
+                    <h3>Support</h3><a href="#">FAQs</a><a href="make-payment.html">Make Payment</a><a
+                        href="contact.html">Report an Issue</a><a href="#">Branch Locator</a><a
+                        href="tel:+2348025551111">Emergency Line</a>
+                </div>
+            </div>
+            <div class="nl">
+                <div>
+                    <h3>Stay up to date</h3>
+                    <p>Receive news, offers, and safety tips from AA Rescue.</p>
+                </div>
+                <form id="nlf" novalidate><label class="sr" for="nle">Email address</label><input id="nle" type="email"
+                        placeholder="Enter your email" autocomplete="email"><button class="b by"
+                        type="submit">Subscribe</button>
+                    <p id="nlm" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+            <p class="cp"><span>&copy; <span id="y">2026</span> AA Rescue Limited. All rights reserved.</span><span><a
+                        href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></span>
+            </p>
+        </div>
+    </footer>
 
 
-<a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Emergency Rescue</a>
+    <a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic">
+            <use href="#i-phone" /></svg>Emergency Rescue</a>
 </body>
+
 </html>

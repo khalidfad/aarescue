@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="inner.css">
     <script src="script.js" defer></script>
     <script src="forms.js" defer></script>
+<script src="member.js" defer></script>
 </head>
 
 <body class="subpage">
@@ -180,7 +181,7 @@
                 <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
                 <circle cx="12" cy="12" r="3" />
             </symbol>
-        </defs>
+        <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></symbol></defs>
     </svg>
 
     <div class="prog" aria-hidden="true"><i></i></div>
@@ -192,7 +193,7 @@
             <nav id="nav" aria-label="Main">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <div class="dd"><button class="ddb" aria-expanded="false" aria-controls="mega">Services<svg class="ic">
+                <div class="dd"><button class="ddb cur" aria-expanded="false" aria-controls="mega">Services<svg class="ic">
                             <use href="#i-chev" /></svg></button>
                     <div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a
                             href="drivers-outsourcing.html">Drivers Outsourcing</a><a
@@ -202,17 +203,19 @@
                             href="logistics.html">General Goods and Equipment Logistics</a><a
                             href="corporate-transport.html">Corporate Transportation</a><a
                             href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
-                            href="licensing.html">Licensing</a><a href="careers.html">Job
-                            Portal</a><a href="fleet-management.html">Fleet Management</a><a
-                            href="vehicle-tracking.html">Vehicle Tracking</a><a class="all" href="services.html">View
-                            all services<svg class="ic">
+                            href="licensing.html">Licensing</a><a
+                            href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
+                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
+                            href="services.html">View all services<svg class="ic">
                                 <use href="#i-arrow" /></svg></a></div>
                 </div>
-                <a href="licensing.html" aria-current="page">Licensing</a>
-                <a href="coming-soon.html?page=Blog">Blog</a>
+                <a href="licensing.html">Licensing</a>
+                <a href="membership.html">Membership</a>
+<a href="coming-soon.html?page=Blog">Blog</a>
                 <a href="contact.html">Contact Us</a>
-                <span class="nr"><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo"
-                        href="make-payment.html">Make Payment</a></span>
+                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
+                        href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
+                        Payment</a></span>
             </nav>
             <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
                     <use href="#i-menu" /></svg></button>

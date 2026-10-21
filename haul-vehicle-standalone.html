@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="booking.css">
 <script src="script.js" defer></script>
 <script src="booking.js" defer></script>
+<script src="member.js" defer></script>
 </head>
 <body class="subpage">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
@@ -58,24 +59,45 @@
 <symbol id="i-img" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.5"/><path d="M21 16l-5-5-8 8"/></symbol>
 <symbol id="i-idcard" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-2 5.5-2 6 0M14 10h4M14 14h3"/></symbol>
 <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
-</defs></svg>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></symbol></defs></svg>
 
 <div class="prog" aria-hidden="true"><i></i></div>
 
-<header class="hd" id="hd"><div class="w">
-<a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue"></a>
-<nav id="nav" aria-label="Main">
-<a href="index.html">Home</a>
-<a href="https://www.aarescuenigeria.com/about.php">About Us</a>
-<div class="dd"><button class="ddb" aria-expanded="false" aria-controls="mega">Services<svg class="ic"><use href="#i-chev"/></svg></button>
-<div class="mega" id="mega"><a href="https://www.aarescuenigeria.com/recovery.php">Vehicular Recovery and Rescue Services</a><a href="https://www.aarescuenigeria.com/outsourcing.php">Drivers Outsourcing</a><a href="https://www.aarescuenigeria.com/learner_driver_training.php">Learner Driver's Training</a><a href="https://www.aarescuenigeria.com/testing_certificate_driver.php">Testing and Certification of Drivers</a><a href="https://www.aarescuenigeria.com/defensive_advanced_drivers_training.php">Defensive and Advanced Drivers Training</a><a href="https://www.aarescuenigeria.com/general_goods_equipment_logistics.php">General Goods and Equipment Logistics</a><a href="https://www.aarescuenigeria.com/corporate_transportation.php">Corporate Transportation</a><a href="https://www.aarescuenigeria.com/drivers_academy.php">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a href="https://licence.aarescuenigeria.com">Licensing</a><a href="careers.html">Job Portal</a><a href="https://www.aarescuenigeria.com/fleet_management.php">Fleet Management</a><a href="https://www.aarescuenigeria.com/vehicle_tracking.php">Vehicle Tracking</a><a class="all" href="https://www.aarescuenigeria.com/services.php">View all services<svg class="ic"><use href="#i-arrow"/></svg></a></div></div>
-<a href="https://licence.aarescuenigeria.com/">Licensing</a>
-<a href="https://blog.aarescuenigeria.com/">Blog</a>
-<a href="https://www.aarescuenigeria.com/contact.php">Contact Us</a>
-<span class="nr"><a class="b by" href="https://www.aarescuenigeria.com/bookcar.php">Book Your Car</a><a class="b bo" href="https://www.aarescuenigeria.com/make_payment.php">Make Payment</a></span>
-</nav>
-<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic"><use href="#i-menu"/></svg></button>
-</div></header>
+<header class="hd" id="hd">
+        <div class="w">
+            <a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62"
+                    alt="AA Rescue"></a>
+            <nav id="nav" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <div class="dd"><button class="ddb cur" aria-expanded="false" aria-controls="mega">Services<svg class="ic">
+                            <use href="#i-chev" /></svg></button>
+                    <div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a
+                            href="drivers-outsourcing.html">Drivers Outsourcing</a><a
+                            href="learner-driver-training.html">Learner Driver's Training</a><a
+                            href="driver-testing-certification.html">Testing and Certification of Drivers</a><a
+                            href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a
+                            href="logistics.html">General Goods and Equipment Logistics</a><a
+                            href="corporate-transport.html">Corporate Transportation</a><a
+                            href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
+                            href="licensing.html">Licensing</a><a
+                            href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
+                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
+                            href="services.html">View all services<svg class="ic">
+                                <use href="#i-arrow" /></svg></a></div>
+                </div>
+                <a href="licensing.html">Licensing</a>
+                <a href="membership.html">Membership</a>
+<a href="coming-soon.html?page=Blog">Blog</a>
+                <a href="contact.html">Contact Us</a>
+                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
+                        href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
+                        Payment</a></span>
+            </nav>
+            <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
+                    <use href="#i-menu" /></svg></button>
+        </div>
+    </header>
 
 <main id="top">
 <section class="phero">
