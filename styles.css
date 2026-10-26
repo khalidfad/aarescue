@@ -475,3 +475,9 @@ html{scroll-behavior:auto}
 .tdots button.on{width:26px;background:var(--y)}
 @media(max-width:1100px){.tcar .tc{flex-basis:calc((100% - 20px)/2)}}
 @media(max-width:680px){.tcar{gap:14px;scroll-padding-left:4px}.tcar .tc{flex-basis:86%;padding:24px}.tnav>button{width:42px;height:42px}.tsec .ty{flex-direction:column;align-items:flex-start}}
+
+/* slim homepage */
+.sg.sg3{grid-template-columns:repeat(3,1fr)}
+.svall{margin-top:40px;text-align:center}
+@media(max-width:1100px){.sg.sg3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.sg.sg3{grid-template-columns:1fr}.svall .b{width:100%}}
