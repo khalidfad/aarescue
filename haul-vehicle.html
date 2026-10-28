@@ -15,6 +15,7 @@
 <script src="script.js" defer></script>
 <script src="booking.js" defer></script>
 <script src="member.js" defer></script>
+<style>.chs label:has(input:disabled){opacity:.45;cursor:not-allowed}</style>
 </head>
 <body class="subpage">
         <!--Start of Tawk.to Script-->
@@ -161,7 +162,7 @@ s0.parentNode.insertBefore(s1,s0);
 <fieldset class="pn" data-step="1" hidden>
 <legend class="sr">Vehicles</legend>
 <header class="ph2"><span class="kk">Step 2 of 5</span><h2 tabindex="-1">Which vehicles are we moving?</h2><p>Add each vehicle with its papers and photos. You can add several in one booking.</p></header>
-<div class="callout"><svg class="ic"><use href="#i-shield"/></svg><p><b>Be exact.</b> Inspect every aspect of the vehicle and note any existing damage before you add it.</p></div>
+<div class="callout"><svg class="ic"><use href="#i-shield"/></svg><p><b>Be exact.</b> Inspect every aspect of the vehicle and note any existing damage before you add it. Luxury cars must go on a single loader.</p></div>
 <ul class="vl" id="vlist"></ul>
 <p class="err" id="e-vehicles"></p>
 <button type="button" class="b bl2" id="vAdd" hidden><svg class="ic"><use href="#i-plus"/></svg>Add another vehicle</button>
@@ -194,10 +195,15 @@ s0.parentNode.insertBefore(s1,s0);
 <label><input type="radio" name="vSec" value="Not bullet proof"><span>Not bullet proof</span></label>
 <label><input type="radio" name="vSec" value="Bullet proof"><span>Bullet proof</span></label>
 </div><p class="err" id="e-vSec"></p></div>
+<div class="fd"><span class="lb" id="lLux">Luxury vehicle?</span>
+<div class="chs" role="radiogroup" aria-labelledby="lLux">
+<label><input type="radio" name="vLux" value="No"><span>No</span></label>
+<label><input type="radio" name="vLux" value="Yes"><span>Yes</span></label>
+</div><p class="hint">Luxury cars go on a single loader.</p><p class="err" id="e-vLux"></p></div>
 <div class="fd"><label for="vQty">Quantity</label><div class="qty"><button type="button" id="qMinus" aria-label="Decrease quantity"><svg class="ic"><use href="#i-minus"/></svg></button><input id="vQty" type="number" min="1" max="10" value="1" inputmode="numeric"><button type="button" id="qPlus" aria-label="Increase quantity"><svg class="ic"><use href="#i-plus"/></svg></button></div><p class="hint">Of this exact vehicle</p><p class="err" id="e-vQty"></p></div>
 <div class="fd c2"><label for="vNotes">Existing damage or notes <i>(optional)</i></label><textarea id="vNotes" rows="2" placeholder="Scratches, dents, missing parts, keys, anything we should know"></textarea></div>
-<div class="fd"><span class="lb">Vehicle papers <i>(recommended)</i></span>
-<div class="dz" id="dzPapers"><input type="file" id="fPapers" accept="image/*,application/pdf" multiple><label for="fPapers"><svg class="ic"><use href="#i-upload"/></svg><b>Upload papers</b><span>Drag files here or browse. PDF, JPG or PNG, up to 5 MB each.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPapers"></p></div>
+<div class="fd"><span class="lb">Vehicle and customs papers <i>(recommended)</i></span>
+<div class="dz" id="dzPapers"><input type="file" id="fPapers" accept="image/*,application/pdf" multiple><label for="fPapers"><svg class="ic"><use href="#i-upload"/></svg><b>Upload papers</b><span>Include your customs papers so we can confirm the car was customs cleared. PDF, JPG or PNG, up to 5 MB each.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPapers"></p></div>
 <div class="fd"><span class="lb">Vehicle photos <i>(recommended)</i></span>
 <div class="dz" id="dzPhotos"><input type="file" id="fPhotos" accept="image/*" multiple><label for="fPhotos"><svg class="ic"><use href="#i-img"/></svg><b>Upload photos</b><span>All sides, interior and odometer. Up to 6 photos.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPhotos"></p></div>
 </div>
@@ -230,8 +236,14 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="fd"><label for="dPhone">Receiver phone</label><input id="dPhone" type="tel" inputmode="tel" placeholder="0802 555 1111"><p class="err" id="e-dPhone"></p></div>
 <div class="fd"><label for="dState">Delivery state</label><select id="dState"></select><p class="err" id="e-dState"></p></div>
 <div class="fd"><label for="dAddr">Delivery location</label><input id="dAddr" autocomplete="off" placeholder="Address or landmark"><p class="err" id="e-dAddr"></p></div>
-<div class="fd"><label for="price">Your proposed haulage price <i>(optional)</i></label><div class="pre"><span>&#8358;</span><input id="price" inputmode="numeric" placeholder="0"></div><p class="hint">We review the route and confirm a final quote before pickup.</p></div>
+<div class="fd"><label for="price">Your proposed haulage price <i>(optional)</i></label><div class="pre"><span>&#8358;</span><input id="price" inputmode="numeric" placeholder="0"></div><p class="hint">The price depends on single or multiple loader. We review the route and confirm a final quote before pickup.</p></div>
 </div>
+<h3 class="shd">Loader type</h3>
+<div class="fd"><span class="lb" id="lLoad">Multiple or single loader?</span>
+<div class="chs big" role="radiogroup" aria-labelledby="lLoad">
+<label><input type="radio" name="loader" value="Single"><span><b>Single loader</b><small>Express: leaves within 24 hours</small></span></label>
+<label><input type="radio" name="loader" value="Multiple"><span><b>Multiple loader</b><small>Takes about 3 days</small></span></label>
+</div><p class="hint">This choice determines your price. Luxury cars must go on a single loader.</p><p class="hint" id="luxNote" hidden>You added a luxury vehicle, so a single loader is selected.</p><p class="err" id="e-loader"></p></div>
 </fieldset>
 
 <fieldset class="pn" data-step="3" hidden>
@@ -276,14 +288,7 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 </div></section>
 
-<section class="lt nx"><div class="w">
-<div class="sh" data-r><small>WHAT HAPPENS NEXT</small><h2>From booking to delivery</h2></div>
-<div class="nxg" data-stagger>
-<div class="nc" data-r><b>1</b><h3>We review and quote</h3><p>Our team checks the route, vehicle types and number of cars, then contacts you to confirm the price.</p></div>
-<div class="nc" data-r><b>2</b><h3>Pickup or drop-off</h3><p>We collect from your address or you bring the vehicle to our office. We inspect it before loading.</p></div>
-<div class="nc" data-r><b>3</b><h3>Delivered and handed over</h3><p>The receiver you name collects the vehicle at the delivery location after their ID is checked.</p></div>
-</div>
-</div></section>
+<section class="lt nx" id="process"><div class="w"><div class="sh" data-r><small>THE HAULAGE PROCESS</small><h2>From booking to pickup</h2></div><div class="nxg" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))" data-stagger><div class="nc" data-r><b>1</b><h3>Vehicle details and customs check</h3><p>You give us the vehicle type, year and other details so we can cost the job. We also check your customs papers to confirm the car was customs cleared.</p></div><div class="nc" data-r><b>2</b><h3>Verification and quotation</h3><p>We request customs verification, verify the owner and collect pictures of the vehicle. You then receive your quotation, as long as there is no short payment.</p></div><div class="nc" data-r><b>3</b><h3>Invoice and car drop-off</h3><p>If you need an invoice, we issue it. You bring in the car, and we take an inventory and check it for any damage.</p></div><div class="nc" data-r><b>4</b><h3>Scheduling</h3><p>Multiple loader trips take about three days. A single loader leaves within 24 hours (express).</p></div></div><div style="margin:26px 0 0;padding:20px 22px;border-radius:18px;border:1px solid var(--y);background:rgba(255,196,0,.1)" data-r><h3 style="margin:0 0 6px">Multiple or single loader?</h3><p style="margin:0 0 8px">This choice determines your price. <b>Single loader</b> is the express option and leaves within 24 hours. <b>Multiple loader</b> takes about three days.</p><p style="margin:0"><b>Good to know:</b> luxury cars must go on a single loader.</p></div><div class="sh" style="margin-top:44px" data-r><small>STAY INFORMED</small><h2>Text message updates</h2></div><div class="nxg" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))" data-stagger><div class="nc" data-r><b>1</b><h3>Acknowledgement and scheduling</h3><p>We text to acknowledge your booking and confirm the schedule.</p></div><div class="nc" data-r><b>2</b><h3>Delay notification</h3><p>If there is any delay, we let you know by text.</p></div><div class="nc" data-r><b>3</b><h3>Arrival text</h3><p>We text when the vehicle arrives. Come with your ID card.</p></div><div class="nc" data-r><b>&#10003;</b><h3>Pickup</h3><p>You come for the pickup, and we check your ID before handing over the vehicle.</p></div></div></div></section>
 
 <section class="wh faq"><div class="w">
 <div class="sh" data-r><small>QUESTIONS</small><h2>Before you book</h2></div>
@@ -292,7 +297,7 @@ s0.parentNode.insertBefore(s1,s0);
 <details><summary>Which files can I upload?</summary><p>JPG, PNG or PDF, up to 5 MB each. Use clear photos with all corners of the document visible.</p></details>
 <details><summary>What if the vehicle cannot move?</summary><p>Choose "Faulty (not moving)" as the condition and tell us where it is parked. We plan the right equipment for it.</p></details>
 <details><summary>Can I send more than one vehicle?</summary><p>Yes. Add each vehicle in step 2 with its own papers and photos. Our multi-loader rigs carry six to ten vehicles per trip.</p></details>
-<details><summary>How is the price decided?</summary><p>You can suggest a price in step 3. We review the route, vehicle types and quantity, then confirm a final quote before pickup.</p></details>
+<details><summary>How is the price decided?</summary><p>The loader type, single or multiple, determines the price. You can suggest a price in step 3. We review the route, vehicle types and quantity, then confirm a final quote before pickup.</p></details><details><summary>How long does haulage take to start?</summary><p>A single loader (express) leaves within 24 hours. Multiple loader trips take about three days.</p></details><details><summary>Can a luxury car go on a multi-loader?</summary><p>No. Luxury cars must go on a single loader.</p></details><details><summary>Why do you check customs papers?</summary><p>We verify the papers to confirm the car was customs cleared, and we verify the owner, before we send your quotation.</p></details><details><summary>What messages will I receive?</summary><p>You get a text to acknowledge your booking and confirm the schedule, a delay notice if there is one, and an arrival text asking you to come with your ID card.</p></details>
 </div>
 </div></section>
 </main>

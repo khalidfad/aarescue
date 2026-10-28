@@ -311,12 +311,7 @@ s0.parentNode.insertBefore(s1,s0);
                             <legend class="sr">Your application</legend>
                             <h3>Your application</h3>
                             <div class="gr2">
-                                <div class="fd c2"
-                                    data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance">
-                                    <label for="lic-v_make">Vehicle make and model</label><input id="lic-v_make"
-                                        name="v_make" type="text" required placeholder="e.g. Toyota Camry">
-                                    <p class="err" id="e-lic-v_make"></p>
-                                </div>
+                                <div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance"><label for="lic-v_make">Make of car</label><input id="lic-v_make" name="v_make" type="text" required placeholder="e.g. Toyota"><p class="err" id="e-lic-v_make"></p></div><div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance"><label for="lic-v_model">Model</label><input id="lic-v_model" name="v_model" type="text" required placeholder="e.g. Camry"><p class="err" id="e-lic-v_model"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-v_color">Colour</label><input id="lic-v_color" name="v_color" type="text" required placeholder="e.g. Black"><p class="err" id="e-lic-v_color"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-v_engine">Engine number</label><input id="lic-v_engine" name="v_engine" type="text" required ><p class="err" id="e-lic-v_engine"></p></div>
                                 <div class="fd"
                                     data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance">
                                     <label for="lic-v_year">Year of manufacture</label><select id="lic-v_year"
@@ -459,7 +454,7 @@ s0.parentNode.insertBefore(s1,s0);
                                         for="lic-i_permit">Existing permit number <i>(optional)</i></label><input
                                         id="lic-i_permit" name="i_permit" type="text">
                                     <p class="err" id="e-lic-i_permit"></p>
-                                </div>
+                                </div><p class="c2" data-show="service=New international permit||Renew international permit" style="margin:0;padding:10px 14px;border-radius:12px;background:rgba(255,196,0,.14);font-size:.88rem"><b>Processing time:</b> 4 to 5 working days.</p><div class="fd" data-show="service=New international permit||Renew international permit"><label for="lic-dob">Date of birth</label><input id="lic-dob" name="dob" type="date" required ><p class="err" id="e-lic-dob"></p></div><div class="fd" data-show="service=New international permit||Renew international permit"><label for="lic-pob">Place of birth</label><input id="lic-pob" name="pob" type="text" required ><p class="err" id="e-lic-pob"></p></div><div class="fd c2" data-show="service=New international permit||Renew international permit"><span class="lb">Signature</span><div class="dz" data-max="1" data-req><input type="file" id="lic-signature" name="signature" accept="image/*"><label for="lic-signature"><svg class="ic"><use href="#i-upload" /></svg><b>Upload your signature</b><span>Sign on plain white paper and upload a clear photo or scan. JPG or PNG, up to 5 MB.</span></label><ul class="fl"></ul></div><p class="err" id="e-lic-signature"></p></div>
                                 <div class="fd c2"
                                     data-show="service=New driver&#x27;s licence||Renew driver&#x27;s licence||Driver&#x27;s licence re-issuance||New international permit||Renew international permit">
                                     <span class="lb">Passport photograph</span>
@@ -503,10 +498,7 @@ s0.parentNode.insertBefore(s1,s0);
                             <legend class="sr">Your details</legend>
                             <h3>Your details</h3>
                             <div class="gr2">
-                                <div class="fd c2"><label for="lic-name">Full name (as on your ID)</label><input
-                                        id="lic-name" name="name" type="text" required autocomplete="name">
-                                    <p class="err" id="e-lic-name"></p>
-                                </div>
+                                <div class="fd"><label for="lic-first">First name</label><input id="lic-first" name="first" type="text" required autocomplete="given-name"><p class="err" id="e-lic-first"></p></div><div class="fd"><label for="lic-surname">Surname</label><input id="lic-surname" name="surname" type="text" required autocomplete="family-name"><p class="err" id="e-lic-surname"></p></div><div class="fd"><label for="lic-other">Other name <i>(optional)</i></label><input id="lic-other" name="other" type="text" autocomplete="additional-name"><p class="err" id="e-lic-other"></p></div><div class="fd c2" data-show="service=New vehicle registration"><label for="lic-fullname">Full name for the registration (as arranged)</label><input id="lic-fullname" name="fullname" type="text" required placeholder="Exactly as it should appear on the vehicle papers"><p class="err" id="e-lic-fullname"></p></div><div class="fd c2"><label for="lic-address">Residential address</label><input id="lic-address" name="address" type="text" required autocomplete="street-address"><p class="err" id="e-lic-address"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-nin">NIN</label><input id="lic-nin" name="nin" type="text" required inputmode="numeric" maxlength="11" data-v="min:11" data-msg="Enter your 11-digit NIN."><p class="err" id="e-lic-nin"></p></div>
                                 <div class="fd"><label for="lic-phone">Phone number</label><input id="lic-phone"
                                         name="phone" type="tel" required placeholder="0802 555 1111" autocomplete="tel"
                                         data-v="phone" inputmode="tel">
@@ -661,7 +653,7 @@ s0.parentNode.insertBefore(s1,s0);
                                 <use href="#i-doc" /></svg></span>
                         <h3>International driving permit</h3>
                         <p>A fast and efficient service for obtaining an international driving permit. We help with the
-                            application and documentation so you hold a valid document to drive in foreign countries.
+                            application and documentation so you hold a valid document to drive in foreign countries. Processing takes 4 to 5 working days.
                         </p>
                         <ul>
                             <li><a href="#form" data-pick="New international permit" data-field="service"
