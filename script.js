@@ -202,5 +202,53 @@
     });
   });
 
+  /* ---------- Tire cursor (styles live in styles.css) ---------- */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    var tireSvg = '<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22.5" fill="#15161a" stroke="rgba(255,255,255,.6)" stroke-width="1.2"/><circle cx="24" cy="24" r="20" fill="none" stroke="#3b3e46" stroke-width="5" stroke-dasharray="5 3.2"/><circle cx="24" cy="24" r="14.5" fill="#0b0b0d"/><circle cx="24" cy="24" r="12" fill="#e4e7ec"/><circle cx="24" cy="24" r="12" fill="none" stroke="#FFC400" stroke-width="2"/><path d="M24 24V13M24 24l10.5-3.4M24 24l6.5 8.9M24 24l-6.5 8.9M24 24l-10.5-3.4" stroke="#8a8f98" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="24" r="3.2" fill="#15161a"/></svg>';
+    var tire = document.createElement('div');
+    tire.className = 'tire'; tire.setAttribute('aria-hidden', 'true');
+    tire.innerHTML = '<div class="tw">' + tireSvg + '</div>';
+    document.body.appendChild(tire);
+    root.classList.add('tire-on');
+    var tw = tire.firstChild, mx = 0, my = 0, cx = 0, cy = 0, lx = 0, ly = 0, rot = 0, acc = 0, live = false, heading = 0;
+    var tick = function () {
+      if (!live) return;
+      cx += (mx - cx) * 0.2; cy += (my - cy) * 0.2;
+      var dx = cx - lx, dy = cy - ly, d = Math.hypot(dx, dy);
+      if (d > 0.05) {
+        heading = Math.atan2(dy, dx);
+        var dir = Math.abs(dx) >= Math.abs(dy) ? (dx >= 0 ? 1 : -1) : (dy >= 0 ? 1 : -1);
+        rot += d * 4.5 * dir;
+        if (!reduce) {
+          acc += d;
+          if (acc > 30) {
+            acc = 0;
+            var k = document.createElement('div');
+            k.className = 'tm';
+            k.style.transform = 'translate(' + cx + 'px,' + cy + 'px) rotate(' + heading + 'rad) translateY(-3.5px)';
+            k.addEventListener('animationend', function () { k.remove(); });
+            document.body.appendChild(k);
+          }
+        }
+      }
+      lx = cx; ly = cy;
+      tire.style.transform = 'translate3d(' + cx + 'px,' + cy + 'px,0)';
+      tw.style.rotate = rot + 'deg';
+      requestAnimationFrame(tick);
+    };
+    document.addEventListener('mousemove', function (e) {
+      mx = e.clientX; my = e.clientY;
+      if (!live) { live = true; cx = lx = mx; cy = ly = my; tire.style.opacity = 1; requestAnimationFrame(tick); }
+      var t = e.target;
+      if (t && t.closest) {
+        tire.classList.toggle('hot', !!t.closest('a,button,summary,label,select,[role=button]'));
+        tire.classList.toggle('txt', !!t.closest('input,textarea'));
+      }
+    });
+    document.addEventListener('mousedown', function () { tire.classList.add('down'); });
+    document.addEventListener('mouseup', function () { tire.classList.remove('down'); });
+    root.addEventListener('mouseleave', function () { tire.style.opacity = 0; live = false; });
+  }
+
   var y = $('#y'); if (y) y.textContent = new Date().getFullYear();
 })();
