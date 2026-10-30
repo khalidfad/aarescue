@@ -12,7 +12,7 @@ GEN = ['drivers-outsourcing','defensive-driving-training','drivers-academy','dri
 # ---------- link normalisation ----------
 CS = lambda p: 'coming-soon.html?page=' + p.replace(' ', '%20')
 LINK = {'About Us':'about.html','Services':'services.html','Contact Us':'contact.html','Book Your Car':'book-car.html','Make Payment':'make-payment.html',
- 'Licensing':'licensing.html','Vehicle Recovery':'recovery.html','Drivers Outsourcing':'drivers-outsourcing.html',"Learner Driver's Training":'learner-driver-training.html',
+ 'Licensing':'licensing.html','Vehicle Recovery':'recovery.html','Drivers Outsourcing':'drivers-outsourcing.html',"Driving School":'learner-driver-training.html',
  'Testing and Certification':'driver-testing-certification.html','Defensive and Advanced Driver Training':'defensive-driving-training.html',
  'General Goods and Equipment Logistics':'logistics.html','Corporate Transportation':'corporate-transport.html','Drivers Academy':'drivers-academy.html',
  'Fleet Management':'fleet-management.html','Vehicle Tracking':'vehicle-tracking.html'}
