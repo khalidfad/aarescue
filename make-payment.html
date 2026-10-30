@@ -19,6 +19,51 @@
     <script src="script.js" defer></script>
     <script src="forms.js" defer></script>
 <script src="member.js" defer></script>
+<style>
+.fcard [hidden]{display:none!important}
+.fcard .fs{margin:20px 0 8px;font-size:1rem}.fcard .fs:first-of-type{margin-top:6px}
+.fcard .hint{font-size:.85rem;opacity:.8;margin:0 0 14px}
+.prow{border:1px solid rgba(128,128,128,.3);border-radius:16px;padding:16px;margin:0 0 14px;background:rgba(128,128,128,.04)}
+.prh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.prm{border:0;background:none;color:inherit;opacity:.7;cursor:pointer;font:inherit;font-size:.85rem;text-decoration:underline}.prm:hover{opacity:1}
+.ptot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:16px 0 8px;padding:14px 16px;border-radius:14px;background:rgba(255,196,0,.14);font-weight:600}
+.ptot b{font-size:1.15rem}
+#pay>.b.lg2{margin-top:14px}
+</style>
+<script>document.addEventListener('DOMContentLoaded',function(){
+var box=document.getElementById('prows'),add=document.getElementById('padd'),MAX=10;
+if(!box)return;
+function digits(v){return(v||'').replace(/\D/g,'')}
+function fmt(n){return Number(n||0).toLocaleString('en-US')}
+function renumber(){
+ var rows=box.querySelectorAll('[data-row]');
+ rows.forEach(function(r,k){var i=k+1;
+  r.querySelector('.pt').textContent='Item '+i;
+  r.querySelector('.prm').hidden=rows.length<2;
+  r.querySelectorAll('[data-f]').forEach(function(c){var f=c.dataset.f;c.id='pay-'+f+'-'+i;c.name='item_'+i+'_'+f;
+   var lb=c.closest('.fd').querySelector('label');if(lb)lb.htmlFor=c.id})});
+ add.hidden=rows.length>=MAX;totals()}
+function totals(){
+ var rows=box.querySelectorAll('[data-row]'),sum=0,parts=[];
+ rows.forEach(function(r,k){var a=+digits(r.querySelector('.pa').value),sv=r.querySelector('select').value,rf=r.querySelector('[data-f=invoice]').value.trim();
+  sum+=a;parts.push((k+1)+'. '+(sv||'-')+' | '+(rf||'-')+' | N'+fmt(a))});
+ document.getElementById('ptot').innerHTML='&#8358;'+fmt(sum);
+ document.getElementById('pcnt').textContent=rows.length+(rows.length>1?' items':' item');
+ document.getElementById('ptotal').value=sum;document.getElementById('pcount').value=rows.length;
+ document.getElementById('psum').value=parts.join('; ')}
+function money(inp){inp.addEventListener('input',function(){var d=digits(inp.value);inp.value=d?fmt(d):''})}
+add.addEventListener('click',function(){
+ var rows=box.querySelectorAll('[data-row]');if(rows.length>=MAX)return;
+ var c=rows[0].cloneNode(true);
+ c.querySelectorAll('input,select').forEach(function(x){x.value='';x.removeAttribute('aria-invalid')});
+ c.querySelectorAll('.err').forEach(function(e){e.textContent=''});
+ c.querySelectorAll('.bad,.has-err').forEach(function(e){e.classList.remove('bad','has-err')});
+ box.appendChild(c);money(c.querySelector('.pa'));renumber();c.querySelector('select').focus()});
+box.addEventListener('click',function(e){var b=e.target.closest('.prm');if(!b)return;
+ b.closest('[data-row]').remove();renumber()});
+document.getElementById('pay').addEventListener('input',totals);
+document.getElementById('pay').addEventListener('change',totals);
+renumber()});</script>
 </head>
 
 <body class="subpage">
@@ -248,65 +293,14 @@ s0.parentNode.insertBefore(s1,s0);
             <div class="w cg">
                 <div class="fcard" id="form">
                     <h2>Payment details</h2>
-                    <p>Tell us what you are paying for and how much.</p>
-                    <form class="sf" id="pay" data-name="Payment request" data-ref="PAY"
-                        data-success="Thank you. Your payment request has been created. Our team will confirm it once the payment is received."
-                        data-success-title="Payment request created" novalidate>
-                        <div class="gr2">
-                            <div class="fd c2"><label for="pay-for">What are you paying for?</label><select id="pay-for"
-                                    name="for" required>
-                                    <option value="">Choose one</option>
-                                    <option>Rescue or towing invoice</option>
-                                    <option>Haulage</option>
-                                    <option>Membership</option>
-                                    <option>Corporate transport or fleet</option>
-                                   <option value="Logistics">Logistics</option>
-<option value="Driving and Personnel Outsourcing">Driving and Personnel Outsourcing</option>
-<option value="Licensing">Licensing (Driver's Licence, Vehicle Registration, International Permit, ECMR, etc.)</option>
-<option value="Tracking">Tracking</option>
-<option value="Testing and Certification">Testing and Certification</option>
-<option value="Driving School">Driving School</option>
-<option value="Academy (Light Vehicle)">Academy (Light Vehicle)</option>
-<option value="Advanced Defensive Training">Advanced Defensive Training</option>
-                                <p class="err" id="e-pay-for"></p>
-                            </div>
-                            <div class="fd c2"><label for="pay-invoice">Invoice or reference number</label><input
-                                    id="pay-invoice" name="invoice" type="text" required
-                                    placeholder="From your invoice or booking confirmation">
-                                <p class="err" id="e-pay-invoice"></p>
-                            </div>
-                            <div class="fd c2"><label for="pay-amount">Amount</label>
-                                <div class="pre"><span>&#8358;</span><input id="pay-amount" name="amount"
-                                        inputmode="numeric" data-money required placeholder="0"></div>
-                                <p class="err" id="e-pay-amount"></p>
-                            </div>
-                            <div class="fd c2"><label for="pay-name">Your name</label><input id="pay-name" name="name"
-                                    type="text" required autocomplete="name">
-                                <p class="err" id="e-pay-name"></p>
-                            </div>
-                            <div class="fd"><label for="pay-phone">Phone number</label><input id="pay-phone"
-                                    name="phone" type="tel" required placeholder="0802 555 1111" autocomplete="tel"
-                                    data-v="phone" inputmode="tel">
-                                <p class="err" id="e-pay-phone"></p>
-                            </div>
-                            <div class="fd"><label for="pay-email">Email</label><input id="pay-email" name="email"
-                                    type="email" required autocomplete="email" data-v="email">
-                                <p class="err" id="e-pay-email"></p>
-                            </div>
-                            <div class="fd c2"><label for="pay-notes">Note <i>(optional)</i></label><textarea
-                                    id="pay-notes" name="notes" rows="3"
-                                    placeholder="Anything we should know about this payment"></textarea>
-                                <p class="err" id="e-pay-notes"></p>
-                            </div>
-                        </div><button class="b by lg2" type="submit">Continue to payment</button>
-                        <p class="fmsg" role="alert"></p>
-                    </form>
+                    <p>Tell us what you are paying for and how much. You can pay for several products or services at once.</p>
+                    <form class="sf" id="pay" data-name="Payment request" data-ref="PAY" data-success="Thank you. Your payment request has been created for all the items listed. Our team will confirm it once the payment is received." data-success-title="Payment request created" novalidate><h3 class="fs">Items you are paying for</h3><p class="hint">Pay for one or more products or services in a single payment. Add each one as its own item.</p><div id="prows"><div class="prow" data-row><div class="prh"><b class="pt">Item 1</b><button type="button" class="prm" hidden>Remove</button></div><div class="gr2"><div class="fd c2"><label for="pay-for-1">What are you paying for?</label><select id="pay-for-1" name="item_1_for" data-f="for" required><option value="">Choose one</option><option>Rescue or towing invoice</option><option>Haulage</option><option>Membership</option><option>Corporate transport or fleet</option><option>Logistics</option><option>Driving and Personnel Outsourcing</option><option>Licensing (Driver&#39;s Licence, Vehicle Registration, International Permit, ECMR, etc.)</option><option>Tracking</option><option>Testing and Certification</option><option>Driving School</option><option>Academy (Light Vehicle)</option><option>Advanced Defensive Training</option></select><p class="err"></p></div><div class="fd"><label for="pay-invoice-1">Invoice or reference number</label><input id="pay-invoice-1" name="item_1_invoice" data-f="invoice" type="text" required placeholder="From your invoice or booking"><p class="err"></p></div><div class="fd"><label for="pay-amount-1">Amount</label><div class="pre"><span>&#8358;</span><input id="pay-amount-1" class="pa" name="item_1_amount" data-f="amount" inputmode="numeric" data-money data-v="num" required placeholder="0"></div><p class="err"></p></div></div></div></div><button type="button" class="b bl2" id="padd">+ Add another item</button><div class="ptot"><span id="pcnt">1 item</span><span>Total: <b id="ptot">&#8358;0</b></span></div><input type="hidden" name="item_count" id="pcount" value="1"><input type="hidden" name="total" id="ptotal" value="0"><input type="hidden" name="summary" id="psum" value=""><h3 class="fs">Your details</h3><div class="gr2"><div class="fd c2"><label for="pay-name">Your name</label><input id="pay-name" name="name" type="text" required autocomplete="name"><p class="err"></p></div><div class="fd"><label for="pay-phone">Phone number</label><input id="pay-phone" name="phone" type="tel" required placeholder="0802 555 1111" autocomplete="tel" data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd"><label for="pay-email">Email</label><input id="pay-email" name="email" type="email" required autocomplete="email" data-v="email"><p class="err"></p></div><div class="fd c2"><label for="pay-notes">Note <i>(optional)</i></label><textarea id="pay-notes" name="notes" rows="3" placeholder="Anything we should know about this payment"></textarea><p class="err"></p></div></div><button class="b by lg2" type="submit">Continue to payment</button><p class="fmsg" role="alert"></p></form>
                 </div>
                 <aside class="cinfo" aria-label="Payment help">
                     <div><span class="ib2"><svg class="ic">
                                 <use href="#i-card" /></svg></span>
                         <div><b>Have your invoice ready</b>
-                            <p>Enter the invoice or booking reference so we can match your payment to the right job.</p>
+                            <p>Enter the invoice or booking reference for each item so we can match your payment to the right job. Paying for more than one service? Add each as a separate item.</p>
                         </div>
                     </div>
                     <div><span class="ib2"><svg class="ic">
