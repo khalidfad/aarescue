@@ -1,189 +1,1599 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Drivers Outsourcing | AA Rescue</title>
-<meta name="description" content="Recruitment, training and outsourcing of tested drivers for homes and companies.">
-<meta name="theme-color" content="#0A0A0B">
-<script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="booking.css">
-<link rel="stylesheet" href="inner.css">
-<script src="script.js" defer></script>
-<script src="forms.js" defer></script>
-<script src="member.js" defer></script>
-<style>
-.fcard [hidden]{display:none!important}
-.fcard .hint{font-size:.85rem;opacity:.8;margin:6px 0 14px}.fcard .hint.c2{grid-column:1/-1}.fcard .ho{margin:18px 0 0}
-.tabs2{display:flex;gap:6px;margin:14px 0 6px;padding:4px;border-radius:999px;background:rgba(128,128,128,.15)}
-.tabs2 button{flex:1;padding:10px 8px;border:0;border-radius:999px;background:none;font:inherit;font-weight:700;font-size:.88rem;color:inherit;cursor:pointer;transition:background .25s}
-.tabs2 button[aria-selected=true]{background:var(--y);color:#111}
-.fcard .fs{margin:14px 0 6px}.fcard .est{margin:0;padding:10px 14px;border-radius:12px;background:rgba(255,196,0,.14);font-size:.88rem}
-.fcard .note{margin:0 0 10px;padding-left:20px;font-size:.88rem;line-height:1.55}.fcard .note.c2{grid-column:1/-1}.fcard .note li{margin-bottom:6px}
-.fcard .ck label{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer}.fcard .ck input{width:auto;margin-top:3px;flex:none}
-.fcard .pay{grid-column:1/-1;display:grid;gap:4px;padding:14px 16px;border-radius:14px;border:1px solid var(--y);background:rgba(255,196,0,.1);font-size:.9rem}
-.fcard .fstepl{margin:12px 0 8px;font-size:.8rem;font-weight:700;opacity:.75}
-.fcard .fbar{height:5px;border-radius:5px;background:rgba(128,128,128,.25);overflow:hidden}.fcard .fbar i{display:block;height:100%;width:0;background:var(--y);transition:width .4s}
-.fcard .fprog{display:flex;gap:4px;list-style:none;margin:10px 0 4px;padding:0}.fcard .fprog li{flex:1}
-.fcard .fprog button{width:100%;padding:6px 1px;border:0;border-bottom:3px solid rgba(128,128,128,.3);background:none;font:inherit;font-size:.66rem;font-weight:700;color:inherit;opacity:.55;cursor:pointer}
-.fcard .fprog li.on button,.fcard .fprog li.done button{border-color:var(--y);opacity:1}
-.fcard .fnav{display:flex;gap:10px;margin-top:20px}.fcard .fnext,.fcard .fsubmit{margin-left:auto}
-.fcard .dz{position:relative;border:2px dashed rgba(128,128,128,.5);border-radius:14px;padding:18px;text-align:center;transition:border-color .2s,background .2s}
-.fcard .dz.over{border-color:var(--y);background:rgba(255,196,0,.1)}
-.fcard .dz input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
-.fcard .dz p{margin:0;font-size:.9rem}.fcard .dz small{opacity:.7}
-.fcard .fl{list-style:none;margin:10px 0 0;padding:0;text-align:left;position:relative;z-index:1}
-.fcard .fl li{display:flex;align-items:center;gap:8px;font-size:.85rem;padding:4px 0}.fcard .fl .ft,.fcard .fl small{display:none}.fcard .fl button{margin-left:auto;border:0;background:none;color:inherit;cursor:pointer}.fcard .fl svg{width:16px;height:16px}
-</style>
-<script>document.addEventListener('DOMContentLoaded',function(){var t=document.querySelectorAll('.tabs2 button'),d=document.getElementById('a-date');
-t.forEach(function(b){b.addEventListener('click',function(){t.forEach(function(x){var on=x===b;x.setAttribute('aria-selected',on);document.getElementById('p-'+x.dataset.t).hidden=!on})})});
-var d2=document.getElementById('h-date');if(d2){d2.value=new Date().toISOString().slice(0,10);d2.readOnly=true}
-var sl=document.getElementById('h-salary'),q=document.getElementById('h-qty'),es=document.getElementById('est');
-function est(){var m=+(sl.value||'').replace(/\D/g,''),n=+q.value||1;if(!m){es.hidden=true;return}var c=Math.round(m*12*0.1)*n;es.hidden=false;es.innerHTML='Estimated service charge: <b>&#8358;'+c.toLocaleString('en-US')+'</b> (10% of annual gross salary &times; '+n+' driver'+(n>1?'s':'')+'). Final charge is confirmed by our team.'}
-if(sl&&q){sl.addEventListener('input',est);q.addEventListener('input',est)}
-if(d){d.value=new Date().toISOString().slice(0,10);d.readOnly=true}});</script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Drivers Outsourcing | AA Rescue</title>
+        <meta name="description"
+                content="Recruitment, training and outsourcing of tested drivers for homes and companies.">
+        <meta name="theme-color" content="#0A0A0B">
+        <script>
+                document.documentElement.classList.add('js')
+        </script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="booking.css">
+        <link rel="stylesheet" href="inner.css">
+        <script src="script.js" defer></script>
+        <script src="forms.js" defer></script>
+        <script src="member.js" defer></script>
+        <style>
+                .fcard [hidden] {
+                        display: none !important
+                }
+
+                .fcard .hint {
+                        font-size: .85rem;
+                        opacity: .8;
+                        margin: 6px 0 14px
+                }
+
+                .fcard .hint.c2 {
+                        grid-column: 1/-1
+                }
+
+                .fcard .ho {
+                        margin: 18px 0 0
+                }
+
+                .tabs2 {
+                        display: flex;
+                        gap: 6px;
+                        margin: 14px 0 6px;
+                        padding: 4px;
+                        border-radius: 999px;
+                        background: rgba(128, 128, 128, .15)
+                }
+
+                .tabs2 button {
+                        flex: 1;
+                        padding: 10px 8px;
+                        border: 0;
+                        border-radius: 999px;
+                        background: none;
+                        font: inherit;
+                        font-weight: 700;
+                        font-size: .88rem;
+                        color: inherit;
+                        cursor: pointer;
+                        transition: background .25s
+                }
+
+                .tabs2 button[aria-selected=true] {
+                        background: var(--y);
+                        color: #111
+                }
+
+                .fcard .fs {
+                        margin: 14px 0 6px
+                }
+
+                .fcard .est {
+                        margin: 0;
+                        padding: 10px 14px;
+                        border-radius: 12px;
+                        background: rgba(255, 196, 0, .14);
+                        font-size: .88rem
+                }
+
+                .fcard .note {
+                        margin: 0 0 10px;
+                        padding-left: 20px;
+                        font-size: .88rem;
+                        line-height: 1.55
+                }
+
+                .fcard .note.c2 {
+                        grid-column: 1/-1
+                }
+
+                .fcard .note li {
+                        margin-bottom: 6px
+                }
+
+                .fcard .ck label {
+                        display: flex;
+                        gap: 10px;
+                        align-items: flex-start;
+                        font-size: .9rem;
+                        cursor: pointer
+                }
+
+                .fcard .ck input {
+                        width: auto;
+                        margin-top: 3px;
+                        flex: none
+                }
+
+                .fcard .pay {
+                        grid-column: 1/-1;
+                        display: grid;
+                        gap: 4px;
+                        padding: 14px 16px;
+                        border-radius: 14px;
+                        border: 1px solid var(--y);
+                        background: rgba(255, 196, 0, .1);
+                        font-size: .9rem
+                }
+
+                .fcard .fstepl {
+                        margin: 12px 0 8px;
+                        font-size: .8rem;
+                        font-weight: 700;
+                        opacity: .75
+                }
+
+                .fcard .fbar {
+                        height: 5px;
+                        border-radius: 5px;
+                        background: rgba(128, 128, 128, .25);
+                        overflow: hidden
+                }
+
+                .fcard .fbar i {
+                        display: block;
+                        height: 100%;
+                        width: 0;
+                        background: var(--y);
+                        transition: width .4s
+                }
+
+                .fcard .fprog {
+                        display: flex;
+                        gap: 4px;
+                        list-style: none;
+                        margin: 10px 0 4px;
+                        padding: 0
+                }
+
+                .fcard .fprog li {
+                        flex: 1
+                }
+
+                .fcard .fprog button {
+                        width: 100%;
+                        padding: 6px 1px;
+                        border: 0;
+                        border-bottom: 3px solid rgba(128, 128, 128, .3);
+                        background: none;
+                        font: inherit;
+                        font-size: .66rem;
+                        font-weight: 700;
+                        color: inherit;
+                        opacity: .55;
+                        cursor: pointer
+                }
+
+                .fcard .fprog li.on button,
+                .fcard .fprog li.done button {
+                        border-color: var(--y);
+                        opacity: 1
+                }
+
+                .fcard .fnav {
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 20px
+                }
+
+                .fcard .fnext,
+                .fcard .fsubmit {
+                        margin-left: auto
+                }
+
+                .fcard .dz {
+                        position: relative;
+                        border: 2px dashed rgba(128, 128, 128, .5);
+                        border-radius: 14px;
+                        padding: 18px;
+                        text-align: center;
+                        transition: border-color .2s, background .2s
+                }
+
+                .fcard .dz.over {
+                        border-color: var(--y);
+                        background: rgba(255, 196, 0, .1)
+                }
+
+                .fcard .dz input {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0;
+                        cursor: pointer
+                }
+
+                .fcard .dz p {
+                        margin: 0;
+                        font-size: .9rem
+                }
+
+                .fcard .dz small {
+                        opacity: .7
+                }
+
+                .fcard .fl {
+                        list-style: none;
+                        margin: 10px 0 0;
+                        padding: 0;
+                        text-align: left;
+                        position: relative;
+                        z-index: 1
+                }
+
+                .fcard .fl li {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        font-size: .85rem;
+                        padding: 4px 0
+                }
+
+                .fcard .fl .ft,
+                .fcard .fl small {
+                        display: none
+                }
+
+                .fcard .fl button {
+                        margin-left: auto;
+                        border: 0;
+                        background: none;
+                        color: inherit;
+                        cursor: pointer
+                }
+
+                .fcard .fl svg {
+                        width: 16px;
+                        height: 16px
+                }
+        </style>
+        <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                        var t = document.querySelectorAll('.tabs2 button'),
+                                d = document.getElementById('a-date');
+                        t.forEach(function (b) {
+                                b.addEventListener('click', function () {
+                                        t.forEach(function (x) {
+                                                var on = x ===
+                                                        b;
+                                                x.setAttribute('aria-selected',
+                                                        on
+                                                        );
+                                                document.getElementById(
+                                                                'p-' +
+                                                                x
+                                                                .dataset
+                                                                .t
+                                                                )
+                                                        .hidden = !
+                                                        on
+                                        })
+                                })
+                        });
+                        var d2 = document.getElementById('h-date');
+                        if (d2) {
+                                d2.value = new Date().toISOString().slice(0, 10);
+                                d2.readOnly = true
+                        }
+                        var sl = document.getElementById('h-salary'),
+                                q = document.getElementById('h-qty'),
+                                es = document.getElementById('est');
+
+                        function est() {
+                                var m = +(sl.value || '').replace(/\D/g, ''),
+                                        n = +q.value || 1;
+                                if (!m) {
+                                        es.hidden = true;
+                                        return
+                                }
+                                var c = Math.round(m * 12 * 0.1) * n;
+                                es.hidden = false;
+                                es.innerHTML = 'Estimated service charge: <b>&#8358;' + c
+                                        .toLocaleString('en-US') +
+                                        '</b> (10% of annual gross salary &times; ' + n + ' driver' + (
+                                                n > 1 ? 's' : '') +
+                                        '). Final charge is confirmed by our team.'
+                        }
+                        if (sl && q) {
+                                sl.addEventListener('input', est);
+                                q.addEventListener('input', est)
+                        }
+                        if (d) {
+                                d.value = new Date().toISOString().slice(0, 10);
+                                d.readOnly = true
+                        }
+                });
+        </script>
 </head>
+
 <body class="subpage">
         <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5eb9049d8ee2956d739ff018/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
-<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
-<symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
-<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
-<symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
-<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
-<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
-<symbol id="i-checkc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></symbol>
-<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h12v11H2zM14 10h4l4 3v4h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
-<symbol id="i-car" viewBox="0 0 24 24"><path d="M3 17v-5l2-5h14l2 5v5M3 17h18M3 17v2h3v-2M18 17v2h3v-2M7 13h.01M17 13h.01"/></symbol>
-<symbol id="i-grad" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
-<symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
-<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c.5-5 12.5-5 14 0M16 5a3.5 3.5 0 0 1 0 7M18 14c2 .5 3.500 2.500 4 6"/></symbol>
-<symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7"/></symbol>
-<symbol id="i-box" viewBox="0 0 24 24"><path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z"/></symbol>
-<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.500 14L7 22l5-3 5 3-1.500-8"/></symbol>
-<symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></symbol>
-<symbol id="i-bldg" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
-<symbol id="i-head" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.500"/><rect x="17" y="14" width="4" height="6" rx="1.500"/></symbol>
-<symbol id="i-nav" viewBox="0 0 24 24"><path d="M3 11l18-8-8 18-2-8z"/></symbol>
-<symbol id="i-hist" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.700M3 4v5h5M12 8v5l3 2"/></symbol>
-<symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
-<symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
-<symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3L2 20h20zM12 10v4M12 17h.01"/></symbol>
-<symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z"/></symbol>
-<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.500 6.500h.01"/></symbol>
-<symbol id="i-tw" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4L4 20"/></symbol>
-<symbol id="i-in" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7h.01M12 17v-7M12 13c0-4 5-4 5 0v4"/></symbol>
-<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z"/></symbol>
-<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
-<symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5"/></symbol>
-<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
-<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
-<symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
-<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z"/></symbol>
-<symbol id="i-wheel" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M3 12h7M14 12h7M12 14v7"/></symbol>
-<symbol id="i-gps" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></symbol>
-<symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5h6v2M3 13h18"/></symbol>
-<symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
-<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></symbol></defs></svg>
+        <script type="text/javascript">
+                var Tawk_API = Tawk_API || {},
+                        Tawk_LoadStart = new Date();
+                (function () {
+                        var s1 = document.createElement("script"),
+                                s0 = document.getElementsByTagName("script")[0];
+                        s1.async = true;
+                        s1.src = 'https://embed.tawk.to/5eb9049d8ee2956d739ff018/default';
+                        s1.charset = 'UTF-8';
+                        s1.setAttribute('crossorigin', '*');
+                        s0.parentNode.insertBefore(s1, s0);
+                })();
+        </script>
+        <!--End of Tawk.to Script-->
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+                <defs>
+                        <symbol id="i-phone" viewBox="0 0 24 24">
+                                <path
+                                        d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+                        </symbol>
+                        <symbol id="i-pin" viewBox="0 0 24 24">
+                                <path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z" />
+                                <circle cx="12" cy="10" r="2.5" />
+                        </symbol>
+                        <symbol id="i-clock" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 7v5l3 2" />
+                        </symbol>
+                        <symbol id="i-mail" viewBox="0 0 24 24">
+                                <rect x="3" y="5" width="18" height="14" rx="2" />
+                                <path d="M3 7l9 6 9-6" />
+                        </symbol>
+                        <symbol id="i-chev" viewBox="0 0 24 24">
+                                <path d="M6 9l6 6 6-6" />
+                        </symbol>
+                        <symbol id="i-arrow" viewBox="0 0 24 24">
+                                <path d="M5 12h14M13 6l6 6-6 6" />
+                        </symbol>
+                        <symbol id="i-menu" viewBox="0 0 24 24">
+                                <path d="M4 7h16M4 12h16M4 17h16" />
+                        </symbol>
+                        <symbol id="i-x" viewBox="0 0 24 24">
+                                <path d="M6 6l12 12M18 6L6 18" />
+                        </symbol>
+                        <symbol id="i-check" viewBox="0 0 24 24">
+                                <path d="M5 12l5 5 9-10" />
+                        </symbol>
+                        <symbol id="i-checkc" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M8 12l3 3 5-6" />
+                        </symbol>
+                        <symbol id="i-truck" viewBox="0 0 24 24">
+                                <path d="M2 6h12v11H2zM14 10h4l4 3v4h-8" />
+                                <circle cx="6" cy="18" r="2" />
+                                <circle cx="17" cy="18" r="2" />
+                        </symbol>
+                        <symbol id="i-car" viewBox="0 0 24 24">
+                                <path d="M3 17v-5l2-5h14l2 5v5M3 17h18M3 17v2h3v-2M18 17v2h3v-2M7 13h.01M17 13h.01" />
+                        </symbol>
+                        <symbol id="i-grad" viewBox="0 0 24 24">
+                                <path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2.5 9 2.5 12 0v-5" />
+                        </symbol>
+                        <symbol id="i-chart" viewBox="0 0 24 24">
+                                <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+                        </symbol>
+                        <symbol id="i-users" viewBox="0 0 24 24">
+                                <circle cx="9" cy="8" r="3.5" />
+                                <path d="M2 20c.5-5 12.5-5 14 0M16 5a3.5 3.5 0 0 1 0 7M18 14c2 .5 3.500 2.500 4 6" />
+                        </symbol>
+                        <symbol id="i-doc" viewBox="0 0 24 24">
+                                <path d="M6 3h9l4 4v14H6zM9 12h7M9 16h7" />
+                        </symbol>
+                        <symbol id="i-box" viewBox="0 0 24 24">
+                                <path d="M3 7l9-4 9 4v10l-9 4-9-4zM3 7l9 4 9-4M12 11v10" />
+                        </symbol>
+                        <symbol id="i-shield" viewBox="0 0 24 24">
+                                <path d="M12 3l8 3v6c0 5-3.500 8-8 9-4.500-1-8-4-8-9V6z" />
+                        </symbol>
+                        <symbol id="i-award" viewBox="0 0 24 24">
+                                <circle cx="12" cy="9" r="6" />
+                                <path d="M8.500 14L7 22l5-3 5 3-1.500-8" />
+                        </symbol>
+                        <symbol id="i-bolt" viewBox="0 0 24 24">
+                                <path d="M13 2L4 14h7l-1 8 9-12h-7z" />
+                        </symbol>
+                        <symbol id="i-bldg" viewBox="0 0 24 24">
+                                <rect x="5" y="3" width="14" height="18" rx="1" />
+                                <path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2" />
+                        </symbol>
+                        <symbol id="i-head" viewBox="0 0 24 24">
+                                <path d="M4 14v-2a8 8 0 0 1 16 0v2" />
+                                <rect x="3" y="14" width="4" height="6" rx="1.500" />
+                                <rect x="17" y="14" width="4" height="6" rx="1.500" />
+                        </symbol>
+                        <symbol id="i-nav" viewBox="0 0 24 24">
+                                <path d="M3 11l18-8-8 18-2-8z" />
+                        </symbol>
+                        <symbol id="i-hist" viewBox="0 0 24 24">
+                                <path d="M3 12a9 9 0 1 0 3-6.700M3 4v5h5M12 8v5l3 2" />
+                        </symbol>
+                        <symbol id="i-search" viewBox="0 0 24 24">
+                                <circle cx="11" cy="11" r="7" />
+                                <path d="M20 20l-4-4" />
+                        </symbol>
+                        <symbol id="i-dl" viewBox="0 0 24 24">
+                                <path d="M12 4v11M7 11l5 5 5-5M5 20h14" />
+                        </symbol>
+                        <symbol id="i-warn" viewBox="0 0 24 24">
+                                <path d="M12 3L2 20h20zM12 10v4M12 17h.01" />
+                        </symbol>
+                        <symbol id="i-fb" viewBox="0 0 24 24">
+                                <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" />
+                        </symbol>
+                        <symbol id="i-ig" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="5" />
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M17.500 6.500h.01" />
+                        </symbol>
+                        <symbol id="i-tw" viewBox="0 0 24 24">
+                                <path d="M4 4l16 16M20 4L4 20" />
+                        </symbol>
+                        <symbol id="i-in" viewBox="0 0 24 24">
+                                <rect x="3" y="3" width="18" height="18" rx="3" />
+                                <path d="M8 10v7M8 7h.01M12 17v-7M12 13c0-4 5-4 5 0v4" />
+                        </symbol>
+                        <symbol id="i-star" viewBox="0 0 24 24">
+                                <path fill="currentColor" stroke="none"
+                                        d="M12 3l2.8 5.8 6.2.9-4.500 4.400 1 6.200L12 17.400l-5.500 2.900 1-6.200L3 9.700l6.200-.9z" />
+                        </symbol>
+                        <symbol id="i-upload" viewBox="0 0 24 24">
+                                <path d="M12 16V4M7 9l5-5 5 5M4 20h16" />
+                        </symbol>
+                        <symbol id="i-file" viewBox="0 0 24 24">
+                                <path d="M6 3h9l4 4v14H6zM14 3v5h5" />
+                        </symbol>
+                        <symbol id="i-lock" viewBox="0 0 24 24">
+                                <rect x="5" y="11" width="14" height="10" rx="2" />
+                                <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+                        </symbol>
+                        <symbol id="i-plus" viewBox="0 0 24 24">
+                                <path d="M12 5v14M5 12h14" />
+                        </symbol>
+                        <symbol id="i-card" viewBox="0 0 24 24">
+                                <rect x="2" y="5" width="20" height="14" rx="2" />
+                                <path d="M2 10h20M6 15h4" />
+                        </symbol>
+                        <symbol id="i-heart" viewBox="0 0 24 24">
+                                <path
+                                        d="M12 21s-8-5.5-8-11a4.5 4.5 0 0 1 8-2.800A4.500 4.500 0 0 1 20 10c0 5.500-8 11-8 11z" />
+                        </symbol>
+                        <symbol id="i-wheel" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" />
+                                <circle cx="12" cy="12" r="2" />
+                                <path d="M3 12h7M14 12h7M12 14v7" />
+                        </symbol>
+                        <symbol id="i-gps" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                                <circle cx="12" cy="12" r="8" />
+                                <path d="M12 1v3M12 20v3M1 12h3M20 12h3" />
+                        </symbol>
+                        <symbol id="i-brief" viewBox="0 0 24 24">
+                                <rect x="3" y="7" width="18" height="13" rx="2" />
+                                <path d="M9 7V5h6v2M3 13h18" />
+                        </symbol>
+                        <symbol id="i-eye" viewBox="0 0 24 24">
+                                <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                                <circle cx="12" cy="12" r="3" />
+                        </symbol>
+                        <symbol id="i-user" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="4" />
+                                <path d="M4 21c1-5 15-5 16 0" />
+                        </symbol>
+                </defs>
+        </svg>
 
-<div class="prog" aria-hidden="true"><i></i></div>
+        <div class="prog" aria-hidden="true"><i></i></div>
 
-<header class="hd" id="hd">
-        <div class="w">
-            <a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100" height="62"
-                    alt="AA Rescue"></a>
-            <nav id="nav" aria-label="Main">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <div class="dd"><button class="ddb cur" aria-expanded="false" aria-controls="mega">Services<svg class="ic">
-                            <use href="#i-chev" /></svg></button>
-                    <div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and Rescue Services</a><a
-                            href="drivers-outsourcing.html">Drivers Outsourcing</a><a
-                            href="learner-driver-training.html">Driving School</a><a
-                            href="driver-testing-certification.html">Testing and Certification of Drivers</a><a
-                            href="defensive-driving-training.html">Defensive and Advanced Drivers Training</a><a
-                            href="logistics.html">General Goods and Equipment Logistics</a><a
-                            href="corporate-transport.html">Corporate Transportation</a><a
-                            href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
-                            href="licensing.html">Licensing</a><a
-                            href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
-                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
-                            href="services.html">View all services<svg class="ic">
-                                <use href="#i-arrow" /></svg></a></div>
+        <header class="hd" id="hd">
+                <div class="w">
+                        <a href="index.html" class="lg" aria-label="AA Rescue home"><img src="img/logo.jpg" width="100"
+                                        height="62" alt="AA Rescue"></a>
+                        <nav id="nav" aria-label="Main">
+                                <a href="index.html">Home</a>
+                                <a href="about.html">About Us</a>
+                                <div class="dd"><button class="ddb cur" aria-expanded="false"
+                                                aria-controls="mega">Services<svg class="ic">
+                                                        <use href="#i-chev" /></svg></button>
+                                        <div class="mega" id="mega"><a href="recovery.html">Vehicular Recovery and
+                                                        Rescue Services</a><a href="drivers-outsourcing.html">Drivers
+                                                        Outsourcing</a><a href="learner-driver-training.html">Driving
+                                                        School</a><a href="driver-testing-certification.html">Testing
+                                                        and Certification of Drivers</a><a
+                                                        href="defensive-driving-training.html">Defensive and Advanced
+                                                        Drivers Training</a><a href="logistics.html">General Goods and
+                                                        Equipment Logistics</a><a
+                                                        href="corporate-transport.html">Corporate Transportation</a><a
+                                                        href="drivers-academy.html">Drivers Academy</a><a
+                                                        href="haul-vehicle.html">Haulage</a><a
+                                                        href="licensing.html">Licensing</a><a href="careers.html">Job
+                                                        Portal</a><a href="fleet-management.html">Fleet
+                                                        Management</a><a href="vehicle-tracking.html">Vehicle
+                                                        Tracking</a><a class="all" href="services.html">View all
+                                                        services<svg class="ic">
+                                                                <use href="#i-arrow" /></svg></a></div>
+                                </div>
+                                <a href="licensing.html">Licensing</a>
+                                <a href="membership.html">Membership</a>
+                                <a href="coming-soon.html?page=Blog">Blog</a>
+                                <a href="contact.html">Contact Us</a>
+                                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic">
+                                                        <use href="#i-user" /></svg>Login</a><a class="b bjob"
+                                                href="careers.html">Apply for a Job</a><a class="b by"
+                                                href="book-car.html">Book Your Car</a><a class="b bo"
+                                                href="make-payment.html">Make
+                                                Payment</a></span>
+                        </nav>
+                        <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg
+                                        class="ic">
+                                        <use href="#i-menu" /></svg></button>
                 </div>
-                <a href="licensing.html">Licensing</a>
-                <a href="membership.html">Membership</a>
-<a href="coming-soon.html?page=Blog">Blog</a>
-                <a href="contact.html">Contact Us</a>
-                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
-                        href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
-                        Payment</a></span>
-            </nav>
-            <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
-                    <use href="#i-menu" /></svg></button>
-        </div>
-    </header>
+        </header>
 
-<main id="top">
-<section class="phero">
-<div class="hbg" id="hbg" aria-hidden="true"><img src="img/photos/drivers-outsourcing.jpg" onerror="this.onerror=null;this.src='img/haul-cars.webp'" width="1080" height="810" alt="" fetchpriority="high"></div>
-<div class="w pc">
-<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="services.html">Services</a><span aria-hidden="true">/</span><b aria-current="page">Drivers Outsourcing</b></nav>
-<p class="badge"><svg class="ic"><use href="#i-users"/></svg>Verified professional drivers</p>
-<h1>Professional drivers, ready to work</h1>
-<p class="sub">We recruit, train and outsource tested drivers to private clients and corporate bodies.</p>
-<div class="cta"><a class="b by lg2" href="#form">Request drivers</a><a class="b bd lg2" href="careers.html?position=Driver">Apply as a driver<svg class="ic"><use href="#i-arrow"/></svg></a></div>
-</div>
-</section><section class="pg2"><div class="w sv2"><div class="bd2">
-<div class="it" data-r><h2>Drivers Outsourcing</h2><p>Every driver is tested and verified before placement, so you hire with confidence.</p><ul class="chk2 in-it"><li><svg class="ic"><use href="#i-check"/></svg>Executive, pool and dispatch drivers</li><li><svg class="ic"><use href="#i-check"/></svg>Police and escort trained drivers</li><li><svg class="ic"><use href="#i-check"/></svg>Recruitment, training and placement in one service</li><li><svg class="ic"><use href="#i-check"/></svg>Replacement support when you need it</li></ul><div class="pf"><img src="img/photos/drivers-outsourcing.jpg" onerror="this.onerror=null;this.src='img/hq-fleet.webp'" width="900" height="563" alt="Drivers Outsourcing" loading="lazy"></div></div>
-<div class="blk" data-r><h2>What you get</h2><div class="hl3"><div><span class="ib2"><svg class="ic"><use href="#i-users"/></svg></span><h3>Executive drivers</h3><p>Polished, discreet chauffeurs for senior staff and families.</p></div><div><span class="ib2"><svg class="ic"><use href="#i-users"/></svg></span><h3>Pool drivers</h3><p>Reliable drivers for company vehicles and shared fleets.</p></div><div><span class="ib2"><svg class="ic"><use href="#i-users"/></svg></span><h3>Dispatch riders and drivers</h3><p>Delivery-ready drivers for logistics needs.</p></div></div></div>
-<div class="blk" data-r><h2>How it works</h2><ol class="stp"><li><b>Tell us your need</b><span>Type of driver, number and location.</span></li><li><b>We shortlist</b><span>Verified drivers matched to your brief.</span></li><li><b>Placement</b><span>You interview, we onboard and support.</span></li></ol></div>
-<div class="blk" data-r><h2>Questions</h2><div class="fq lt"><details><summary>Are drivers background checked?</summary><p>Drivers are tested and verified before placement. Ask our team about the specific checks for your category.</p></details><details><summary>Can you supply drivers in bulk?</summary><p>Yes. Tell us the quantity and start date in the request form.</p></details><details><summary>Can I speak to someone instead?</summary><p>Yes. Call 0802 555 1111 at any time. Our line is open 24 hours a day, 7 days a week.</p></details></div></div>
-<div class="rel blk" data-r><h2>Related services</h2><div class="rg"><a href="driver-testing-certification.html"><b>Testing and Certification of Drivers</b><span>Skills testing and certification for corporate bodies and individuals.</span><em>Learn more &rarr;</em></a><a href="defensive-driving-training.html"><b>Defensive and Advanced Drivers Training</b><span>Defensive and advanced driving for executives, drivers and corporate fleets.</span><em>Learn more &rarr;</em></a><a href="drivers-academy.html"><b>Drivers Academy</b><span>A 2-day programme with practical and theory training.</span><em>Learn more &rarr;</em></a></div></div></div>
-<div class="fcard" id="form"><h2>Drivers outsourcing</h2><p>Need drivers, or looking for placement as a driver? Choose below.</p><div class="tabs2" role="tablist"><button type="button" role="tab" aria-selected="true" data-t="hire">I need drivers</button><button type="button" role="tab" aria-selected="false" data-t="apply">I am a driver</button></div><div id="p-hire" role="tabpanel"><p class="hint">Tell us what kind of drivers you need. We shortlist verified candidates and confirm by phone.</p><form class="sf" id="drv" data-name="Client's request form" data-ref="DRV" data-success="Thank you. Our Outsourcing team will contact you to confirm the details and the service charge." data-success-title="Request received" novalidate><p class="fstepl"></p><div class="fbar"><i></i></div><ol class="fprog"><li><button type="button">1. Client</button></li><li><button type="button">2. Driver needed</button></li><li><button type="button">3. Terms and sign</button></li></ol><div class="fstep" data-title="Client"><h3 class="fs">Client details</h3><div class="gr2"><div class="fd c2"><label for="h-client">Client's name</label><input id="h-client" name="client" type="text" required autocomplete="name"><p class="err"></p></div><div class="fd c2"><label for="h-office">Office address</label><input id="h-office" name="office" type="text" required ><p class="err"></p></div><div class="fd c2"><label for="h-residence">Residential address <i>(optional)</i></label><input id="h-residence" name="residence" type="text" ><p class="err"></p></div><div class="fd"><label for="h-email">Email</label><input id="h-email" name="email" type="email" required data-v="email" autocomplete="email"><p class="err"></p></div><div class="fd"><label for="h-phone">Telephone number 1</label><input id="h-phone" name="phone" type="tel" required data-v="phone" inputmode="tel" autocomplete="tel" placeholder="0802 555 1111"><p class="err"></p></div><div class="fd"><label for="h-phone2">Telephone number 2 <i>(optional)</i></label><input id="h-phone2" name="phone2" type="tel" data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-purpose">Recruitment purpose</span><div class="chs" role="radiogroup" aria-labelledby="l-purpose" data-req><label><input type="radio" name="purpose" value="Official"><span>Official</span></label><label><input type="radio" name="purpose" value="Personal"><span>Personal</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-service">Type of service</span><div class="chs" role="radiogroup" aria-labelledby="l-service" data-req><label><input type="radio" name="service" value="One-off"><span>One-off</span></label><label><input type="radio" name="service" value="Contract"><span>Contract</span></label></div><p class="err"></p></div></div></div><div class="fstep" data-title="Driver needed"><h3 class="fs">Driver needed</h3><div class="gr2"><div class="fd c2"><span class="lb" id="l-type">Type of driver</span><div class="chs" role="radiogroup" aria-labelledby="l-type" data-req><label><input type="radio" name="type" value="Pool"><span>Pool driver (&#8358;180,000 and above)</span></label><label><input type="radio" name="type" value="Executive"><span>Executive driver (&#8358;200,000 and above)</span></label><label><input type="radio" name="type" value="Truck"><span>Truck driver (&#8358;200,000 and above)</span></label><label><input type="radio" name="type" value="Spy/Legion"><span>Spy/Legion driver (&#8358;300,000 and above)</span></label><label><input type="radio" name="type" value="Dispatch"><span>Dispatch (&#8358;120,000 and above)</span></label></div><p class="err"></p></div><div class="fd"><label for="h-qty">How many drivers?</label><input id="h-qty" name="qty" type="number" required min="1" max="10000" inputmode="numeric" placeholder="1"><p class="err"></p></div><div class="fd"><label for="h-salary">Monthly salary you will offer (&#8358;)</label><input id="h-salary" name="salary" type="text" required data-money data-v="num" inputmode="numeric" placeholder="e.g. 200,000"><p class="err"></p></div><p class="est c2" id="est" hidden></p><div class="fd c2"><span class="lb" id="l-transmission">Type of vehicle</span><div class="chs" role="radiogroup" aria-labelledby="l-transmission" data-req><label><input type="radio" name="transmission" value="Manual"><span>Manual</span></label><label><input type="radio" name="transmission" value="Auto"><span>Auto</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-vclass">Class of vehicle</span><div class="chs" role="radiogroup" aria-labelledby="l-vclass" data-req><label><input type="radio" name="vclass" value="Saloon"><span>Saloon cars</span></label><label><input type="radio" name="vclass" value="SUV"><span>SUVs</span></label><label><input type="radio" name="vclass" value="Pick-up"><span>Pick-up</span></label><label><input type="radio" name="vclass" value="Bus"><span>Bus</span></label><label><input type="radio" name="vclass" value="Truck"><span>Truck</span></label><label><input type="radio" name="vclass" value="M/Bike"><span>M/bike</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-age">Age range</span><div class="chs" role="radiogroup" aria-labelledby="l-age"><label><input type="radio" name="age" value="26-30"><span>26-30</span></label><label><input type="radio" name="age" value="31-34"><span>31-34</span></label><label><input type="radio" name="age" value="35-40"><span>35-40</span></label><label><input type="radio" name="age" value="41-46"><span>41-46</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-area">Residential area of driver</span><div class="chs" role="radiogroup" aria-labelledby="l-area" data-req><label><input type="radio" name="area" value="Mainland"><span>Mainland Lagos</span></label><label><input type="radio" name="area" value="Island"><span>Island</span></label><label><input type="radio" name="area" value="Lekki-Ajah"><span>Lekki-Ajah</span></label></div><p class="err"></p></div><div class="fd c2" data-show="area=Lekki-Ajah"><span class="lb" id="l-accom">Is accommodation available?</span><div class="chs" role="radiogroup" aria-labelledby="l-accom" data-req><label><input type="radio" name="accom" value="Yes"><span>Yes</span></label><label><input type="radio" name="accom" value="No"><span>No</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-overtime">Provision for overtime</span><div class="chs" role="radiogroup" aria-labelledby="l-overtime" data-req><label><input type="radio" name="overtime" value="Yes"><span>Yes</span></label><label><input type="radio" name="overtime" value="No"><span>No</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-leave">Provision for annual leave</span><div class="chs" role="radiogroup" aria-labelledby="l-leave" data-req><label><input type="radio" name="leave" value="Yes"><span>Yes</span></label><label><input type="radio" name="leave" value="No"><span>No</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-marital">Marital status preference</span><div class="chs" role="radiogroup" aria-labelledby="l-marital"><label><input type="radio" name="marital" value="Single"><span>Single</span></label><label><input type="radio" name="marital" value="Married"><span>Married</span></label><label><input type="radio" name="marital" value="Any"><span>No preference</span></label></div><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-religion">Religion preference</span><div class="chs" role="radiogroup" aria-labelledby="l-religion"><label><input type="radio" name="religion" value="Christian"><span>Christian</span></label><label><input type="radio" name="religion" value="Muslim"><span>Muslim</span></label><label><input type="radio" name="religion" value="Any"><span>No preference</span></label></div><p class="err"></p></div><p class="hint c2"><b>Working hours:</b> 12 hours maximum a day, Monday to Friday; Saturdays 6 hours maximum; Sundays are work-free days. Excess hours are counted as overtime.</p></div></div><div class="fstep" data-title="Terms and sign"><h3 class="fs">Terms and signature</h3><div class="gr2"><p class="hint c2"><b>Terms and conditions for clients (one-off package)</b></p><ol class="note c2"><li>Processing takes <b>14 working days</b>.</li><li>You pay a service charge of <b>10% of the driver's annual gross salary</b> before the request is processed. It applies to one driver; each additional driver is treated as a separate request with its own charge.</li><li>AA Rescue deploys tested and trained drivers as requested.</li><li>AA Rescue recruits on your behalf, so you are responsible for managing and caring for the driver, including paying salary. Paying statutory obligations (tax, pension), health care, training and uniforms is also advised.</li><li>Confirm acceptance of the deployed driver to the Deployment Unit, Outsourcing Department, within <b>3 days</b> of receiving the driver: email outsourcing@aarescuenigeria.com or SMS 08150846120.</li><li>The service charge is not refundable once a driver has worked with you for more than 3 days.</li><li>The service charge lapses after 12 continuous weeks. If you need another driver after that, a renewal charge of <b>8% of annual gross salary</b> applies.</li><li>No replacement is available after a driver and two replacements have been posted within 12 weeks of the first posting (4 weeks for a truck driver).</li><li>If you do not wish to continue with a deployed driver at any stage, you pay the driver for the days worked.</li><li>Treat drivers with due regard: no assault, insult, abuse or de-humanizing acts by you, your agents or your family. Drivers have signed a Code of Conduct and Ethics.</li><li>Take up a comprehensive insurance policy and install a tracker on the vehicle or vehicles.</li><li>You may not get a replacement if a driver alleges any act in clause 11 and, after investigation, AA Rescue reasonably establishes it to be true.</li><li>During the contract, AA Rescue's liability for any claim by you is limited to <b>twice the service charge paid</b>.</li></ol><div class="fd c2 ck"><label><input id="h-agree" name="agree" type="checkbox" value="Yes" required><span>I have read and accept the terms and conditions for clients (one-off package).</span></label><p class="err"></p></div><div class="fd"><label for="h-sign">Name of client (typed as signature)</label><input id="h-sign" name="sign" type="text" required autocomplete="name"><p class="err"></p></div><div class="fd"><label for="h-date">Date</label><input id="h-date" name="date" type="date" required data-today><p class="err"></p></div><p class="hint c2">For office use: date received, name of marketer and processing officer are completed by our team after you submit.</p></div></div><div class="fnav"><button type="button" class="b bl2 fback" hidden>Back</button><button type="button" class="b by fnext">Continue</button><button type="submit" class="b by lg2 fsubmit" hidden>Submit request</button></div><p class="fmsg" role="alert"></p></form></div><div id="p-apply" role="tabpanel" hidden><p class="hint">Apply to be placed with our clients. You need <b>2 guarantors</b>, and registration is paid at the end.</p><form class="sf" id="apl" data-name="Driver application and guarantor details" data-ref="DRA" data-success="Thank you. Your application has been received. Our team will review it and contact you about the next steps." data-success-title="Application received" novalidate><p class="fstepl"></p><div class="fbar"><i></i></div><ol class="fprog"><li><button type="button">1. You</button></li><li><button type="button">2. Guarantor 1</button></li><li><button type="button">3. Guarantor 2</button></li><li><button type="button">4. Documents</button></li><li><button type="button">5. Declare</button></li></ol><div class="fstep" data-title="Your details"><h3 class="fs">Your details</h3><div class="gr2"><div class="fd"><label for="a-surname">Surname</label><input id="a-surname" name="surname" type="text" required autocomplete="family-name"><p class="err"></p></div><div class="fd"><label for="a-other">Other names</label><input id="a-other" name="other" type="text" required autocomplete="given-name"><p class="err"></p></div><div class="fd"><label for="a-phone">Phone number</label><input id="a-phone" name="phone" type="tel" required data-v="phone" autocomplete="tel" inputmode="tel" placeholder="0802 555 1111"><p class="err"></p></div><div class="fd"><label for="a-email">Email</label><input id="a-email" name="email" type="email" required data-v="email" autocomplete="email"><p class="err"></p></div><div class="fd c2"><label for="a-address">Residential address</label><input id="a-address" name="address" type="text" required autocomplete="street-address"><p class="err"></p></div><div class="fd c2"><span class="lb" id="l-category">I drive a</span><div class="chs" role="radiogroup" aria-labelledby="l-category" data-req><label><input type="radio" name="category" value="Car"><span>Car</span></label><label><input type="radio" name="category" value="Truck"><span>Truck</span></label></div><p class="err"></p></div><div class="fd"><label for="a-licno">Driver's licence number <i>(optional)</i></label><input id="a-licno" name="licno" type="text" ><p class="err"></p></div></div></div><div class="fstep" data-title="Guarantor 1"><h3 class="fs">Guarantor 1</h3><p class="hint">Please do not guarantee someone who has not been well known to you for at least <b>5 years</b>.</p><div class="gr2"><div class="fd"><label for="a-g1_name">Full name</label><input id="a-g1_name" name="g1_name" type="text" required autocomplete="off"><p class="err"></p></div><div class="fd"><label for="a-g1_tel">Residential phone number</label><input id="a-g1_tel" name="g1_tel" type="tel" required data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd c2"><label for="a-g1_address">Residential address</label><input id="a-g1_address" name="g1_address" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g1_office">Office phone number <i>(optional)</i></label><input id="a-g1_office" name="g1_office" type="tel" data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd"><label for="a-g1_job">Occupation or job title</label><input id="a-g1_job" name="g1_job" type="text" required ><p class="err"></p></div><div class="fd c2"><label for="a-g1_biz">Business name and address</label><input id="a-g1_biz" name="g1_biz" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g1_email">Email address <i>(optional)</i></label><input id="a-g1_email" name="g1_email" type="email" data-v="email"><p class="err"></p></div><div class="fd"><label for="a-g1_rel">Relationship to applicant</label><input id="a-g1_rel" name="g1_rel" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g1_years">Years known</label><input id="a-g1_years" name="g1_years" type="number" required min="5" max="80" inputmode="numeric" placeholder="At least 5"><p class="err"></p></div></div></div><div class="fstep" data-title="Guarantor 2"><h3 class="fs">Guarantor 2</h3><p class="hint">Please do not guarantee someone who has not been well known to you for at least <b>5 years</b>.</p><div class="gr2"><div class="fd"><label for="a-g2_name">Full name</label><input id="a-g2_name" name="g2_name" type="text" required autocomplete="off"><p class="err"></p></div><div class="fd"><label for="a-g2_tel">Residential phone number</label><input id="a-g2_tel" name="g2_tel" type="tel" required data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd c2"><label for="a-g2_address">Residential address</label><input id="a-g2_address" name="g2_address" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g2_office">Office phone number <i>(optional)</i></label><input id="a-g2_office" name="g2_office" type="tel" data-v="phone" inputmode="tel"><p class="err"></p></div><div class="fd"><label for="a-g2_job">Occupation or job title</label><input id="a-g2_job" name="g2_job" type="text" required ><p class="err"></p></div><div class="fd c2"><label for="a-g2_biz">Business name and address</label><input id="a-g2_biz" name="g2_biz" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g2_email">Email address <i>(optional)</i></label><input id="a-g2_email" name="g2_email" type="email" data-v="email"><p class="err"></p></div><div class="fd"><label for="a-g2_rel">Relationship to applicant</label><input id="a-g2_rel" name="g2_rel" type="text" required ><p class="err"></p></div><div class="fd"><label for="a-g2_years">Years known</label><input id="a-g2_years" name="g2_years" type="number" required min="5" max="80" inputmode="numeric" placeholder="At least 5"><p class="err"></p></div></div></div><div class="fstep" data-title="Documents and payment"><h3 class="fs">Documents and payment</h3><div class="gr2"><ul class="note c2"><li><b>You:</b> 4 passport photographs, CV, credentials, driver's licence, LASDRI, a NEPA, LAWMA or house rent receipt, and your NIN or voter's card (dress corporately for photographs).</li><li><b>Each of your 2 guarantors:</b> 1 passport photograph, a NEPA, LAWMA or house rent receipt, and a NIN, voter's card or driver's licence. At least one guarantor must also provide a work or business ID card.</li></ul><p class="hint c2">Upload copies now, or bring photocopies to the office.</p><div class="fd c2"><span class="lb">Your documents <i>(optional)</i></span><div class="dz" data-multiple data-max="10"><input type="file" name="documents" accept=".jpg,.jpeg,.png,.pdf" multiple aria-label="Your documents"><p><b>Drop files here</b> or tap to browse<br><small>Photos, CV, credentials, licence, LASDRI, receipt, NIN or voter's card. JPG, PNG or PDF, up to 5 MB each.</small></p><ul class="fl"></ul></div><p class="err"></p></div><div class="fd c2"><span class="lb">Guarantors' documents <i>(optional)</i></span><div class="dz" data-multiple data-max="10"><input type="file" name="guarantor_documents" accept=".jpg,.jpeg,.png,.pdf" multiple aria-label="Guarantors' documents"><p><b>Drop files here</b> or tap to browse<br><small>Photos, receipts, IDs and work or business ID. JPG, PNG or PDF, up to 5 MB each.</small></p><ul class="fl"></ul></div><p class="err"></p></div><div class="pay c2"><b>Registration payment</b><span>Account name: AA RESCUE NIG. LTD</span><span>Account number: <b>1006194931</b> (UBA Bank)</span><span data-show="category=Car">Amount for car drivers: <b>&#8358;3,000</b></span><span data-show="category=Truck">Amount for truck drivers: <b>&#8358;4,000</b></span><span data-show="category=">Car drivers pay &#8358;3,000. Truck drivers pay &#8358;4,000.</span></div><div class="fd c2"><span class="lb">Proof of payment <i>(optional)</i></span><div class="dz" data-max="1"><input type="file" name="payment_proof" accept=".jpg,.jpeg,.png,.pdf" aria-label="Proof of payment"><p><b>Drop files here</b> or tap to browse<br><small>Receipt or transfer screenshot. JPG, PNG or PDF, up to 5 MB each.</small></p><ul class="fl"></ul></div><p class="err"></p></div></div></div><div class="fstep" data-title="Declaration"><h3 class="fs">Declaration</h3><div class="gr2"><p class="hint c2">Each guarantor confirms that they have known you for the stated years, that you are of good character and fit to be considered for employment, and accepts to produce you or indemnify AA Rescue Nigeria Ltd and its clients, subsidiaries or related companies for any loss from your action, inaction, negligence or fraud.</p><div class="fd c2 ck"><label><input id="a-c1" name="c1" type="checkbox" value="Yes" required><span>I confirm that the information in this application is true and correct.</span></label><p class="err"></p></div><div class="fd c2 ck"><label><input id="a-c2" name="c2" type="checkbox" value="Yes" required><span>My two guarantors have each known me for at least 5 years and have agreed to guarantee me.</span></label><p class="err"></p></div><div class="fd c2 ck"><label><input id="a-c3" name="c3" type="checkbox" value="Yes" required><span>I understand each guarantor must sign the guarantor's declaration before a Notary Public or Commissioner for Oaths, attach a copy of their ID and a passport photograph, and certify three of my passport photographs.</span></label><p class="err"></p></div><div class="fd"><label for="a-sign">Your full name (typed as signature)</label><input id="a-sign" name="sign" type="text" required autocomplete="name"><p class="err"></p></div><div class="fd"><label for="a-date">Date</label><input id="a-date" name="date" type="date" required data-today><p class="err"></p></div></div></div><div class="fnav"><button type="button" class="b bl2 fback" hidden>Back</button><button type="button" class="b by fnext">Continue</button><button type="submit" class="b by lg2 fsubmit" hidden>Submit application</button></div><p class="fmsg" role="alert"></p></form></div><p class="hint ho">Head office: 13/15 Castle Rock Avenue, by 3rd Roundabout, beside Mobil Filling Station, Lekki, Lagos. Tel: 0802 555 1111, 0815 084 6120, 0815 084 6108. Outsourcing: outsourcing@aarescuenigeria.com</p></div></div></section>
-</main>
+        <main id="top">
+                <section class="phero">
+                        <div class="hbg" id="hbg" aria-hidden="true"><img src="img/photos/drivers-outsourcing.jpg"
+                                        onerror="this.onerror=null;this.src='img/haul-cars.webp'" width="1080"
+                                        height="810" alt="" fetchpriority="high"></div>
+                        <div class="w pc">
+                                <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span
+                                                aria-hidden="true">/</span><a href="services.html">Services</a><span
+                                                aria-hidden="true">/</span><b aria-current="page">Drivers
+                                                Outsourcing</b></nav>
+                                <p class="badge"><svg class="ic">
+                                                <use href="#i-users" /></svg>Verified professional drivers</p>
+                                <h1>Professional drivers, ready to work</h1>
+                                <p class="sub">We recruit, train and outsource tested drivers to private clients and
+                                        corporate bodies.</p>
+                                <div class="cta"><a class="b by lg2" href="#form">Request drivers</a><a class="b bd lg2"
+                                                href="careers.html?position=Driver">Apply as a driver<svg class="ic">
+                                                        <use href="#i-arrow" /></svg></a></div>
+                        </div>
+                </section>
+                <section class="pg2">
+                        <div class="w sv2">
+                                <div class="bd2">
+                                        <div class="it" data-r>
+                                                <h2>Drivers Outsourcing</h2>
+                                                <p>Every driver is tested and verified before placement, so you hire
+                                                        with confidence.</p>
+                                                <ul class="chk2 in-it">
+                                                        <li><svg class="ic">
+                                                                        <use href="#i-check" /></svg>Executive, pool and
+                                                                dispatch drivers</li>
+                                                        <li><svg class="ic">
+                                                                        <use href="#i-check" /></svg>Police and escort
+                                                                trained drivers</li>
+                                                        <li><svg class="ic">
+                                                                        <use href="#i-check" /></svg>Recruitment,
+                                                                training and placement in one service</li>
+                                                        <li><svg class="ic">
+                                                                        <use href="#i-check" /></svg>Replacement support
+                                                                when you need it</li>
+                                                </ul>
+                                                <div class="pf"><img src="img/photos/drivers-outsourcing.jpg"
+                                                                onerror="this.onerror=null;this.src='img/hq-fleet.webp'"
+                                                                width="900" height="563" alt="Drivers Outsourcing"
+                                                                loading="lazy"></div>
+                                        </div>
+                                        <div class="blk" data-r>
+                                                <h2>What you get</h2>
+                                                <div class="hl3">
+                                                        <div><span class="ib2"><svg class="ic">
+                                                                                <use href="#i-users" /></svg></span>
+                                                                <h3>Executive drivers</h3>
+                                                                <p>Polished, discreet chauffeurs for senior staff and
+                                                                        families.</p>
+                                                        </div>
+                                                        <div><span class="ib2"><svg class="ic">
+                                                                                <use href="#i-users" /></svg></span>
+                                                                <h3>Pool drivers</h3>
+                                                                <p>Reliable drivers for company vehicles and shared
+                                                                        fleets.</p>
+                                                        </div>
+                                                        <div><span class="ib2"><svg class="ic">
+                                                                                <use href="#i-users" /></svg></span>
+                                                                <h3>Dispatch riders and drivers</h3>
+                                                                <p>Delivery-ready drivers for logistics needs.</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="blk" data-r>
+                                                <h2>How it works</h2>
+                                                <ol class="stp">
+                                                        <li><b>Tell us your need</b><span>Type of driver, number and
+                                                                        location.</span></li>
+                                                        <li><b>We shortlist</b><span>Verified drivers matched to your
+                                                                        brief.</span></li>
+                                                        <li><b>Placement</b><span>You interview, we onboard and
+                                                                        support.</span></li>
+                                                </ol>
+                                        </div>
+                                        <div class="blk" data-r>
+                                                <h2>Questions</h2>
+                                                <div class="fq lt">
+                                                        <details>
+                                                                <summary>Are drivers background checked?</summary>
+                                                                <p>Drivers are tested and verified before placement. Ask
+                                                                        our team about the specific checks for your
+                                                                        category.</p>
+                                                        </details>
+                                                        <details>
+                                                                <summary>Can you supply drivers in bulk?</summary>
+                                                                <p>Yes. Tell us the quantity and start date in the
+                                                                        request form.</p>
+                                                        </details>
+                                                        <details>
+                                                                <summary>Can I speak to someone instead?</summary>
+                                                                <p>Yes. Call 0802 555 1111 at any time. Our line is open
+                                                                        24 hours a day, 7 days a week.</p>
+                                                        </details>
+                                                </div>
+                                        </div>
+                                        <div class="rel blk" data-r>
+                                                <h2>Related services</h2>
+                                                <div class="rg"><a href="driver-testing-certification.html"><b>Testing
+                                                                        and Certification of Drivers</b><span>Skills
+                                                                        testing and certification for corporate bodies
+                                                                        and individuals.</span><em>Learn more
+                                                                        &rarr;</em></a><a
+                                                                href="defensive-driving-training.html"><b>Defensive and
+                                                                        Advanced Drivers Training</b><span>Defensive and
+                                                                        advanced driving for executives, drivers and
+                                                                        corporate fleets.</span><em>Learn more
+                                                                        &rarr;</em></a><a
+                                                                href="drivers-academy.html"><b>Drivers
+                                                                        Academy</b><span>A 2-day programme with
+                                                                        practical and theory training.</span><em>Learn
+                                                                        more &rarr;</em></a></div>
+                                        </div>
+                                </div>
+                                <div class="fcard" id="form">
+                                        <h2>Drivers outsourcing</h2>
+                                        <p>Need drivers, or looking for placement as a driver? Choose below.</p>
+                                        <div class="tabs2" role="tablist"><button type="button" role="tab"
+                                                        aria-selected="true" data-t="hire">I need
+                                                        drivers</button><button type="button" role="tab"
+                                                        aria-selected="false" data-t="apply">I am a driver</button>
+                                        </div>
+                                        <div id="p-hire" role="tabpanel">
+                                                <p class="hint">Tell us what kind of drivers you need. We shortlist
+                                                        verified candidates and confirm by phone.</p>
+                                                <form class="sf" id="drv" data-name="Client's request form"
+                                                        data-ref="DRV"
+                                                        data-success="Thank you. Our Outsourcing team will contact you to confirm the details and the service charge."
+                                                        data-success-title="Request received" novalidate>
+                                                        <p class="fstepl"></p>
+                                                        <div class="fbar"><i></i></div>
+                                                        <ol class="fprog">
+                                                                <li><button type="button">1. Client</button></li>
+                                                                <li><button type="button">2. Driver needed</button></li>
+                                                                <li><button type="button">3. Terms and sign</button>
+                                                                </li>
+                                                        </ol>
+                                                        <div class="fstep" data-title="Client">
+                                                                <h3 class="fs">Client details</h3>
+                                                                <div class="gr2">
+                                                                        <div class="fd c2"><label
+                                                                                        for="h-client">Client's
+                                                                                        name</label><input id="h-client"
+                                                                                        name="client" type="text"
+                                                                                        required autocomplete="name">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label for="h-office">Office
+                                                                                        address</label><input
+                                                                                        id="h-office" name="office"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="h-residence">Residential
+                                                                                        address
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="h-residence"
+                                                                                        name="residence" type="text">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="h-email">Email</label><input
+                                                                                        id="h-email" name="email"
+                                                                                        type="email" required
+                                                                                        data-v="email"
+                                                                                        autocomplete="email">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="h-phone">Telephone
+                                                                                        number 1</label><input
+                                                                                        id="h-phone" name="phone"
+                                                                                        type="tel" required
+                                                                                        data-v="phone" inputmode="tel"
+                                                                                        autocomplete="tel"
+                                                                                        placeholder="0802 555 1111">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="h-phone2">Telephone
+                                                                                        number 2
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="h-phone2" name="phone2"
+                                                                                        type="tel" data-v="phone"
+                                                                                        inputmode="tel">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-purpose">Recruitment
+                                                                                        purpose</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-purpose"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="purpose"
+                                                                                                        value="Official"><span>Official</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="purpose"
+                                                                                                        value="Personal"><span>Personal</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-service">Type of
+                                                                                        service</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-service"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="service"
+                                                                                                        value="One-off"><span>One-off</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="service"
+                                                                                                        value="Contract"><span>Contract</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Driver needed">
+                                                                <h3 class="fs">Driver needed</h3>
+                                                                <div class="gr2">
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-type">Type of
+                                                                                        driver</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-type"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="type"
+                                                                                                        value="Pool"><span>Pool
+                                                                                                        driver
+                                                                                                        (&#8358;180,000
+                                                                                                        and
+                                                                                                        above)</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="type"
+                                                                                                        value="Executive"><span>Executive
+                                                                                                        driver
+                                                                                                        (&#8358;200,000
+                                                                                                        and
+                                                                                                        above)</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="type"
+                                                                                                        value="Truck"><span>Truck
+                                                                                                        driver
+                                                                                                        (&#8358;200,000
+                                                                                                        and
+                                                                                                        above)</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="type"
+                                                                                                        value="Spy/Legion"><span>Spy/Legion
+                                                                                                        driver
+                                                                                                        (&#8358;300,000
+                                                                                                        and
+                                                                                                        above)</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="type"
+                                                                                                        value="Dispatch"><span>Dispatch
+                                                                                                        (&#8358;120,000
+                                                                                                        and
+                                                                                                        above)</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="h-qty">How many
+                                                                                        drivers?</label><input
+                                                                                        id="h-qty" name="qty"
+                                                                                        type="number" required min="1"
+                                                                                        max="10000" inputmode="numeric"
+                                                                                        placeholder="1">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="h-salary">Monthly
+                                                                                        salary you will offer
+                                                                                        (&#8358;)</label><input
+                                                                                        id="h-salary" name="salary"
+                                                                                        type="text" required data-money
+                                                                                        data-v="num" inputmode="numeric"
+                                                                                        placeholder="e.g. 200,000">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <p class="est c2" id="est" hidden></p>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-transmission">Type of
+                                                                                        vehicle</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-transmission"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="transmission"
+                                                                                                        value="Manual"><span>Manual</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="transmission"
+                                                                                                        value="Auto"><span>Auto</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-vclass">Class of
+                                                                                        vehicle</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-vclass"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="Saloon"><span>Saloon
+                                                                                                        cars</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="SUV"><span>SUVs</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="Pick-up"><span>Pick-up</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="Bus"><span>Bus</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="Truck"><span>Truck</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="vclass"
+                                                                                                        value="M/Bike"><span>M/bike</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-age">Age range</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-age">
+                                                                                        <label><input type="radio"
+                                                                                                        name="age"
+                                                                                                        value="26-30"><span>26-30</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="age"
+                                                                                                        value="31-34"><span>31-34</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="age"
+                                                                                                        value="35-40"><span>35-40</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="age"
+                                                                                                        value="41-46"><span>41-46</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-area">Residential area of
+                                                                                        driver</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-area"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="area"
+                                                                                                        value="Mainland"><span>Mainland
+                                                                                                        Lagos</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="area"
+                                                                                                        value="Island"><span>Island</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="area"
+                                                                                                        value="Lekki-Ajah"><span>Lekki-Ajah</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2" data-show="area=Lekki-Ajah">
+                                                                                <span class="lb" id="l-accom">Is
+                                                                                        accommodation available?</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-accom"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="accom"
+                                                                                                        value="Yes"><span>Yes</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="accom"
+                                                                                                        value="No"><span>No</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-overtime">Provision for
+                                                                                        overtime</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-overtime"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="overtime"
+                                                                                                        value="Yes"><span>Yes</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="overtime"
+                                                                                                        value="No"><span>No</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-leave">Provision for
+                                                                                        annual leave</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-leave"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="leave"
+                                                                                                        value="Yes"><span>Yes</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="leave"
+                                                                                                        value="No"><span>No</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-marital">Marital status
+                                                                                        preference</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-marital">
+                                                                                        <label><input type="radio"
+                                                                                                        name="marital"
+                                                                                                        value="Single"><span>Single</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="marital"
+                                                                                                        value="Married"><span>Married</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="marital"
+                                                                                                        value="Any"><span>No
+                                                                                                        preference</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                       
+                                                                        <p class="hint c2"><b>Working hours:</b> 12
+                                                                                hours maximum a day, Monday to Friday;
+                                                                                Saturdays 6 hours maximum; Sundays are
+                                                                                work-free days. Excess hours are counted
+                                                                                as overtime.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Terms and sign">
+                                                                <h3 class="fs">Terms and signature</h3>
+                                                                <div class="gr2">
+                                                                        <p class="hint c2"><b>Terms and conditions for
+                                                                                        clients (one-off package)</b>
+                                                                        </p>
+                                                                        <ol class="note c2">
+                                                                                <li>Processing takes <b>14 working
+                                                                                                days</b>.</li>
+                                                                                <li>You pay a service charge of <b>10%
+                                                                                                of the driver's annual
+                                                                                                gross salary</b> before
+                                                                                        the request is processed. It
+                                                                                        applies to one driver; each
+                                                                                        additional driver is treated as
+                                                                                        a separate request with its own
+                                                                                        charge.</li>
+                                                                                <li>AA Rescue deploys tested and trained
+                                                                                        drivers as requested.</li>
+                                                                                <li>AA Rescue recruits on your behalf,
+                                                                                        so you are responsible for
+                                                                                        managing and caring for the
+                                                                                        driver, including paying salary.
+                                                                                        Paying statutory obligations
+                                                                                        (tax, pension), health care,
+                                                                                        training and uniforms is also
+                                                                                        advised.</li>
+                                                                                <li>Confirm acceptance of the deployed
+                                                                                        driver to the Deployment Unit,
+                                                                                        Outsourcing Department, within
+                                                                                        <b>3 days</b> of receiving the
+                                                                                        driver: email
+                                                                                        outsourcing@aarescuenigeria.com
+                                                                                        or SMS 08150846120.</li>
+                                                                                <li>The service charge is not refundable
+                                                                                        once a driver has worked with
+                                                                                        you for more than 3 days.</li>
+                                                                                <li>The service charge lapses after 12
+                                                                                        continuous weeks. If you need
+                                                                                        another driver after that, a
+                                                                                        renewal charge of <b>8% of
+                                                                                                annual gross salary</b>
+                                                                                        applies.</li>
+                                                                                <li>No replacement is available after a
+                                                                                        driver and two replacements have
+                                                                                        been posted within 12 weeks of
+                                                                                        the first posting (4 weeks for a
+                                                                                        truck driver).</li>
+                                                                                <li>If you do not wish to continue with
+                                                                                        a deployed driver at any stage,
+                                                                                        you pay the driver for the days
+                                                                                        worked.</li>
+                                                                                <li>Treat drivers with due regard: no
+                                                                                        assault, insult, abuse or
+                                                                                        de-humanizing acts by you, your
+                                                                                        agents or your family. Drivers
+                                                                                        have signed a Code of Conduct
+                                                                                        and Ethics.</li>
+                                                                                <li>Take up a comprehensive insurance
+                                                                                        policy and install a tracker on
+                                                                                        the vehicle or vehicles.</li>
+                                                                                <li>You may not get a replacement if a
+                                                                                        driver alleges any act in clause
+                                                                                        11 and, after investigation, AA
+                                                                                        Rescue reasonably establishes it
+                                                                                        to be true.</li>
+                                                                                <li>During the contract, AA Rescue's
+                                                                                        liability for any claim by you
+                                                                                        is limited to <b>twice the
+                                                                                                service charge paid</b>.
+                                                                                </li>
+                                                                        </ol>
+                                                                        <div class="fd c2 ck"><label><input id="h-agree"
+                                                                                                name="agree"
+                                                                                                type="checkbox"
+                                                                                                value="Yes"
+                                                                                                required><span>I have
+                                                                                                read and accept the
+                                                                                                terms and conditions for
+                                                                                                clients (one-off
+                                                                                                package).</span></label>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="h-sign">Name of
+                                                                                        client (typed as
+                                                                                        signature)</label><input
+                                                                                        id="h-sign" name="sign"
+                                                                                        type="text" required
+                                                                                        autocomplete="name">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="h-date">Date</label><input
+                                                                                        id="h-date" name="date"
+                                                                                        type="date" required data-today>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <p class="hint c2">For office use: date
+                                                                                received, name of marketer and
+                                                                                processing officer are completed by our
+                                                                                team after you submit.</p>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fnav"><button type="button" class="b bl2 fback"
+                                                                        hidden>Back</button><button type="button"
+                                                                        class="b by fnext">Continue</button><button
+                                                                        type="submit" class="b by lg2 fsubmit"
+                                                                        hidden>Submit request</button></div>
+                                                        <p class="fmsg" role="alert"></p>
+                                                </form>
+                                        </div>
+                                        <div id="p-apply" role="tabpanel" hidden>
+                                                <p class="hint">Apply to be placed with our clients. You need <b>2
+                                                                guarantors</b>, and registration is paid at the end.</p>
+                                                <form class="sf" id="apl"
+                                                        data-name="Driver application and guarantor details"
+                                                        data-ref="DRA"
+                                                        data-success="Thank you. Your application has been received. Our team will review it and contact you about the next steps."
+                                                        data-success-title="Application received" novalidate>
+                                                        <p class="fstepl"></p>
+                                                        <div class="fbar"><i></i></div>
+                                                        <ol class="fprog">
+                                                                <li><button type="button">1. You</button></li>
+                                                                <li><button type="button">2. Guarantor 1</button></li>
+                                                                <li><button type="button">3. Guarantor 2</button></li>
+                                                                <li><button type="button">4. Documents</button></li>
+                                                                <li><button type="button">5. Declare</button></li>
+                                                        </ol>
+                                                        <div class="fstep" data-title="Your details">
+                                                                <h3 class="fs">Your details</h3>
+                                                                <div class="gr2">
+                                                                        <div class="fd"><label
+                                                                                        for="a-surname">Surname</label><input
+                                                                                        id="a-surname" name="surname"
+                                                                                        type="text" required
+                                                                                        autocomplete="family-name">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-other">Other
+                                                                                        names</label><input id="a-other"
+                                                                                        name="other" type="text"
+                                                                                        required
+                                                                                        autocomplete="given-name">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-phone">Phone
+                                                                                        number</label><input
+                                                                                        id="a-phone" name="phone"
+                                                                                        type="tel" required
+                                                                                        data-v="phone"
+                                                                                        autocomplete="tel"
+                                                                                        inputmode="tel"
+                                                                                        placeholder="0802 555 1111">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-email">Email</label><input
+                                                                                        id="a-email" name="email"
+                                                                                        type="email" required
+                                                                                        data-v="email"
+                                                                                        autocomplete="email">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="a-address">Residential
+                                                                                        address</label><input
+                                                                                        id="a-address" name="address"
+                                                                                        type="text" required
+                                                                                        autocomplete="street-address">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb"
+                                                                                        id="l-category">I drive a</span>
+                                                                                <div class="chs" role="radiogroup"
+                                                                                        aria-labelledby="l-category"
+                                                                                        data-req><label><input
+                                                                                                        type="radio"
+                                                                                                        name="category"
+                                                                                                        value="Car"><span>Car</span></label><label><input
+                                                                                                        type="radio"
+                                                                                                        name="category"
+                                                                                                        value="Truck"><span>Truck</span></label>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-licno">Driver's
+                                                                                        licence number
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="a-licno" name="licno"
+                                                                                        type="text">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Guarantor 1">
+                                                                <h3 class="fs">Guarantor 1</h3>
+                                                                <p class="hint">Please do not guarantee someone who has
+                                                                        not been well known to you for at least <b>5
+                                                                                years</b>.</p>
+                                                                <div class="gr2">
+                                                                        <div class="fd"><label for="a-g1_name">Full
+                                                                                        name</label><input
+                                                                                        id="a-g1_name" name="g1_name"
+                                                                                        type="text" required
+                                                                                        autocomplete="off">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-g1_tel">Residential phone
+                                                                                        number</label><input
+                                                                                        id="a-g1_tel" name="g1_tel"
+                                                                                        type="tel" required
+                                                                                        data-v="phone" inputmode="tel">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="a-g1_address">Residential
+                                                                                        address</label><input
+                                                                                        id="a-g1_address"
+                                                                                        name="g1_address" type="text"
+                                                                                        required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g1_office">Office
+                                                                                        phone number
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="a-g1_office"
+                                                                                        name="g1_office" type="tel"
+                                                                                        data-v="phone" inputmode="tel">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g1_job">Occupation
+                                                                                        or job title</label><input
+                                                                                        id="a-g1_job" name="g1_job"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="a-g1_biz">Business name and
+                                                                                        address</label><input
+                                                                                        id="a-g1_biz" name="g1_biz"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g1_email">Email
+                                                                                        address
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="a-g1_email" name="g1_email"
+                                                                                        type="email" data-v="email">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-g1_rel">Relationship to
+                                                                                        applicant</label><input
+                                                                                        id="a-g1_rel" name="g1_rel"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g1_years">Years
+                                                                                        known</label><input
+                                                                                        id="a-g1_years" name="g1_years"
+                                                                                        type="number" required min="5"
+                                                                                        max="80" inputmode="numeric"
+                                                                                        placeholder="At least 5">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Guarantor 2">
+                                                                <h3 class="fs">Guarantor 2</h3>
+                                                                <p class="hint">Please do not guarantee someone who has
+                                                                        not been well known to you for at least <b>5
+                                                                                years</b>.</p>
+                                                                <div class="gr2">
+                                                                        <div class="fd"><label for="a-g2_name">Full
+                                                                                        name</label><input
+                                                                                        id="a-g2_name" name="g2_name"
+                                                                                        type="text" required
+                                                                                        autocomplete="off">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-g2_tel">Residential phone
+                                                                                        number</label><input
+                                                                                        id="a-g2_tel" name="g2_tel"
+                                                                                        type="tel" required
+                                                                                        data-v="phone" inputmode="tel">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="a-g2_address">Residential
+                                                                                        address</label><input
+                                                                                        id="a-g2_address"
+                                                                                        name="g2_address" type="text"
+                                                                                        required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g2_office">Office
+                                                                                        phone number
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="a-g2_office"
+                                                                                        name="g2_office" type="tel"
+                                                                                        data-v="phone" inputmode="tel">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g2_job">Occupation
+                                                                                        or job title</label><input
+                                                                                        id="a-g2_job" name="g2_job"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><label
+                                                                                        for="a-g2_biz">Business name and
+                                                                                        address</label><input
+                                                                                        id="a-g2_biz" name="g2_biz"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g2_email">Email
+                                                                                        address
+                                                                                        <i>(optional)</i></label><input
+                                                                                        id="a-g2_email" name="g2_email"
+                                                                                        type="email" data-v="email">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-g2_rel">Relationship to
+                                                                                        applicant</label><input
+                                                                                        id="a-g2_rel" name="g2_rel"
+                                                                                        type="text" required>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-g2_years">Years
+                                                                                        known</label><input
+                                                                                        id="a-g2_years" name="g2_years"
+                                                                                        type="number" required min="5"
+                                                                                        max="80" inputmode="numeric"
+                                                                                        placeholder="At least 5">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Documents and payment">
+                                                                <h3 class="fs">Documents and payment</h3>
+                                                                <div class="gr2">
+                                                                        <ul class="note c2">
+                                                                                <li><b>You:</b> 4 passport photographs,
+                                                                                        CV, credentials, driver's
+                                                                                        licence, LASDRI, a NEPA, LAWMA
+                                                                                        or house rent receipt, and your
+                                                                                        NIN or voter's card (dress
+                                                                                        corporately for photographs).
+                                                                                </li>
+                                                                                <li><b>Each of your 2 guarantors:</b> 1
+                                                                                        passport photograph, a NEPA,
+                                                                                        LAWMA or house rent receipt, and
+                                                                                        a NIN, voter's card or driver's
+                                                                                        licence. At least one guarantor
+                                                                                        must also provide a work or
+                                                                                        business ID card.</li>
+                                                                        </ul>
+                                                                        <p class="hint c2">Upload copies now, or bring
+                                                                                photocopies to the office.</p>
+                                                                        <div class="fd c2"><span class="lb">Your
+                                                                                        documents
+                                                                                        <i>(optional)</i></span>
+                                                                                <div class="dz" data-multiple
+                                                                                        data-max="10"><input type="file"
+                                                                                                name="documents"
+                                                                                                accept=".jpg,.jpeg,.png,.pdf"
+                                                                                                multiple
+                                                                                                aria-label="Your documents">
+                                                                                        <p><b>Drop files here</b> or tap
+                                                                                                to browse<br><small>Photos,
+                                                                                                        CV, credentials,
+                                                                                                        licence, LASDRI,
+                                                                                                        receipt, NIN or
+                                                                                                        voter's card.
+                                                                                                        JPG, PNG or PDF,
+                                                                                                        up to 5 MB
+                                                                                                        each.</small>
+                                                                                        </p>
+                                                                                        <ul class="fl"></ul>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb">Guarantors'
+                                                                                        documents
+                                                                                        <i>(optional)</i></span>
+                                                                                <div class="dz" data-multiple
+                                                                                        data-max="10"><input type="file"
+                                                                                                name="guarantor_documents"
+                                                                                                accept=".jpg,.jpeg,.png,.pdf"
+                                                                                                multiple
+                                                                                                aria-label="Guarantors' documents">
+                                                                                        <p><b>Drop files here</b> or tap
+                                                                                                to browse<br><small>Photos,
+                                                                                                        receipts, IDs
+                                                                                                        and work or
+                                                                                                        business ID.
+                                                                                                        JPG, PNG or PDF,
+                                                                                                        up to 5 MB
+                                                                                                        each.</small>
+                                                                                        </p>
+                                                                                        <ul class="fl"></ul>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="pay c2"><b>Registration
+                                                                                        payment</b><span>Account name:
+                                                                                        AA RESCUE NIG.
+                                                                                        LTD</span><span>Account number:
+                                                                                        <b>1006194931</b> (UBA
+                                                                                        Bank)</span><span
+                                                                                        data-show="category=Car">Amount
+                                                                                        for car drivers:
+                                                                                        <b>&#8358;3,000</b></span><span
+                                                                                        data-show="category=Truck">Amount
+                                                                                        for truck drivers:
+                                                                                        <b>&#8358;4,000</b></span><span
+                                                                                        data-show="category=">Car
+                                                                                        drivers pay &#8358;3,000. Truck
+                                                                                        drivers pay &#8358;4,000.</span>
+                                                                        </div>
+                                                                        <div class="fd c2"><span class="lb">Proof of
+                                                                                        payment <i>(optional)</i></span>
+                                                                                <div class="dz" data-max="1"><input
+                                                                                                type="file"
+                                                                                                name="payment_proof"
+                                                                                                accept=".jpg,.jpeg,.png,.pdf"
+                                                                                                aria-label="Proof of payment">
+                                                                                        <p><b>Drop files here</b> or tap
+                                                                                                to browse<br><small>Receipt
+                                                                                                        or transfer
+                                                                                                        screenshot. JPG,
+                                                                                                        PNG or PDF, up
+                                                                                                        to 5 MB
+                                                                                                        each.</small>
+                                                                                        </p>
+                                                                                        <ul class="fl"></ul>
+                                                                                </div>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fstep" data-title="Declaration">
+                                                                <h3 class="fs">Declaration</h3>
+                                                                <div class="gr2">
+                                                                        <p class="hint c2">Each guarantor confirms that
+                                                                                they have known you for the stated
+                                                                                years, that you are of good character
+                                                                                and fit to be considered for employment,
+                                                                                and accepts to produce you or indemnify
+                                                                                AA Rescue Nigeria Ltd and its clients,
+                                                                                subsidiaries or related companies for
+                                                                                any loss from your action, inaction,
+                                                                                negligence or fraud.</p>
+                                                                        <div class="fd c2 ck"><label><input id="a-c1"
+                                                                                                name="c1"
+                                                                                                type="checkbox"
+                                                                                                value="Yes"
+                                                                                                required><span>I confirm
+                                                                                                that the information in
+                                                                                                this application is true
+                                                                                                and
+                                                                                                correct.</span></label>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2 ck"><label><input id="a-c2"
+                                                                                                name="c2"
+                                                                                                type="checkbox"
+                                                                                                value="Yes"
+                                                                                                required><span>My two
+                                                                                                guarantors have each
+                                                                                                known me for at least 5
+                                                                                                years and have agreed to
+                                                                                                guarantee
+                                                                                                me.</span></label>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd c2 ck"><label><input id="a-c3"
+                                                                                                name="c3"
+                                                                                                type="checkbox"
+                                                                                                value="Yes"
+                                                                                                required><span>I
+                                                                                                understand each
+                                                                                                guarantor must sign the
+                                                                                                guarantor's declaration
+                                                                                                before a Notary Public
+                                                                                                or Commissioner for
+                                                                                                Oaths, attach a copy of
+                                                                                                their ID and a passport
+                                                                                                photograph, and certify
+                                                                                                three of my passport
+                                                                                                photographs.</span></label>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label for="a-sign">Your full
+                                                                                        name (typed as
+                                                                                        signature)</label><input
+                                                                                        id="a-sign" name="sign"
+                                                                                        type="text" required
+                                                                                        autocomplete="name">
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                        <div class="fd"><label
+                                                                                        for="a-date">Date</label><input
+                                                                                        id="a-date" name="date"
+                                                                                        type="date" required data-today>
+                                                                                <p class="err"></p>
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                        <div class="fnav"><button type="button" class="b bl2 fback"
+                                                                        hidden>Back</button><button type="button"
+                                                                        class="b by fnext">Continue</button><button
+                                                                        type="submit" class="b by lg2 fsubmit"
+                                                                        hidden>Submit application</button></div>
+                                                        <p class="fmsg" role="alert"></p>
+                                                </form>
+                                        </div>
+                                        <p class="hint ho">Head office: 13/15 Castle Rock Avenue, by 3rd Roundabout,
+                                                beside Mobil Filling Station, Lekki, Lagos. Tel: 0802 555 1111, 0815 084
+                                                6120, 0815 084 6108. Outsourcing: outsourcing@aarescuenigeria.com</p>
+                                </div>
+                        </div>
+                </section>
+        </main>
 
-<section class="ybn"><div class="w">
-<h2><svg class="ic"><use href="#i-phone"/></svg>Prefer to talk to someone?</h2>
-<p>Our team is on the phone 24 hours a day, 7 days a week, including major holidays.</p>
-<a class="b bk lg2" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>0802 555 1111</a>
-</div></section>
+        <section class="ybn">
+                <div class="w">
+                        <h2><svg class="ic">
+                                        <use href="#i-phone" /></svg>Prefer to talk to someone?</h2>
+                        <p>Our team is on the phone 24 hours a day, 7 days a week, including major holidays.</p>
+                        <a class="b bk lg2" href="tel:+2348025551111"><svg class="ic">
+                                        <use href="#i-phone" /></svg>0802 555 1111</a>
+                </div>
+        </section>
 
-<footer class="ft"><div class="w">
-<div class="fg">
-<div class="fb0"><a class="lg" href="index.html"><img src="img/logo.jpg" width="100" height="62" alt="AA Rescue" loading="lazy"></a><p>Nigeria's most trusted roadside assistance and mobility solutions company since 2003.</p>
-<ul class="fc"><li><svg class="ic"><use href="#i-phone"/></svg><a href="tel:+2348025551111">0802 555 1111</a></li><li><svg class="ic"><use href="#i-mail"/></svg><a href="mailto:info@aarescuenigeria.com">info@aarescuenigeria.com</a></li><li><svg class="ic"><use href="#i-pin"/></svg>13/15 Castle Rock Avenue, off Lekki-Epe Expressway, Jakande Roundabout, Lekki, Lagos</li></ul>
-<div class="so"><a href="https://www.facebook.com/aarescuenigeria/" aria-label="Facebook"><svg class="ic"><use href="#i-fb"/></svg></a><a href="https://twitter.com/AARescueNigeria" aria-label="X"><svg class="ic"><use href="#i-tw"/></svg></a><a href="https://www.instagram.com/aarescuenigeria/" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a><a href="#" aria-label="LinkedIn"><svg class="ic"><use href="#i-in"/></svg></a></div></div>
-<div><h3>About</h3><a href="about.html">Our Story</a><a href="coming-soon.html?page=Leadership%20Team">Leadership Team</a><a href="coming-soon.html?page=Press%20and%20Media">Press &amp; Media</a><a href="coming-soon.html?page=Awards">Awards</a><a href="careers.html">Careers</a></div>
-<div><h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet Management</a><a href="drivers-academy.html">Driving School</a><a href="drivers-outsourcing.html">Driver Outsourcing</a><a href="licensing.html">Vehicle Licensing</a></div>
-<div><h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a href="corporate-transport.html">Corporate Transport</a><a href="drivers-outsourcing.html">Driver Hire</a><a href="logistics.html">Logistics</a><a href="haul-vehicle.html">Haulage</a></div>
-<div><h3>Support</h3><a href="contact.html#faq">FAQs</a><a href="make-payment.html">Make Payment</a><a href="contact.html">Report an Issue</a><a href="contact.html#branches">Branch Locator</a><a href="tel:+2348025551111">Emergency Line</a></div>
-</div>
-<div class="nl"><div><h3>Stay up to date</h3><p>Receive news, offers, and safety tips from AA Rescue.</p></div><form id="nlf" novalidate><label class="sr" for="nle">Email address</label><input id="nle" type="email" placeholder="Enter your email" autocomplete="email"><button class="b by" type="submit">Subscribe</button><p id="nlm" role="status" aria-live="polite"></p></form></div>
-<p class="cp"><span>&copy; <span id="y">2026</span> AA Rescue Limited. All rights reserved.</span><span><a href="coming-soon.html?page=Privacy%20Policy">Privacy Policy</a><a href="coming-soon.html?page=Terms%20of%20Service">Terms of Service</a><a href="coming-soon.html?page=Cookie%20Policy">Cookie Policy</a></span></p>
-</div></footer>
+        <footer class="ft">
+                <div class="w">
+                        <div class="fg">
+                                <div class="fb0"><a class="lg" href="index.html"><img src="img/logo.jpg" width="100"
+                                                        height="62" alt="AA Rescue" loading="lazy"></a>
+                                        <p>Nigeria's most trusted roadside assistance and mobility solutions company
+                                                since 2003.</p>
+                                        <ul class="fc">
+                                                <li><svg class="ic">
+                                                                <use href="#i-phone" /></svg><a
+                                                                href="tel:+2348025551111">0802 555 1111</a></li>
+                                                <li><svg class="ic">
+                                                                <use href="#i-mail" /></svg><a
+                                                                href="mailto:info@aarescuenigeria.com">info@aarescuenigeria.com</a>
+                                                </li>
+                                                <li><svg class="ic">
+                                                                <use href="#i-pin" /></svg>13/15 Castle Rock Avenue, off
+                                                        Lekki-Epe Expressway, Jakande Roundabout, Lekki, Lagos</li>
+                                        </ul>
+                                        <div class="so"><a href="https://www.facebook.com/aarescuenigeria/"
+                                                        aria-label="Facebook"><svg class="ic">
+                                                                <use href="#i-fb" /></svg></a><a
+                                                        href="https://twitter.com/AARescueNigeria" aria-label="X"><svg
+                                                                class="ic">
+                                                                <use href="#i-tw" /></svg></a><a
+                                                        href="https://www.instagram.com/aarescuenigeria/"
+                                                        aria-label="Instagram"><svg class="ic">
+                                                                <use href="#i-ig" /></svg></a><a href="#"
+                                                        aria-label="LinkedIn"><svg class="ic">
+                                                                <use href="#i-in" /></svg></a></div>
+                                </div>
+                                <div>
+                                        <h3>About</h3><a href="about.html">Our Story</a><a
+                                                href="coming-soon.html?page=Leadership%20Team">Leadership Team</a><a
+                                                href="coming-soon.html?page=Press%20and%20Media">Press &amp; Media</a><a
+                                                href="coming-soon.html?page=Awards">Awards</a><a
+                                                href="careers.html">Careers</a>
+                                </div>
+                                <div>
+                                        <h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a
+                                                href="fleet-management.html">Fleet Management</a><a
+                                                href="drivers-academy.html">Driving School</a><a
+                                                href="drivers-outsourcing.html">Driver Outsourcing</a><a
+                                                href="licensing.html">Vehicle Licensing</a>
+                                </div>
+                                <div>
+                                        <h3>Corporate</h3><a href="fleet-management.html">Fleet Solutions</a><a
+                                                href="corporate-transport.html">Corporate Transport</a><a
+                                                href="drivers-outsourcing.html">Driver Hire</a><a
+                                                href="logistics.html">Logistics</a><a
+                                                href="haul-vehicle.html">Haulage</a>
+                                </div>
+                                <div>
+                                        <h3>Support</h3><a href="contact.html#faq">FAQs</a><a
+                                                href="make-payment.html">Make Payment</a><a href="contact.html">Report
+                                                an Issue</a><a href="contact.html#branches">Branch Locator</a><a
+                                                href="tel:+2348025551111">Emergency Line</a>
+                                </div>
+                        </div>
+                        <div class="nl">
+                                <div>
+                                        <h3>Stay up to date</h3>
+                                        <p>Receive news, offers, and safety tips from AA Rescue.</p>
+                                </div>
+                                <form id="nlf" novalidate><label class="sr" for="nle">Email address</label><input
+                                                id="nle" type="email" placeholder="Enter your email"
+                                                autocomplete="email"><button class="b by"
+                                                type="submit">Subscribe</button>
+                                        <p id="nlm" role="status" aria-live="polite"></p>
+                                </form>
+                        </div>
+                        <p class="cp"><span>&copy; <span id="y">2026</span> AA Rescue Limited. All rights
+                                        reserved.</span><span><a href="coming-soon.html?page=Privacy%20Policy">Privacy
+                                                Policy</a><a href="coming-soon.html?page=Terms%20of%20Service">Terms of
+                                                Service</a><a href="coming-soon.html?page=Cookie%20Policy">Cookie
+                                                Policy</a></span></p>
+                </div>
+        </footer>
 
-<a class="b by lg2 mcta" href="#form">Request drivers</a>
-<a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Emergency Rescue</a>
+        <a class="b by lg2 mcta" href="#form">Request drivers</a>
+        <a class="fab" id="fab" href="tel:+2348025551111"><svg class="ic">
+                        <use href="#i-phone" /></svg>Emergency Rescue</a>
 </body>
+
 </html>
