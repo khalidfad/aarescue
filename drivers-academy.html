@@ -21,6 +21,23 @@
         <script src="script.js" defer></script>
         <script src="forms.js" defer></script>
         <script src="member.js" defer></script>
+<style>
+.fcard [hidden]{display:none!important}
+.fcard .fs{margin:14px 0 6px;font-size:1rem}
+.fcard .hint{font-size:.85rem;opacity:.8;margin:0 0 12px}.fcard .hint.c2{grid-column:1/-1}
+.fcard .note{margin:0 0 10px;padding-left:20px;font-size:.88rem;line-height:1.55;grid-column:1/-1}.fcard .note li{margin-bottom:6px}
+.fcard .tc{grid-column:1/-1;margin:0 0 6px}.fcard .tc summary{cursor:pointer;font-weight:600}.fcard .tc div{font-size:.85rem;line-height:1.55;padding-top:8px}.fcard .tc ol{padding-left:20px;margin:8px 0 0}.fcard .tc li{margin-bottom:8px}
+.fcard .ck label{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;cursor:pointer}.fcard .ck input{width:auto;margin-top:3px;flex:none}
+.fcard .fstepl{margin:12px 0 8px;font-size:.8rem;font-weight:700;opacity:.75}
+.fcard .fbar{height:5px;border-radius:5px;background:rgba(128,128,128,.25);overflow:hidden}.fcard .fbar i{display:block;height:100%;width:0;background:var(--y);transition:width .4s}
+.fcard .fprog{display:flex;gap:6px;list-style:none;margin:10px 0 4px;padding:0}.fcard .fprog li{flex:1}
+.fcard .fprog button{width:100%;padding:6px 2px;border:0;border-bottom:3px solid rgba(128,128,128,.3);background:none;font:inherit;font-size:.7rem;font-weight:700;color:inherit;opacity:.55;cursor:pointer}
+.fcard .fprog li.on button,.fcard .fprog li.done button{border-color:var(--y);opacity:1}
+.fcard .fnav{display:flex;gap:10px;margin-top:20px}.fcard .fnext,.fcard .fsubmit{margin-left:auto}
+</style>
+<script>document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('aca-branch'),c=document.getElementById('aca-bcode'),d=document.getElementById('aca-sdate');
+if(b)b.addEventListener('change',function(){c.value=b.options[b.selectedIndex].dataset.code||''});
+if(d){d.value=new Date().toISOString().slice(0,10);d.readOnly=true}});</script>
 </head>
 
 <body class="subpage">
@@ -300,18 +317,11 @@ s0.parentNode.insertBefore(s1,s0);
                                         </div>
                                         <div class="blk" data-r>
                                                 <h2>How it works</h2>
-                                                <ol class="stp">
-                                                        <li><b>Enrol</b><span>Tell us who is attending and when.</span>
-                                                        </li>
-                                                        <li><b>We confirm your place</b><span>Our team calls to confirm
-                                                                        dates and details.</span></li>
-                                                        <li><b>Attend the programme</b><span>Complete the practical and
-                                                                        theory courses.</span></li>
-                                                </ol>
+                                                <ol class="stp"><li><b>Enrol online</b><span>Choose your course and branch, and tell us who is attending.</span></li><li><b>We confirm your place</b><span>Our team calls to confirm payment, your commencement date and details.</span></li><li><b>Attend and graduate</b><span>Complete the practical and theory courses within 3 months of starting.</span></li></ol>
                                         </div>
                                         <div class="blk" data-r>
                                                 <h2>Questions</h2>
-                                                <div class="fq lt">
+                                                <div class="fq lt"><details><summary>How long is my payment valid?</summary><p>Payment is valid for six months. If your studies are deferred because of pregnancy or ill health and you tell us, it lasts 12 months.</p></details><details><summary>Are Academy fees refundable?</summary><p>No. Driving Academy fees are non-refundable, and all training must be completed within 3 months of starting classes.</p></details><details><summary>What should I wear and bring?</summary><p>Wear suitable footwear and professional clothing that does not restrict movement. You must be able to read a number plate at 20.5 metres, with glasses if you normally wear them. Tell your instructor about any medication that may affect your driving.</p></details>
                                                         <details>
                                                                 <summary>What happens after I submit the form?</summary>
                                                                 <p>Our team reviews your request and contacts you by
@@ -348,69 +358,10 @@ s0.parentNode.insertBefore(s1,s0);
                                                                         &rarr;</em></a></div>
                                         </div>
                                 </div>
-                                <div class="fcard stick" id="form">
+                                <div class="fcard" id="form">
                                         <h2>Enrol at the Academy</h2>
-                                        <p>Reserve a place on the next programme.</p>
-                                        <form class="sf" id="aca" data-name="Drivers Academy enrolment" data-ref="ACA"
-                                                data-success="Thank you. The Academy team will contact you to confirm your place."
-                                                data-success-title="Enrolment received" novalidate>
-                                                <div class="gr2">
-                                                        <div class="fd c2"><label for="aca-name">Full name</label><input
-                                                                        id="aca-name" name="name" type="text" required
-                                                                        autocomplete="name">
-                                                                <p class="err" id="e-aca-name"></p>
-                                                        </div>
-                                                        <div class="fd"><label for="aca-phone">Phone
-                                                                        number</label><input id="aca-phone" name="phone"
-                                                                        type="tel" required placeholder="0802 555 1111"
-                                                                        autocomplete="tel" data-v="phone"
-                                                                        inputmode="tel">
-                                                                <p class="err" id="e-aca-phone"></p>
-                                                        </div>
-                                                        <div class="fd"><label for="aca-email">Email
-                                                                        <i>(optional)</i></label><input id="aca-email"
-                                                                        name="email" type="email" autocomplete="email"
-                                                                        data-v="email">
-                                                                <p class="err" id="e-aca-email"></p>
-                                                        </div>
-                                                        <div class="fd c2"><span class="lb"
-                                                                        id="l-aca-attendee">Enrolling as</span>
-                                                                <div class="chs" role="radiogroup"
-                                                                        aria-labelledby="l-aca-attendee" data-req>
-                                                                        <label><input type="radio" name="attendee"
-                                                                                        value="An individual"><span>An
-                                                                                        individual</span></label><label><input
-                                                                                        type="radio" name="attendee"
-                                                                                        value="A company group"><span>A
-                                                                                        company group</span></label>
-                                                                </div>
-                                                                <p class="err" id="e-aca-attendee"></p>
-                                                        </div>
-                                                        <div class="fd c2" data-show="attendee=A company group"><label
-                                                                        for="aca-company">Company name</label><input
-                                                                        id="aca-company" name="company" type="text"
-                                                                        required>
-                                                                <p class="err" id="e-aca-company"></p>
-                                                        </div>
-                                                        <div class="fd"><label for="aca-participants">Number of
-                                                                        participants</label><input id="aca-participants"
-                                                                        name="participants" type="number" required
-                                                                        min="1" max="500" inputmode="numeric">
-                                                                <p class="err" id="e-aca-participants"></p>
-                                                        </div>
-                                                        <div class="fd"><label for="aca-date">Preferred date
-                                                                        <i>(optional)</i></label><input id="aca-date"
-                                                                        name="date" type="date" data-future>
-                                                                <p class="err" id="e-aca-date"></p>
-                                                        </div>
-                                                        <div class="fd c2"><label for="aca-notes">Anything else we
-                                                                        should know? <i>(optional)</i></label><textarea
-                                                                        id="aca-notes" name="notes" rows="3"></textarea>
-                                                                <p class="err" id="e-aca-notes"></p>
-                                                        </div>
-                                                </div><button class="b by lg2" type="submit">Enrol now</button>
-                                                <p class="fmsg" role="alert"></p>
-                                        </form>
+                                        <p>Reserve a place on the next programme. Choose a light vehicle or heavy duty vehicle (HDV) course.</p>
+                                        <form class="sf" id="aca" data-name="Drivers Academy enrolment" data-ref="ACA" data-success="Thank you. The Academy team will contact you to confirm your place, payment and commencement date." data-success-title="Enrolment received" novalidate><p class="fstepl"></p><div class="fbar"><i></i></div><ol class="fprog"><li><button type="button">1. Course</button></li><li><button type="button">2. Your details</button></li><li><button type="button">3. Terms and sign</button></li></ol><div class="fstep" data-title="Course"><h3 class="fs">Choose your course</h3><div class="gr2"><div class="fd c2"><span class="lb" id="l-aca-course">Course</span><div class="chs" role="radiogroup" aria-labelledby="l-aca-course" data-req><label><input type="radio" name="course" value="Light vehicle"><span>Light vehicle</span></label><label><input type="radio" name="course" value="Heavy duty vehicle (HDV)"><span>Heavy duty vehicle (HDV)</span></label></div><p class="err" id="e-aca-course"></p></div><div class="fd c2"><span class="lb" id="l-aca-attendee">Enrolling as</span><div class="chs" role="radiogroup" aria-labelledby="l-aca-attendee" data-req><label><input type="radio" name="attendee" value="An individual"><span>An individual</span></label><label><input type="radio" name="attendee" value="A company group"><span>A company group</span></label></div><p class="err" id="e-aca-attendee"></p></div><div class="fd c2" data-show="attendee=A company group"><label for="aca-company">Company name</label><input id="aca-company" name="company" type="text" required ><p class="err" id="e-aca-company"></p></div><div class="fd"><label for="aca-participants">Number of participants</label><input id="aca-participants" name="participants" type="number" required min="1" max="500" inputmode="numeric"><p class="err" id="e-aca-participants"></p></div><div class="fd"><label for="aca-date">Preferred start date <i>(optional)</i></label><input id="aca-date" name="date" type="date" data-future><p class="err" id="e-aca-date"></p></div><div class="fd c2"><label for="aca-branch">AA Rescue branch</label><select id="aca-branch" name="branch" required><option value="">Choose a branch</option><option value="Head Office, Lekki, Lagos (AAR-HQ)" data-code="AAR-HQ">Head Office, Lekki, Lagos (AAR-HQ)</option><option value="Abuja Office 1, Gudu (AAR-ABJ1)" data-code="AAR-ABJ1">Abuja Office 1, Gudu (AAR-ABJ1)</option><option value="Abuja Office 2 (AAR-ABJ2)" data-code="AAR-ABJ2">Abuja Office 2 (AAR-ABJ2)</option><option value="Kaduna Office (AAR-KAD)" data-code="AAR-KAD">Kaduna Office (AAR-KAD)</option><option value="Orchid Road Office, Lagos (AAR-ORC)" data-code="AAR-ORC">Orchid Road Office, Lagos (AAR-ORC)</option><option value="Festac Office, Lagos (AAR-FST)" data-code="AAR-FST">Festac Office, Lagos (AAR-FST)</option><option value="Ikeja Office, Lagos (AAR-IKJ)" data-code="AAR-IKJ">Ikeja Office, Lagos (AAR-IKJ)</option><option value="Magodo Office, Lagos (AAR-OMO)" data-code="AAR-OMO">Magodo Office, Lagos (AAR-OMO)</option><option value="Ogombo Office, Lagos (AAR-OGO)" data-code="AAR-OGO">Ogombo Office, Lagos (AAR-OGO)</option><option value="Lekki Phase 1 Office, Lagos (AAR-LEK1)" data-code="AAR-LEK1">Lekki Phase 1 Office, Lagos (AAR-LEK1)</option><option value="Ikota Office, Lagos (AAR-IKO)" data-code="AAR-IKO">Ikota Office, Lagos (AAR-IKO)</option><option value="Port Harcourt 1 (AAR-PHC1)" data-code="AAR-PHC1">Port Harcourt 1 (AAR-PHC1)</option><option value="Port Harcourt 2 (AAR-PHC2)" data-code="AAR-PHC2">Port Harcourt 2 (AAR-PHC2)</option><option value="Sangotedo (AAR-SAN)" data-code="AAR-SAN">Sangotedo (AAR-SAN)</option><option value="Benin (AAR-BEN)" data-code="AAR-BEN">Benin (AAR-BEN)</option><option value="Allen (AAR-ALN)" data-code="AAR-ALN">Allen (AAR-ALN)</option><option value="Ikoyi" data-code="">Ikoyi</option><option value="Bayelsa (AAR-BAY)" data-code="AAR-BAY">Bayelsa (AAR-BAY)</option><option value="Asaba (AAR-ASB)" data-code="AAR-ASB">Asaba (AAR-ASB)</option><option value="Uyo (AAR-UYO)" data-code="AAR-UYO">Uyo (AAR-UYO)</option><option value="Chevron (AAR-CHV)" data-code="AAR-CHV">Chevron (AAR-CHV)</option></select><p class="err" id="e-aca-branch"></p></div><input type="hidden" name="branch_code" id="aca-bcode" value=""></div></div><div class="fstep" data-title="Your details"><h3 class="fs">Your details</h3><div class="gr2"><p class="hint c2">For a company group, enter the details of the lead contact.</p><div class="fd"><label for="aca-surname">Surname</label><input id="aca-surname" name="surname" type="text" required autocomplete="family-name"><p class="err" id="e-aca-surname"></p></div><div class="fd"><label for="aca-first">First and other names</label><input id="aca-first" name="first" type="text" required autocomplete="given-name"><p class="err" id="e-aca-first"></p></div><div class="fd c2"><label for="aca-address">Contact address</label><input id="aca-address" name="address" type="text" required autocomplete="street-address"><p class="err" id="e-aca-address"></p></div><div class="fd c2"><span class="lb" id="l-aca-gender">Gender</span><div class="chs" role="radiogroup" aria-labelledby="l-aca-gender" data-req><label><input type="radio" name="gender" value="Male"><span>Male</span></label><label><input type="radio" name="gender" value="Female"><span>Female</span></label></div><p class="err" id="e-aca-gender"></p></div><div class="fd"><label for="aca-age">Age</label><input id="aca-age" name="age" type="number" required min="1" max="99" inputmode="numeric"><p class="err" id="e-aca-age"></p></div><div class="fd"><label for="aca-phone">Telephone number</label><input id="aca-phone" name="phone" type="tel" required placeholder="0802 555 1111" autocomplete="tel" data-v="phone" inputmode="tel"><p class="err" id="e-aca-phone"></p></div><div class="fd"><label for="aca-email">Email address <i>(optional)</i></label><input id="aca-email" name="email" type="email" autocomplete="email" data-v="email"><p class="err" id="e-aca-email"></p></div><div class="fd"><label for="aca-nok">Next of kin</label><input id="aca-nok" name="nok" type="text" required ><p class="err" id="e-aca-nok"></p></div><div class="fd"><label for="aca-nokphone">Next of kin phone number</label><input id="aca-nokphone" name="nokphone" type="tel" required data-v="phone" inputmode="tel"><p class="err" id="e-aca-nokphone"></p></div></div></div><div class="fstep" data-title="Terms and sign"><h3 class="fs">Terms and signature</h3><div class="gr2"><ul class="note c2"><li>Payment is valid for <b>six (6) months</b> (12 months if studies are deferred for pregnancy or ill health and we are notified).</li><li>Complete the programme within <b>3 months</b> of starting. <b>Academy fees are non-refundable.</b></li></ul><details class="tc c2"><summary>Terms and conditions for driving lessons provided by AA Rescue Drivers Training Institute</summary><div><p>These terms are the basis on which driving lessons and courses are offered to you.</p><ol><li><b>General conduct.</b> AA Rescue instructors are bound by a professional code of conduct. They will be courteous, polite, tidy and punctual, and behave professionally and ethically at all times. Your instructor's car or truck will be well maintained, clean and tidy.</li><li><b>Eyesight and health.</b> You must be able to read a number plate at 20.5 metres, with glasses if normally worn. Present yourself for lessons in a fit state to drive, mindful of the laws on alcohol and drugs. The instructor may cancel the lesson if you seem unwell or your judgement seems impaired.</li><li><b>Payments.</b> Payment is made to AA Rescue on the agreed terms at registration or at the start of the lesson. It is valid for six (6) months, within which you must complete the classes. If your studies are deferred due to pregnancy or ill health and the company is notified, payment lasts 12 months.</li><li><b>Postponement.</b> AA Rescue may postpone lessons if weather or road conditions seem unsuitable or dangerous, and cannot be held responsible for any costs resulting from postponement, for whatever reason.</li><li><b>Damage to the vehicle.</b> The vehicle is insured under road traffic law, but damage to tyres and wheels is not covered. You are liable for any damage caused during your lesson, especially where you habitually do not follow your instructor's directions.</li><li><b>Punctuality.</b> Be punctual and record all appointments in your Log in Card to avoid mistakes. You may need to wait if the instructor is delayed by unforeseen circumstances. Lost lesson time is made up at the end of the lesson if possible, or at a later date.</li><li><b>Learner comfort and safety.</b> Wear suitable footwear and professional clothing that does not restrict movement; no indecent dressing. Tell your instructor before any lesson about medication that may affect your ability to drive safely.</li><li><b>Training programme.</b> All training must be completed within 3 months at the maximum from the start of classes. Driving Academy fees are non-refundable. Students must listen to and abide by their instructors' instructions, be of good character, and be respectful to instructors and other road users while training.</li></ol></div></details><div class="fd c2"><span class="lb" id="l-aca-payment">Preferred payment method</span><div class="chs" role="radiogroup" aria-labelledby="l-aca-payment" data-req><label><input type="radio" name="payment" value="POS"><span>POS</span></label><label><input type="radio" name="payment" value="Bank transfer"><span>Bank transfer</span></label></div><p class="err" id="e-aca-payment"></p></div><div class="fd c2"><label for="aca-notes">Anything else we should know? <i>(optional)</i></label><textarea id="aca-notes" name="notes" rows="3"></textarea><p class="err" id="e-aca-notes"></p></div><div class="fd c2 ck"><label><input id="aca-eyes" name="eyes" type="checkbox" value="Yes" required><span>I can read a number plate at 20.5 metres (with glasses if I normally wear them).</span></label><p class="err" id="e-aca-eyes"></p></div><div class="fd c2 ck"><label><input id="aca-terms" name="terms" type="checkbox" value="Yes" required><span>I have read and agree to the terms and conditions for driving lessons provided by AA Rescue Drivers Training Institute.</span></label><p class="err" id="e-aca-terms"></p></div><div class="fd"><label for="aca-sign">Your full name (typed as signature)</label><input id="aca-sign" name="sign" type="text" required autocomplete="name"><p class="err" id="e-aca-sign"></p></div><div class="fd"><label for="aca-sdate">Date</label><input id="aca-sdate" name="sign_date" type="date" required data-today><p class="err" id="e-aca-sdate"></p></div><p class="hint c2">For office use: serial number, amount paid, balance, commencement date and graduation date are completed by our team, and the instructor signs after enrolment.</p></div></div><div class="fnav"><button type="button" class="b bl2 fback" hidden>Back</button><button type="button" class="b by fnext">Continue</button><button type="submit" class="b by lg2 fsubmit" hidden>Enrol now</button></div><p class="fmsg" role="alert"></p></form>
                                 </div>
                         </div>
                 </section>
