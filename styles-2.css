@@ -206,13 +206,13 @@ h1{font-size:clamp(2.5rem,4.6vw,4.2rem);font-weight:900;line-height:1.02;letter-
 .ctr{text-align:center;margin-top:48px}
 
 /* testimonials */
-.tg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.tsec .ty{margin-top:24px;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 30px}.tsec .ty blockquote{flex:1 1 280px}.tsec .ty p{flex:1 1 260px}.tsec .ty .b{align-self:center}
 .tc{display:flex;flex-direction:column;gap:18px;padding:30px;border-radius:22px;background:#fff;border:1px solid var(--l);transition:transform .4s var(--e),box-shadow .4s var(--e)}
 .tc:hover{transform:translateY(-6px);box-shadow:0 26px 44px -26px rgba(15,17,21,.3)}
 .rt{display:flex;gap:2px;color:var(--y)}
 blockquote{font-size:.95rem;color:#3B4252;line-height:1.7}
 figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px;border-top:1px solid var(--l);font-size:.78rem;color:var(--m)}
-figcaption i{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#0A0A0B;color:var(--y);font-style:normal;font-weight:800;font-size:.8rem;flex:none}
+figcaption img{width:64px;height:82px;border-radius:10px;object-fit:cover;flex:none;background:#eee}figcaption em{display:block;margin-top:3px;color:#B07F00;font-style:normal;font-weight:700;font-size:.74rem}figcaption i{display:grid;place-items:center;width:64px;height:82px;border-radius:10px;background:#0A0A0B;color:var(--y);font-style:normal;font-weight:800;font-size:.8rem;flex:none}
 figcaption b{display:block;color:var(--t);font-size:.9rem}
 .ty{background:#0A0A0B;border-color:#0A0A0B;color:#fff;justify-content:center}
 .ty blockquote{font-size:1.6rem;font-weight:800;letter-spacing:-.03em;line-height:1.15;color:#fff}
@@ -268,7 +268,7 @@ figcaption b{display:block;color:var(--t);font-size:.9rem}
 #nlm{width:100%;font-size:.78rem;color:var(--y);min-height:1.2em}
 .cp{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:28px;font-size:.8rem}
 .cp a{margin-left:22px;transition:color .2s}
-.fab{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:8px;padding:14px 22px;border-radius:99px;background:var(--y);color:#111;font-weight:700;font-size:.88rem;box-shadow:0 0 0 0 rgba(255,196,0,.6),0 18px 40px -10px rgba(255,196,0,.7);transform:translateY(140%);transition:transform .5s var(--e);animation:ring 2.4s infinite}
+.fab{position:fixed;left:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:8px;padding:14px 22px;border-radius:99px;background:var(--y);color:#111;font-weight:700;font-size:.88rem;box-shadow:0 0 0 0 rgba(255,196,0,.6),0 18px 40px -10px rgba(255,196,0,.7);transform:translateY(140%);transition:transform .5s var(--e);animation:ring 2.4s infinite}
 .fab.show{transform:none}
 
 /* reveal on scroll */
@@ -384,7 +384,7 @@ nav>a{padding:6px 0}
 .since{right:10px;bottom:-26px}.since.y{left:10px;top:-22px}
 .fg{grid-template-columns:1fr 1fr}
 .cp a{margin:0 18px 0 0}
-.fab{right:12px;bottom:12px;padding:13px 18px}
+.fab{left:12px;bottom:12px;padding:13px 18px}
 .scr{display:none}
 .mq li:after{margin:0 28px}
 }
@@ -458,3 +458,38 @@ html{scroll-behavior:auto}
 .mcard:hover{transform:rotate(0)}.mcard b{font-size:1.7rem;font-weight:900;letter-spacing:.04em}.mcard p{margin-top:-14px;color:rgba(255,255,255,.7)}
 .mc,.mc2{display:flex;justify-content:space-between;gap:10px;font-size:.7rem;font-weight:800;letter-spacing:.1em}.mc .ic{color:var(--y);width:1.8em;height:1.8em}.mc2{color:var(--y)}
 @media(max-width:680px){.mhome{padding:80px 0}}
+
+/* testimonials carousel */
+.tcw{position:relative}
+.tcar{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:10px 4px 30px;margin:-10px -4px -6px;outline-offset:4px}
+.tcar::-webkit-scrollbar{display:none}
+.tcar .tc{flex:0 0 calc((100% - 40px)/3);scroll-snap-align:start}
+.tnav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:6px}
+.tnav[hidden]{display:none}
+.tnav>button{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--l);background:#fff;color:var(--t);cursor:pointer;transition:background .2s,border-color .2s,opacity .2s}
+.tnav>button:first-child .ic{transform:rotate(180deg)}
+.tnav>button:hover:not(:disabled){background:var(--y);border-color:var(--y)}
+.tnav>button:disabled{opacity:.35;cursor:default}
+.tdots{display:flex;gap:8px}
+.tdots button{width:10px;height:10px;padding:0;border:0;border-radius:99px;background:#CBD0D8;cursor:pointer;transition:width .3s,background .3s}
+.tdots button.on{width:26px;background:var(--y)}
+@media(max-width:1100px){.tcar .tc{flex-basis:calc((100% - 20px)/2)}}
+@media(max-width:680px){.tcar{gap:14px;scroll-padding-left:4px}.tcar .tc{flex-basis:86%;padding:24px}.tnav>button{width:42px;height:42px}.tsec .ty{flex-direction:column;align-items:flex-start}}
+
+/* slim homepage */
+.sg.sg3{grid-template-columns:repeat(3,1fr)}
+.svall{margin-top:40px;text-align:center}
+@media(max-width:1100px){.sg.sg3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.sg.sg3{grid-template-columns:1fr}.svall .b{width:100%}}
+
+/* tire cursor */
+.tire{position:fixed;left:0;top:0;z-index:9999;width:0;height:0;pointer-events:none;opacity:0;transition:opacity .25s}
+.tire .tw{position:absolute;left:-17px;top:-17px;width:34px;height:34px;transition:scale .25s var(--e);filter:drop-shadow(0 3px 5px rgba(0,0,0,.45))}
+.tire .tw svg{width:100%;height:100%;display:block}
+.tire.hot .tw{scale:1.55}.tire.down .tw{scale:.8}.tire.hot.down .tw{scale:1.2}
+.tire.txt{opacity:0!important}
+.tm{position:fixed;left:0;top:0;z-index:9998;pointer-events:none;width:14px;height:2px;margin:-1px 0 0 -7px;border-radius:2px;background:rgba(255,196,0,.8);box-shadow:0 7px 0 rgba(255,196,0,.8),0 -0px 0 transparent;animation:tmf .9s ease-out forwards}
+@keyframes tmf{to{opacity:0}}
+html.tire-on,html.tire-on *{cursor:none!important}
+html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!important}
+@media(prefers-reduced-motion:reduce){.tm{display:none}.tire .tw{transition:none}}

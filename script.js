@@ -174,13 +174,95 @@
     });
   }
 
-  /* ---------- Newsletter (front-end only: connect to your email provider) ---------- */
+  /* ---------- Newsletter: footer form, post prompts and the 15-second popup ----------
+     Front-end only. Set NEWSLETTER_API to your endpoint (POST JSON {email, source}) and have it send the
+     welcome email: "Welcome! You'll now receive updates, offers, and news." */
+  var NEWSLETTER_API = '';
+  var WELCOME = "Welcome! You'll now receive updates, offers, and news.";
+  var okEmail = function (v) { return /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.trim()); };
+  function subscribe(email, source) {
+    var done = function () { try { localStorage.setItem('aar_nl', '1'); } catch (e) {} };
+    if (!NEWSLETTER_API) { done(); return Promise.resolve(); }
+    return fetch(NEWSLETTER_API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email.trim(), source: source }) })
+      .then(function (r) { if (!r.ok) throw new Error('x'); done(); });
+  }
+  function nlSubmit(form, input, out, source, after) {
+    if (!okEmail(input.value)) { out.textContent = 'Please enter a valid email address.'; input.focus(); return; }
+    out.textContent = '';
+    subscribe(input.value, source).then(function () { out.textContent = WELCOME; input.value = ''; if (after) after(); })
+      .catch(function () { out.textContent = 'We could not send this. Check your connection and try again, or call 0802 555 1111.'; });
+  }
   var nlf = $('#nlf'), nle = $('#nle'), nlm = $('#nlm');
-  if (nlf) nlf.addEventListener('submit', function (e) {
+  if (nlf) nlf.addEventListener('submit', function (e) { e.preventDefault(); nlSubmit(nlf, nle, nlm, 'footer'); });
+  document.addEventListener('submit', function (e) {
+    var f = e.target.closest ? e.target.closest('form.nlsub') : null; if (!f) return;
     e.preventDefault();
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(nle.value.trim())) { nlm.textContent = 'Please enter a valid email address.'; nle.focus(); return; }
-    nlm.textContent = 'Thanks! You are on the list.'; nle.value = '';
+    nlSubmit(f, $('input', f), $('.nlm', f), f.dataset.src || 'post', f.dataset.src === 'popup' ? function () { setTimeout(closeNl, 2200); } : null);
   });
+  var nlp = null;
+  function closeNl() { if (nlp) { nlp.classList.remove('open'); nlp.setAttribute('aria-hidden', 'true'); } try { sessionStorage.setItem('aar_nlp', '1'); } catch (e) {} }
+  function openNl() {
+    nlp = document.createElement('div'); nlp.className = 'nlp'; nlp.setAttribute('role', 'dialog'); nlp.setAttribute('aria-modal', 'true'); nlp.setAttribute('aria-labelledby', 'nlt');
+    nlp.innerHTML = '<div class="nlc"><button class="nlx" type="button" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" width="16" height="16"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>'
+      + '<span class="ico"><svg class="ic" viewBox="0 0 24 24" width="26" height="26"><path d="M4 6h16v12H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none"/></svg></span>'
+      + '<h2 id="nlt">Stay in the loop</h2><p>Get updates, offers, and news from AA Rescue straight to your inbox.</p>'
+      + '<form class="nlsub" data-src="popup" novalidate><input type="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address"><button class="b by" type="submit">Subscribe</button><p class="nlm" role="status" aria-live="polite"></p></form>'
+      + '<button class="nln" type="button">No thanks</button></div>';
+    document.body.appendChild(nlp);
+    $('.nlx', nlp).onclick = closeNl; $('.nln', nlp).onclick = closeNl;
+    nlp.addEventListener('click', function (e) { if (e.target === nlp) closeNl(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nlp.classList.contains('open')) closeNl(); });
+    requestAnimationFrame(function () { nlp.classList.add('open'); nlp.setAttribute('aria-hidden', 'false'); $('input', nlp).focus({ preventScroll: true }); });
+  }
+  (function popupTimer() {
+    var subbed = false, seen = false;
+    try { subbed = localStorage.getItem('aar_nl') === '1'; seen = sessionStorage.getItem('aar_nlp') === '1'; } catch (e) {}
+    if (subbed || seen || !$('#nlf')) return;
+    var tries = 0;
+    setTimeout(function wait() {
+      var busyPop = $('#bpm.open') || document.body.style.overflow === 'hidden';
+      if (busyPop && tries++ < 20) return setTimeout(wait, 3000);
+      if (!busyPop) openNl();
+    }, 15000);
+  })();
+
+  /* ---------- Blog (sample posts: edit this list) ---------- */
+  var POSTS = [
+    { cat: 'News', title: 'Membership plans from \u20A6150,000', excerpt: 'Standard cover for one car starts at \u20A6150,000, with 24-hour recovery in Lagos, Abuja and Port Harcourt.',
+      body: ['AA Rescue membership is priced by the number of vehicles you register. Standard (1 car) is \u20A6150,000, Family (2 cars) is \u20A6280,000 and Comprehensive (3 cars) is \u20A6360,000.', 'Members also enjoy rapid response and 3% off other AA Rescue services. See the membership page for fleet plans.'] },
+    { cat: 'Tips', title: '5 checks to make before a long trip', excerpt: 'Tyres, oil, lights, brakes and coolant: a quick routine that prevents most breakdowns.',
+      body: ['Before a long journey, check your tyre pressure and tread, engine oil, lights, brakes and coolant level. Carry a spare tyre, a warning triangle and a charged phone.', 'A few minutes of checking at home is far cheaper than a breakdown on the road. If anything looks wrong, call us before you set off.'] },
+    { cat: 'Tips', title: 'Broken down on the expressway? Do this first', excerpt: 'Stay calm, get safe and call for help. Here is the step-by-step plan our team recommends.',
+      body: ['Switch on your hazard lights, move the vehicle as far off the road as you safely can, and get everyone out on the side away from traffic.', 'Place a warning triangle behind the vehicle if it is safe, then call our 24-hour line on 0802 555 1111 and share your exact location.'] },
+    { cat: 'Company Updates', title: 'New learner registration: what to expect', excerpt: 'Registration days, your introduction session and how your lessons are scheduled.',
+      body: ['New learners are registered every Monday and Friday at 3:00 PM, and introduction sessions hold every Monday and Tuesday.', 'After registration our team confirms your lesson schedule with you. All training must be completed within three months of starting.'] }
+  ];
+  function postCard(p, full) {
+    var c = document.createElement('article'); c.className = 'bgc';
+    var sm = document.createElement('small'); sm.textContent = p.cat; c.appendChild(sm);
+    var h = document.createElement('h3'); h.textContent = p.title; c.appendChild(h);
+    var ex = document.createElement('p'); ex.textContent = p.excerpt; c.appendChild(ex);
+    if (full) {
+      var d = document.createElement('details'), s = document.createElement('summary'), pb = document.createElement('div');
+      s.textContent = 'Read more'; pb.className = 'pb';
+      p.body.forEach(function (t) { var q = document.createElement('p'); q.textContent = t; pb.appendChild(q); });
+      pb.insertAdjacentHTML('beforeend', '<div class="psub"><b>Enjoyed this post?</b><p>Get news, tips and company updates in your inbox.</p><form class="nlsub" data-src="post" novalidate><input type="email" placeholder="Enter your email" autocomplete="email" aria-label="Email address"><button class="b by" type="submit">Subscribe</button><p class="nlm" role="status" aria-live="polite"></p></form></div>');
+      d.appendChild(s); d.appendChild(pb); c.appendChild(d);
+    }
+    return c;
+  }
+  var bg = $('#bgrid'), bcats = $('#bcats'), bh = $('#bhome');
+  if (bg && bcats) {
+    var cats = ['All', 'News', 'Tips', 'Company Updates'], act = 'All';
+    var draw = function () {
+      bg.innerHTML = ''; POSTS.filter(function (p) { return act === 'All' || p.cat === act; }).forEach(function (p) { bg.appendChild(postCard(p, true)); });
+      [].forEach.call(bcats.children, function (b) { b.setAttribute('aria-pressed', b.dataset.c === act ? 'true' : 'false'); });
+    };
+    cats.forEach(function (c) { var b = document.createElement('button'); b.type = 'button'; b.dataset.c = c; b.textContent = c; b.onclick = function () { act = c; draw(); }; bcats.appendChild(b); });
+    draw();
+    var hash = decodeURIComponent((location.hash || '').slice(1)); if (cats.indexOf(hash) > 0) { act = hash; draw(); }
+  }
+  if (bh) POSTS.slice(0, 3).forEach(function (p) { bh.appendChild(postCard(p, false)); });
 
   /* ---------- Clients carousel: local logo first, then the existing-site logo, then the client's name ---------- */
   $$('.cc').forEach(function (cc) {

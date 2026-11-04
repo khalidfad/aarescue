@@ -17,6 +17,7 @@
     <link rel="preload" as="image" href="img/haul-cars.webp" type="image/webp">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+<script src="lang.js" defer></script>
     <style id="cc-base">
         /* Client logo carousel base styles. :where() keeps specificity at zero so your own .cc rules always win. */
         :where(.cc) {
@@ -302,21 +303,23 @@
                             href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
                             href="licensing.html">Licensing</a><a href="careers.html">Job Portal</a><a
                             href="fleet-management.html">Fleet
-                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
+                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a href="membership.html">Membership</a><a class="all"
                             href="services.html">View all services<svg class="ic">
                                 <use href="#i-arrow" /></svg></a></div>
                 </div>
-                <a href="licensing.html">Licensing</a>
-                <a href="membership.html">Membership</a>
-                <a href="coming-soon.html?page=Blog">Blog</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="drivers-outsourcing.html">Outsourcing</a>
+<a href="coming-soon.html?page=Galaxy">Galaxy</a>
+<a href="blog.html">Blog</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="careers.html">Careers</a>
+<a href="contact.html">Contact Us</a>
                 <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic">
-                            <use href="#i-user" /></svg>Login</a><a class="b bjob" href="careers.html">Apply for a
-                        Job</a><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo"
+                            <use href="#i-user" /></svg>Login</a><a class="b by" href="book-car.html">Book Your Car</a><a class="b bo"
                         href="make-payment.html">Make
                         Payment</a></span>
             </nav>
-            <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
+            <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" aria-label="English">EN</button><i aria-hidden="true">|</i><button type="button" data-lang="fr" aria-pressed="false" aria-label="Fran&ccedil;ais">FR</button></div>
+<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
                     <use href="#i-menu" /></svg></button>
         </div>
     </header>
@@ -666,7 +669,7 @@
                 </div>
                 <figure class="tc ty" data-r>
                     <blockquote>Your story could be next.</blockquote>
-                    <p>Tell us about your rescue, training or fleet experience with AA Rescue.</p><a class="b by"
+                    <p>Tell us about your rescue, training or fleet experience with AA Rescue.</p><a class="b bl2" href="testimonials.html" style="margin-right:10px">Read all testimonials</a><a class="b by"
                         href="contact.html">Share your experience<svg class="ic">
                             <use href="#i-arrow" /></svg></a>
                 </figure>
@@ -674,7 +677,9 @@
         </section>
 
 
-        <section class="ybn" id="contact">
+        <section class="lt" id="blog"><div class="w"><div class="sh" data-r><small>BLOG</small><h2>Latest from the blog</h2><p>News, tips and company updates from AA Rescue.</p></div><div class="bgg" id="bhome"></div><p style="margin-top:26px"><a class="b bl2" href="blog.html">View all posts<svg class="ic"><use href="#i-arrow"/></svg></a></p></div></section>
+<section class="dcta" id="need-driver"><div class="w"><div><h2>Do you need a <span>driver?</span></h2><p>Get trained, vetted drivers for your business. Request outsourced drivers today.</p></div><a class="b by lg2" href="drivers-outsourcing.html#form">Request a Driver<svg class="ic"><use href="#i-arrow"/></svg></a></div></section>
+<section class="ybn" id="contact">
             <div class="w">
                 <h2 data-r><svg class="ic">
                         <use href="#i-warn" /></svg>Need Immediate Roadside Assistance?</h2>
@@ -723,8 +728,7 @@
                     <h3>About</h3><a href="about.html">Our Story</a><a
                         href="coming-soon.html?page=Leadership%20Team">Leadership Team</a><a
                         href="coming-soon.html?page=Press%20and%20Media">Press &amp; Media</a><a
-                        href="coming-soon.html?page=Awards">Awards</a><a
-                        href="https://jobs.aarescuenigeria.com">Careers</a>
+                        href="coming-soon.html?page=Awards">Awards</a><a href="careers.html">Careers</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="coming-soon.html?page=Galaxy">Galaxy</a>
                 </div>
                 <div>
                     <h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet
@@ -1337,7 +1341,7 @@
     <script>
         (function () {
             /* ===== Edit these: blog page link and the posts shown in the popup ===== */
-            var BLOG_URL = 'coming-soon.html?page=Blog';
+            var BLOG_URL='blog.html';
             var POSTS = [{
                     tag: 'Road safety',
                     date: 'Oct 2026',
