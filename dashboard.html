@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>My Dashboard | AA Rescue</title><meta name="description" content="Your AA Rescue member dashboard."><meta name="theme-color" content="#0A0A0B"><script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="member.css"><script src="script.js" defer></script><script src="member.js" defer></script></head>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&display=swap"><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="member.css"><script src="script.js" defer></script>
+<script src="lang.js" defer></script><script src="member.js" defer></script></head>
 <body class="subpage" data-page="dashboard"><svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <defs>
             <symbol id="i-phone" viewBox="0 0 24 24">
@@ -137,23 +138,23 @@
                             href="drivers-academy.html">Drivers Academy</a><a href="haul-vehicle.html">Haulage</a><a
                             href="licensing.html">Licensing</a><a
                             href="careers.html">Job Portal</a><a href="fleet-management.html">Fleet
-                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a class="all"
+                            Management</a><a href="vehicle-tracking.html">Vehicle Tracking</a><a href="index.html#galaxy">Galaxy</a><a href="membership.html">Membership</a><a class="all"
                             href="services.html">View all services<svg class="ic">
                                 <use href="#i-arrow" /></svg></a></div>
                 </div>
-                <a href="licensing.html">Licensing</a>
-                <a href="membership.html">Membership</a>
-<a href="coming-soon.html?page=Blog">Blog</a>
-                <a href="contact.html">Contact Us</a>
-                <span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b bjob" href="careers.html">Apply for a Job</a><a class="b by"
+<a href="blog.html">Blog</a>
+<a href="careers.html">Careers</a>
+<a href="contact.html">Contact Us</a>
+<span class="nr"><a class="b blg" data-auth-link href="login.html"><svg class="ic"><use href="#i-user"/></svg>Login</a><a class="b by"
                         href="book-car.html">Book Your Car</a><a class="b bo" href="make-payment.html">Make
                         Payment</a></span>
             </nav>
-            <button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
+            <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" aria-label="English">EN</button><i aria-hidden="true">|</i><button type="button" data-lang="fr" aria-pressed="false" aria-label="Fran&ccedil;ais">FR</button></div>
+<button class="mb" id="mb" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg class="ic">
                     <use href="#i-menu" /></svg></button>
         </div>
     </header><main id="top"><section class="dh"><div class="hbgw"><div class="hbg" id="hbg" aria-hidden="true"><img src="img/haul-cars.webp" width="1080" height="810" alt=""></div></div><div class="w dh-g"><div><p class="badge" id="dStat"></p><h1 id="dHi">Welcome</h1><p class="sub" id="dSub"></p></div><div class="cta"><a class="b by lg2" href="recovery.html#form"><svg class="ic"><use href="#i-truck"/></svg>Request a rescue</a><a class="b bg2 lg2" href="tel:+2348025551111"><svg class="ic"><use href="#i-phone"/></svg>Call 24/7</a></div></div></section>
-<section class="dbm"><div class="w"><p class="note">Dashboard data is stored in this browser for preview. Connect it to your member database before launch.</p><div class="sts"><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-shield"/></svg></span><b id="sLeft">-</b><span>Rescues left</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-clock"/></svg></span><b id="sDays">-</b><span>Days to renewal</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-car"/></svg></span><b id="sVeh">-</b><span>Vehicles</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-hist"/></svg></span><b id="sTot">-</b><span>Rescues this year</span></div></div>
+<section class="dbm"><div class="w"><p class="note">Dashboard data is stored in this browser for preview. Connect it to your member database before launch.</p><div class="sts"><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-shield"/></svg></span><b id="sLeft">-</b><span>Recovery cover</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-clock"/></svg></span><b id="sDays">-</b><span>Days to renewal</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-car"/></svg></span><b id="sVeh">-</b><span>Vehicles</span></div><div class="stc"><span class="ib l"><svg class="ic"><use href="#i-hist"/></svg></span><b id="sTot">-</b><span>Recoveries this year</span></div></div>
 <div class="dg"><div class="col"><div class="pn"><h2>Your plan</h2><div class="pt"><div><b id="pName"></b><span id="pPrice"></span></div><a class="b bl2" href="membership.html#plans">Upgrade plan</a></div><div class="mtr"><i id="mBar"></i></div><p class="ml" id="mTxt"></p><ul class="pk" id="pPerks"></ul></div>
 <div class="pn"><h2>Rescue history</h2><div id="hist"></div></div></div>
 <div class="col"><div class="pn"><h2>Quick actions</h2><div class="qa"><a href="recovery.html#form"><svg class="ic"><use href="#i-truck"/></svg>Request a rescue<svg class="ic ar"><use href="#i-arrow"/></svg></a><a href="book-car.html"><svg class="ic"><use href="#i-car"/></svg>Book your car<svg class="ic ar"><use href="#i-arrow"/></svg></a><a href="make-payment.html"><svg class="ic"><use href="#i-card"/></svg>Make payment<svg class="ic ar"><use href="#i-arrow"/></svg></a><a href="vehicle-tracking.html"><svg class="ic"><use href="#i-gps"/></svg>Vehicle tracking<svg class="ic ar"><use href="#i-arrow"/></svg></a><a href="licensing.html"><svg class="ic"><use href="#i-doc"/></svg>Licensing<svg class="ic ar"><use href="#i-arrow"/></svg></a><a href="contact.html"><svg class="ic"><use href="#i-head"/></svg>Contact support<svg class="ic ar"><use href="#i-arrow"/></svg></a></div></div>
@@ -188,8 +189,7 @@
                     <h3>About</h3><a href="about.html">Our Story</a><a
                         href="coming-soon.html?page=Leadership%20Team">Leadership Team</a><a
                         href="coming-soon.html?page=Press%20and%20Media">Press &amp; Media</a><a
-                        href="coming-soon.html?page=Awards">Awards</a><a
-                        href="https://jobs.aarescuenigeria.com">Careers</a>
+                        href="coming-soon.html?page=Awards">Awards</a><a href="careers.html">Careers</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="index.html#galaxy">Galaxy</a>
                 </div>
                 <div>
                     <h3>Services</h3><a href="recovery.html">Vehicle Recovery</a><a href="fleet-management.html">Fleet
