@@ -547,3 +547,7 @@ html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!importa
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .tgrid .tc{margin:0}
 @media(prefers-reduced-motion:reduce){.nlp,.nlc{transition:none}}
+
+/* keep the logo visible on every screen width */
+.hd .lg{flex:none;display:block}.hd .lg img{flex:none;max-width:none}
+@media(min-width:1361px) and (max-width:1560px){nav{gap:14px;font-size:.8rem}.nr{gap:8px}.nr .b{padding:.4rem .75rem;font-size:.75rem}.hd .w{gap:12px}}

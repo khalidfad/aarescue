@@ -129,7 +129,7 @@
       brand: bo ? val('vBrandO') : brand,
       model: (bo || model === 'Others') ? val('vModelO') : model,
       year: $('#vYear').value, value: val('vValue').replace(/\D/g, ''),
-      cond: checked('vCond'), sec: checked('vSec'),
+      cond: checked('vCond'), sec: checked('vSec'), lux: checked('vLux'),
       qty: parseInt($('#vQty').value, 10) || 0, notes: val('vNotes'),
       papers: upPapers.get(), photos: upPhotos.get()
     };
@@ -143,7 +143,7 @@
     ['vBrand', 'vYear'].forEach(function (id) { $('#' + id).value = ''; });
     ['vBrandO', 'vModelO', 'vValue', 'vNotes'].forEach(function (id) { $('#' + id).value = ''; });
     $('#vQty').value = 1; onBrand(); upPapers.set([]); upPhotos.set([]);
-    ['vType', 'vBrand', 'vModel', 'vBrandO', 'vModelO', 'vYear', 'vCond', 'vSec', 'vQty', 'fPapers', 'fPhotos'].forEach(function (id) { setErr(id, ''); });
+    ['vType', 'vBrand', 'vModel', 'vBrandO', 'vModelO', 'vYear', 'vCond', 'vSec', 'vLux', 'vQty', 'fPapers', 'fPhotos'].forEach(function (id) { setErr(id, ''); });
   }
   function writeVeh(v) {
     clearEditor();
@@ -151,6 +151,7 @@
     if ((r = $('input[name="vType"][value="' + v.type + '"]'))) r.checked = true;
     if ((r = $('input[name="vCond"][value="' + v.cond + '"]'))) r.checked = true;
     if ((r = $('input[name="vSec"][value="' + v.sec + '"]'))) r.checked = true;
+    if ((r = $('input[name="vLux"][value="' + v.lux + '"]'))) r.checked = true;
     var known = !!MODELS[v.brand];
     $('#vBrand').value = known ? v.brand : 'Others'; onBrand();
     if (known) {
@@ -173,6 +174,7 @@
     c('vYear', v.year ? '' : 'Choose the year.');
     c('vCond', v.cond ? '' : 'Choose the condition.');
     c('vSec', v.sec ? '' : 'Choose the security status.');
+    c('vLux', v.lux ? '' : 'Tell us if this is a luxury vehicle.');
     c('vQty', v.qty >= 1 && v.qty <= 10 ? '' : 'Enter a quantity from 1 to 10.');
     return bad.length ? bad[0] : '';
   }
@@ -197,9 +199,18 @@
     var ul = $('#vlist');
     ul.innerHTML = state.vehicles.map(function (v, i) {
       var name = esc(v.year + ' ' + v.brand + ' ' + v.model);
-      return '<li class="vc"><span class="vi"><svg class="ic"><use href="#i-car"/></svg></span><div class="vt"><b>' + name + '</b><p>' + esc([v.type, v.cond, v.sec].join(' \u00b7 ')) + ' \u00b7 Qty ' + v.qty + '</p><p class="vf">' + v.papers.length + ' paper' + (v.papers.length === 1 ? '' : 's') + ' \u00b7 ' + v.photos.length + ' photo' + (v.photos.length === 1 ? '' : 's') + '</p></div><div class="va"><button type="button" data-edit="' + i + '" aria-label="Edit ' + name + '"><svg class="ic"><use href="#i-edit"/></svg></button><button type="button" data-del="' + i + '" aria-label="Remove ' + name + '"><svg class="ic"><use href="#i-trash"/></svg></button></div></li>';
+      return '<li class="vc"><span class="vi"><svg class="ic"><use href="#i-car"/></svg></span><div class="vt"><b>' + name + '</b><p>' + esc([v.type, v.cond, v.sec, v.lux === 'Yes' ? 'Luxury' : ''].filter(Boolean).join(' \u00b7 ')) + ' \u00b7 Qty ' + v.qty + '</p><p class="vf">' + v.papers.length + ' paper' + (v.papers.length === 1 ? '' : 's') + ' \u00b7 ' + v.photos.length + ' photo' + (v.photos.length === 1 ? '' : 's') + '</p></div><div class="va"><button type="button" data-edit="' + i + '" aria-label="Edit ' + name + '"><svg class="ic"><use href="#i-edit"/></svg></button><button type="button" data-del="' + i + '" aria-label="Remove ' + name + '"><svg class="ic"><use href="#i-trash"/></svg></button></div></li>';
     }).join('');
+    syncLoader();
   }
+  /* luxury cars must go on a single loader */
+  function syncLoader() {
+    var lux = state.vehicles.some(function (v) { return v.lux === 'Yes'; });
+    var s = $('input[name="loader"][value="Single"]'), m = $('input[name="loader"][value="Multiple"]');
+    if (lux) { s.checked = true; setErr('loader', ''); }
+    m.disabled = lux; $('#luxNote').hidden = !lux;
+  }
+  syncLoader();
   $('#vlist').addEventListener('click', function (e) {
     var b = e.target.closest('button'); if (!b) return;
     if (b.dataset.edit !== undefined) { var i = +b.dataset.edit; writeVeh(state.vehicles[i]); showEditor(true, i); $('#ved').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' }); }
@@ -252,6 +263,7 @@
       c('dPhone', phoneOk(val('dPhone')) ? '' : 'Enter a valid phone number.');
       c('dState', $('#dState').value ? '' : 'Choose the delivery state.');
       c('dAddr', val('dAddr').length < 3 ? 'Enter the delivery location.' : '');
+      c('loader', checked('loader') ? '' : 'Choose single or multiple loader.');
     }
     if (step === 3) {
       c('idType', $('#idType').value ? '' : 'Choose your ID type.');
@@ -318,7 +330,7 @@
   function renderReview() {
     var yes = checked('pick') === 'yes', qty = state.vehicles.reduce(function (s, v) { return s + v.qty; }, 0);
     var vh = state.vehicles.map(function (v) {
-      return '<li><b>' + esc(v.year + ' ' + v.brand + ' ' + v.model) + '</b><span>' + esc(v.type + ' \u00b7 ' + v.cond + ' \u00b7 ' + v.sec) + ' \u00b7 Qty ' + v.qty + ' \u00b7 ' + v.papers.length + ' paper(s) \u00b7 ' + v.photos.length + ' photo(s)</span></li>';
+      return '<li><b>' + esc(v.year + ' ' + v.brand + ' ' + v.model) + '</b><span>' + esc(v.type + ' \u00b7 ' + v.cond + ' \u00b7 ' + v.sec) + (v.lux === 'Yes' ? ' \u00b7 Luxury' : '') + ' \u00b7 Qty ' + v.qty + ' \u00b7 ' + v.papers.length + ' paper(s) \u00b7 ' + v.photos.length + ' photo(s)</span></li>';
     }).join('');
     var f = upId.get()[0], fb = upIdB.get()[0];
     $('#rev').innerHTML =
@@ -328,6 +340,7 @@
         row('Pickup', yes ? 'We collect it' : 'I will drop it off') +
         (yes ? row('Pickup address', val('pAddr')) + row('Contact', val('pPerson') + ' \u00b7 ' + val('pPhone')) + row('Pickup date', val('pDate')) : row('Drop-off office', $('#pOffice').value)) +
         row('Receiver', val('dName') + ' \u00b7 ' + val('dPhone')) + row('Delivery', val('dAddr') + ', ' + $('#dState').value) +
+        row('Loader', checked('loader') === 'Single' ? 'Single loader (express)' : checked('loader') === 'Multiple' ? 'Multiple loader' : '') +
         row('Proposed price', val('price') ? '\u20a6' + val('price') : '')) +
       sec('ID & referral', 3, row('ID type', $('#idType').value) + row('ID file', f ? f.name : '') + row('ID back', fb ? fb.name : '') +
         row('Referred by', val('rName')) + row('Referral phone', val('rPhone')) + row('Referral email', val('rEmail')));
@@ -348,11 +361,12 @@
     fd.append('pickup_address', val('pAddr')); fd.append('pickup_contact', val('pPerson')); fd.append('pickup_phone', val('pPhone')); fd.append('pickup_date', val('pDate'));
     fd.append('dropoff_office', $('#pOffice').value);
     fd.append('receiver_name', val('dName')); fd.append('receiver_phone', val('dPhone')); fd.append('delivery_state', $('#dState').value); fd.append('delivery_location', val('dAddr'));
+    fd.append('loader', checked('loader'));
     fd.append('proposed_price', val('price').replace(/\D/g, ''));
     fd.append('id_type', $('#idType').value);
     fd.append('referral_name', val('rName')); fd.append('referral_phone', val('rPhone')); fd.append('referral_email', val('rEmail'));
     fd.append('vehicles', JSON.stringify(state.vehicles.map(function (v) {
-      return { type: v.type, brand: v.brand, model: v.model, year: v.year, value: v.value, condition: v.cond, security: v.sec, quantity: v.qty, notes: v.notes };
+      return { type: v.type, brand: v.brand, model: v.model, year: v.year, value: v.value, condition: v.cond, security: v.sec, luxury: v.lux, quantity: v.qty, notes: v.notes };
     })));
     state.vehicles.forEach(function (v, i) {
       v.papers.forEach(function (f) { fd.append('vehicle_' + i + '_papers', f, f.name); });
