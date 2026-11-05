@@ -218,11 +218,23 @@
     var subbed = false, seen = false;
     try { subbed = localStorage.getItem('aar_nl') === '1'; seen = sessionStorage.getItem('aar_nlp') === '1'; } catch (e) {}
     if (subbed || seen || !$('#nlf')) return;
+    var busyPop = function () { return $('#bpm.open') || document.body.style.overflow === 'hidden'; };
+    if ($('section.hero')) {
+      /* homepage: open the popup once the visitor has scrolled a while (about 40% of the page, at least 900px) */
+      var armed = true;
+      var check = function () {
+        if (!armed || busyPop()) return;
+        var max = root.scrollHeight - window.innerHeight;
+        if (window.scrollY > Math.max(900, max * 0.4)) { armed = false; window.removeEventListener('scroll', check); openNl(); }
+      };
+      window.addEventListener('scroll', check, { passive: true });
+      return;
+    }
+    /* other pages: 15 seconds after load */
     var tries = 0;
     setTimeout(function wait() {
-      var busyPop = $('#bpm.open') || document.body.style.overflow === 'hidden';
-      if (busyPop && tries++ < 20) return setTimeout(wait, 3000);
-      if (!busyPop) openNl();
+      if (busyPop() && tries++ < 20) return setTimeout(wait, 3000);
+      if (!busyPop()) openNl();
     }, 15000);
   })();
 
