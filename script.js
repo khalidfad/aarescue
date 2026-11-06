@@ -215,19 +215,22 @@
     requestAnimationFrame(function () { nlp.classList.add('open'); nlp.setAttribute('aria-hidden', 'false'); $('input', nlp).focus({ preventScroll: true }); });
   }
   (function popupTimer() {
+    var force = /[?&]newsletter=1\b/.test(location.search);   /* add ?newsletter=1 to the URL to test the popup again */
     var subbed = false, seen = false;
     try { subbed = localStorage.getItem('aar_nl') === '1'; seen = sessionStorage.getItem('aar_nlp') === '1'; } catch (e) {}
-    if (subbed || seen || !$('#nlf')) return;
-    var busyPop = function () { return $('#bpm.open') || document.body.style.overflow === 'hidden'; };
+    if ((subbed || seen) && !force) return;
+    if (!$('#nlf')) return;
+    var busyPop = function () { return $('#bpm.open') || $('.nlp.open') || document.body.style.overflow === 'hidden'; };
     if ($('section.hero')) {
-      /* homepage: open the popup once the visitor has scrolled a while (about 40% of the page, at least 900px) */
-      var armed = true;
+      /* homepage: open the popup once the visitor has scrolled a while (about 20% of the page, at least 800px) */
+      var armed = true, iv = null;
       var check = function () {
         if (!armed || busyPop()) return;
         var max = root.scrollHeight - window.innerHeight;
-        if (window.scrollY > Math.max(900, max * 0.4)) { armed = false; window.removeEventListener('scroll', check); openNl(); }
+        if (window.scrollY > Math.max(800, max * 0.2)) { armed = false; window.removeEventListener('scroll', check); clearInterval(iv); openNl(); }
       };
       window.addEventListener('scroll', check, { passive: true });
+      iv = setInterval(check, 1000);   /* also catches visitors who passed the mark while the blog popup was open */
       return;
     }
     /* other pages: 15 seconds after load */
