@@ -53,6 +53,7 @@ localStorage.setItem(S,un);location.href='dashboard.html'}}
 
 if(document.body.dataset.page==='dashboard'){var u=me();if(!u){location.replace('login.html');return}
 var p=PLANS[u.plan]||PLANS.standard,used=u.history.length,end=new Date(u.joined).getTime()+365*DAY,days=Math.max(0,Math.ceil((end-Date.now())/DAY));
+if(window.AARCard&&$('#myCard')){var dg=u.id.replace(/\D/g,'').padEnd(8,'0'),ex=new Date(end);AARCard.set($('#myCard'),{name:u.name,plan:p.n,no:'1050 '+dg.slice(0,4)+' '+dg.slice(4,8),exp:String(ex.getMonth()+1).padStart(2,'0')+'/'+String(ex.getFullYear()).slice(2)})}
 $('#dHi').textContent='Welcome, '+u.name.split(' ')[0];$('#dStat').textContent='Active member \u00B7 '+u.id;
 $('#dSub').textContent=p.n+' plan \u00B7 renews '+fmt(end);
 $('#sLeft').textContent='24/7';var sl=$('#sLeft');[sl.nextElementSibling,sl.previousElementSibling].forEach(function(l){if(l&&/rescues left/i.test(l.textContent))l.textContent='Recovery cover'});$('#sDays').textContent=days;$('#sVeh').textContent=u.vehicles.length+' / '+p.v;$('#sTot').textContent=used;
