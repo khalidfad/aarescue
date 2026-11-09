@@ -451,13 +451,13 @@ html{scroll-behavior:auto}
 .cct2{display:flex;width:max-content;animation:mq 45s linear infinite}
 .cc:hover .cct2,.cc:focus-within .cct2,.cc.paused .cct2{animation-play-state:paused}
 .ccl{display:flex;flex:none;align-items:center}
-.ccl li{display:grid;place-items:center;flex:none;width:176px;height:68px;padding:0 22px}
-.ccl img{max-height:46px;max-width:100%;width:auto;object-fit:contain;filter:grayscale(1);opacity:.62;mix-blend-mode:multiply;transition:filter .3s,opacity .3s}
-.ccl li:hover img{filter:none;opacity:1}
+.ccl li{display:grid;place-items:center;flex:none;width:220px;height:92px;padding:0 24px}
+.ccl img{display:block;height:70px;max-height:70px;max-width:100%;width:auto;object-fit:contain;image-rendering:auto;filter:none;opacity:1;mix-blend-mode:multiply;transition:transform .3s}
+.ccl li:hover img{transform:scale(1.06)}
 .ccl li span{display:none;font-size:1.05rem;font-weight:800;line-height:1.1;text-align:center;color:#8795AA}
 .ccl li.noimg img{display:none}
 .ccl li.noimg span{display:block}
-@media(max-width:680px){.ccl li{width:140px;padding:0 14px}.cc{padding:22px 0 24px}}
+@media(max-width:680px){.ccl li{width:176px;height:82px;padding:0 18px}.ccl img{height:62px;max-height:62px}.cc{padding:22px 0 24px}}
 @media(prefers-reduced-motion:reduce){.cct2{animation:none;width:auto;overflow-x:auto}.ccl[aria-hidden]{display:none}.ccp{display:none}}
 
 /* Job application button (own class, does not touch the .bd card layout) */
@@ -551,3 +551,12 @@ html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!importa
 /* keep the logo visible on every screen width */
 .hd .lg{flex:none;display:block}.hd .lg img{flex:none;max-width:none}
 @media(min-width:1361px) and (max-width:1560px){nav{gap:14px;font-size:.8rem}.nr{gap:8px}.nr .b{padding:.4rem .75rem;font-size:.75rem}.hd .w{gap:12px}}
+
+/* About page core values diagram */
+.subpage .values-diagram{max-width:900px;margin:24px auto 0}
+.subpage .values-map{display:block;width:100%;height:auto;overflow:visible}
+.subpage .value-center .center-aa{font-family:Inter,Arial,sans-serif;font-size:92px;font-weight:900;letter-spacing:-8px;fill:#050505}
+.subpage .value-center .center-rescue{font-family:Inter,Arial,sans-serif;font-size:23px;font-weight:900;fill:#050505}
+.subpage .value-center .center-title{font-family:Inter,Arial,sans-serif;font-size:22px;font-weight:900;fill:#050505}
+.subpage .values-mobile{display:none}
+@media(max-width:600px){.subpage .values-diagram{max-width:440px}.subpage .values-map{display:none}.subpage .values-mobile{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;margin:0;padding:0}.subpage .values-mobile li{display:grid;place-items:center;min-height:84px;padding:12px 10px;background:linear-gradient(180deg,#FFD21A,#F5B900);clip-path:polygon(12% 0,88% 0,100% 20%,100% 80%,88% 100%,12% 100%,0 80%,0 20%);color:#111;text-align:center;font-size:.88rem;font-weight:900;line-height:1.25}.subpage .values-mobile li:first-child,.subpage .values-mobile li:last-child{grid-column:1/-1;max-width:220px;width:100%;justify-self:center;min-height:76px}}
