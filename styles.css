@@ -573,3 +573,7 @@ html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!importa
 .office-contact{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:36px;padding:22px;border-radius:16px;background:#FFF8DF}
 .office-contact p{margin:0;font-weight:700}
 @media(max-width:600px){.office-grid{grid-template-columns:1fr}.office-card{min-height:0}.office-contact{flex-direction:column;text-align:center}}
+
+.office-card .office-phone{margin-top:12px;color:var(--t);font-size:.82rem}.office-card .office-phone a{font-weight:700;color:#8A6500;text-decoration:underline;text-underline-offset:2px}
+
+.office-card .office-email{margin:5px 0 0;color:var(--t);font-size:.82rem;line-height:1.45;overflow-wrap:anywhere}.office-card .office-email a{color:#8A6500;text-decoration:underline;text-underline-offset:2px}
