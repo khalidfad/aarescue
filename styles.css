@@ -592,3 +592,14 @@ html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!importa
 
 .office-region-label,.office-region-select{display:none}
 @media(max-width:600px){.office-tablist{display:none}.office-region-label{display:block;margin:18px 0 7px;font-size:.86rem;font-weight:800;color:var(--t)}.office-region-select{display:block;width:100%;margin-bottom:18px;min-height:48px;padding:10px 42px 10px 14px;border:1px solid var(--l);border-radius:12px;background:#fff;color:var(--t);font:inherit;font-weight:700;appearance:auto}.office-region-select:focus-visible{outline:3px solid rgba(255,196,0,.65);outline-offset:3px}}
+
+/* Homepage impact cards step down from left to right */
+@media(min-width:1101px){
+  #impact .st5{grid-template-columns:1.2fr 1.1fr 1fr .9fr .8fr;align-items:center;gap:14px}
+}
+#impact .st5>li{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+#impact .st5>li:nth-child(1){min-height:224px}
+#impact .st5>li:nth-child(2){min-height:196px}
+#impact .st5>li:nth-child(3){min-height:170px}
+#impact .st5>li:nth-child(4){min-height:148px}
+#impact .st5>li:nth-child(5){min-height:128px}
