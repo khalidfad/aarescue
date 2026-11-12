@@ -187,7 +187,7 @@ s0.parentNode.insertBefore(s1,s0);
         var normalizedState=query.replace(/\s+state$/,'');
         var stateRegion=stateRegions[normalizedState];
         var stateKey=normalizedState==='abuja'?'fct':normalizedState;
-        var hasStateOffice=!!stateRegion&&!!document.querySelector('.office-card[data-state="'+statekey+'"]');
+        var hasStateOffice=!!stateRegion&&!!document.querySelector('.office-card[data-state="'+stateKey+'"]');
         var firstMatchingTab=null;
         var visibleCount=0;
         tabs.forEach(function(tab){
