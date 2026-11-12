@@ -603,3 +603,11 @@ html.tire-on input,html.tire-on textarea,html.tire-on select{cursor:text!importa
 #impact .st5>li:nth-child(3){min-height:170px}
 #impact .st5>li:nth-child(4){min-height:148px}
 #impact .st5>li:nth-child(5){min-height:128px}
+
+/* Mini search for the office directory */
+.office-search{max-width:520px;margin:22px 0 6px}
+.office-search label{display:block;margin-bottom:7px;font-size:.86rem;font-weight:800;color:var(--t)}
+.office-search input{display:block;width:100%;min-height:46px;padding:10px 14px;border:1px solid var(--l);border-radius:12px;background:#fff;color:var(--t);font:inherit;font-size:.9rem}
+.office-search input:focus-visible{outline:3px solid rgba(255,196,0,.65);outline-offset:3px}
+.office-search-help{margin:5px 0 0;color:var(--m);font-size:.76rem}
+.office-card[hidden]{display:none}
