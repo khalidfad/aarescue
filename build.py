@@ -102,7 +102,7 @@ def hero(crumbs, icon, badge, h1, sub, ctas, photo):
 </div>
 </section>'''
 CALL = f'<a class="b bg2 lg2" href="tel:{C["tel"]}">{ic("i-phone")}Call {C["phone"]}</a>'
-PF = lambda slug, alt: f'<div class="pf"><img src="img/photos/{slug}.jpg" onerror="this.onerror=null;this.src=\'img/hq-fleet.webp\'" width="900" height="563" alt="{E(alt)}" loading="lazy"></div>'
+PF = lambda slug, alt: f'<div class="pf"><img src="img/photos/{slug}.jpg" onerror="this.onerror=null;this.src=\'img/aa-head-office.jpeg\'" width="900" height="563" alt="{E(alt)}" loading="lazy"></div>'
 
 # ---------- forms in the site's own pattern ----------
 def fd(p, f, opts=None):
