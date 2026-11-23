@@ -208,8 +208,12 @@ s0.parentNode.insertBefore(s1,s0);
 <div class="fd c2"><label for="vNotes">Existing damage or notes <i>(optional)</i></label><textarea id="vNotes" rows="2" placeholder="Scratches, dents, missing parts, keys, anything we should know"></textarea></div>
 <div class="fd"><span class="lb">Vehicle and customs papers <i>(recommended)</i></span>
 <div class="dz" id="dzPapers"><input type="file" id="fPapers" accept="image/*,application/pdf" multiple><label for="fPapers"><svg class="ic"><use href="#i-upload"/></svg><b>Upload papers</b><span>Include your customs papers so we can confirm the car was customs cleared. PDF, JPG or PNG, up to 5 MB each.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPapers"></p></div>
-<div class="fd"><span class="lb">Vehicle photos <i>(recommended)</i></span>
-<div class="dz" id="dzPhotos"><input type="file" id="fPhotos" accept="image/*" multiple><label for="fPhotos"><svg class="ic"><use href="#i-img"/></svg><b>Upload photos</b><span>All sides, interior and odometer. Up to 6 photos.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPhotos"></p></div>
+<div class="fd"><span class="lb">Front view of car <i>(recommended)</i></span>
+<div class="dz" id="dzFront"><input type="file" id="fFront" accept="image/jpeg,image/png,image/webp,image/heic"><label for="fFront"><svg class="ic"><use href="#i-img"/></svg><b>Upload front view</b><span>Choose a clear photo of the front of the car. Up to 5 MB.</span></label><ul class="fl"></ul></div><p class="err" id="e-fFront"></p></div>
+<div class="fd"><span class="lb">Back view of car <i>(recommended)</i></span>
+<div class="dz" id="dzBack"><input type="file" id="fBack" accept="image/jpeg,image/png,image/webp,image/heic"><label for="fBack"><svg class="ic"><use href="#i-img"/></svg><b>Upload back view</b><span>Choose a clear photo of the back of the car. Up to 5 MB.</span></label><ul class="fl"></ul></div><p class="err" id="e-fBack"></p></div>
+<div class="fd c2"><span class="lb">Other vehicle photos <i>(optional)</i></span>
+<div class="dz" id="dzPhotos"><input type="file" id="fPhotos" accept="image/*" multiple><label for="fPhotos"><svg class="ic"><use href="#i-img"/></svg><b>Upload other photos</b><span>Interior, odometer or extra angles. Up to 6 photos.</span></label><ul class="fl"></ul></div><p class="err" id="e-fPhotos"></p></div>
 </div>
 <div class="vact"><button type="button" class="b by" id="vSave">Add vehicle</button><button type="button" class="b bl2" id="vCancel" hidden>Cancel</button></div>
 </div>
@@ -221,7 +225,7 @@ s0.parentNode.insertBefore(s1,s0);
 <h3 class="shd">Pickup</h3>
 <div class="fd"><span class="lb" id="lPick">Should we collect it from you?</span>
 <div class="chs big" role="radiogroup" aria-labelledby="lPick">
-<label><input type="radio" name="pick" value="yes" checked><span><b>Yes, collect it</b><small>We come to you</small></span></label>
+<label><input type="radio" name="pick" value="yes" checked><span><b>Yes, pick up</b><small>We come to you</small></span></label>
 <label><input type="radio" name="pick" value="no"><span><b>No, I will drop it off</b><small>Bring it to our nearest office</small></span></label>
 </div></div>
 <div class="gr2" id="pkYes">

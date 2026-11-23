@@ -7,7 +7,7 @@
   /* ---------- Settings ----------
      SUBMIT_URL: your endpoint. The form is sent as multipart/form-data (POST) with
        reference, client fields, vehicles (JSON), vehicle_<n>_papers, vehicle_<n>_photos,
-       id_front and id_back files. Reply with JSON { "reference": "..." } (optional).
+       vehicle_<n>_front_view, vehicle_<n>_back_view, id_front and id_back files. Reply with JSON { "reference": "..." } (optional).
      While it is empty the form runs in demo mode and sends nothing. */
   var SUBMIT_URL = '';
   var MAX_BYTES = 5 * 1024 * 1024;
@@ -75,7 +75,7 @@
     function add(fs) {
       fail('');
       Array.prototype.slice.call(fs).forEach(function (f) {
-        if (!FILE_OK.test(f.name)) { fail(f.name + ' is not supported. Use JPG, PNG or PDF.'); return; }
+        if (o.imagesOnly ? !/\.(jpe?g|png|webp|heic)$/i.test(f.name) : !FILE_OK.test(f.name)) { fail(f.name + (o.imagesOnly ? ' is not a supported image. Use JPG, PNG, WEBP or HEIC.' : ' is not supported. Use JPG, PNG or PDF.')); return; }
         if (f.size > MAX_BYTES) { fail(f.name + ' is over 5 MB.'); return; }
         if (!o.multiple) files = [];
         if (o.max && files.length >= o.max) { fail('You can add up to ' + o.max + ' files here.'); return; }
@@ -91,6 +91,8 @@
   }
   var upPapers = uploader($('#dzPapers'), { multiple: true, max: 4, err: 'fPapers' });
   var upPhotos = uploader($('#dzPhotos'), { multiple: true, max: 6, err: 'fPhotos' });
+  var upFront = uploader($('#dzFront'), { multiple: false, max: 1, err: 'fFront', imagesOnly: true });
+  var upBack = uploader($('#dzBack'), { multiple: false, max: 1, err: 'fBack', imagesOnly: true });
   var upId = uploader($('#dzId'), { multiple: false, err: 'fId' });
   var upIdB = uploader($('#dzIdB'), { multiple: false, err: 'fIdB' });
 
@@ -131,19 +133,20 @@
       year: $('#vYear').value, value: val('vValue').replace(/\D/g, ''),
       cond: checked('vCond'), sec: checked('vSec'), lux: checked('vLux'),
       qty: parseInt($('#vQty').value, 10) || 0, notes: val('vNotes'),
-      papers: upPapers.get(), photos: upPhotos.get()
+      papers: upPapers.get(), photos: upPhotos.get(),
+      frontPhoto: upFront.get()[0] || null, backPhoto: upBack.get()[0] || null
     };
   }
   function pristine() {
     var v = readVeh();
-    return !v.type && !$('#vBrand').value && !v.year && !v.cond && !v.sec && !v.notes && !v.value && !v.papers.length && !v.photos.length;
+    return !v.type && !$('#vBrand').value && !v.year && !v.cond && !v.sec && !v.notes && !v.value && !v.papers.length && !v.photos.length && !v.frontPhoto && !v.backPhoto;
   }
   function clearEditor() {
     $$('#ved input[type=radio]').forEach(function (r) { r.checked = false; });
     ['vBrand', 'vYear'].forEach(function (id) { $('#' + id).value = ''; });
     ['vBrandO', 'vModelO', 'vValue', 'vNotes'].forEach(function (id) { $('#' + id).value = ''; });
-    $('#vQty').value = 1; onBrand(); upPapers.set([]); upPhotos.set([]);
-    ['vType', 'vBrand', 'vModel', 'vBrandO', 'vModelO', 'vYear', 'vCond', 'vSec', 'vLux', 'vQty', 'fPapers', 'fPhotos'].forEach(function (id) { setErr(id, ''); });
+    $('#vQty').value = 1; onBrand(); upPapers.set([]); upPhotos.set([]); upFront.set([]); upBack.set([]);
+    ['vType', 'vBrand', 'vModel', 'vBrandO', 'vModelO', 'vYear', 'vCond', 'vSec', 'vLux', 'vQty', 'fPapers', 'fPhotos', 'fFront', 'fBack'].forEach(function (id) { setErr(id, ''); });
   }
   function writeVeh(v) {
     clearEditor();
@@ -159,7 +162,7 @@
       else { $('#vModel').value = 'Others'; onModel(); $('#vModelO').value = v.model; }
     } else { $('#vBrandO').value = v.brand; $('#vModelO').value = v.model; }
     $('#vYear').value = v.year; $('#vValue').value = v.value ? Number(v.value).toLocaleString('en-US') : '';
-    $('#vQty').value = v.qty; $('#vNotes').value = v.notes; upPapers.set(v.papers); upPhotos.set(v.photos);
+    $('#vQty').value = v.qty; $('#vNotes').value = v.notes; upPapers.set(v.papers); upPhotos.set(v.photos); upFront.set(v.frontPhoto ? [v.frontPhoto] : []); upBack.set(v.backPhoto ? [v.backPhoto] : []);
   }
   function validVeh() {
     var v = readVeh(), bad = [];
@@ -199,7 +202,7 @@
     var ul = $('#vlist');
     ul.innerHTML = state.vehicles.map(function (v, i) {
       var name = esc(v.year + ' ' + v.brand + ' ' + v.model);
-      return '<li class="vc"><span class="vi"><svg class="ic"><use href="#i-car"/></svg></span><div class="vt"><b>' + name + '</b><p>' + esc([v.type, v.cond, v.sec, v.lux === 'Yes' ? 'Luxury' : ''].filter(Boolean).join(' \u00b7 ')) + ' \u00b7 Qty ' + v.qty + '</p><p class="vf">' + v.papers.length + ' paper' + (v.papers.length === 1 ? '' : 's') + ' \u00b7 ' + v.photos.length + ' photo' + (v.photos.length === 1 ? '' : 's') + '</p></div><div class="va"><button type="button" data-edit="' + i + '" aria-label="Edit ' + name + '"><svg class="ic"><use href="#i-edit"/></svg></button><button type="button" data-del="' + i + '" aria-label="Remove ' + name + '"><svg class="ic"><use href="#i-trash"/></svg></button></div></li>';
+      return '<li class="vc"><span class="vi"><svg class="ic"><use href="#i-car"/></svg></span><div class="vt"><b>' + name + '</b><p>' + esc([v.type, v.cond, v.sec, v.lux === 'Yes' ? 'Luxury' : ''].filter(Boolean).join(' \u00b7 ')) + ' \u00b7 Qty ' + v.qty + '</p><p class="vf">' + v.papers.length + ' paper' + (v.papers.length === 1 ? '' : 's') + ' \u00b7 ' + v.photos.length + ' extra photo' + (v.photos.length === 1 ? '' : 's') + ' · ' + (v.frontPhoto ? 'front view added' : 'no front view') + ' · ' + (v.backPhoto ? 'back view added' : 'no back view') + '</p></div><div class="va"><button type="button" data-edit="' + i + '" aria-label="Edit ' + name + '"><svg class="ic"><use href="#i-edit"/></svg></button><button type="button" data-del="' + i + '" aria-label="Remove ' + name + '"><svg class="ic"><use href="#i-trash"/></svg></button></div></li>';
     }).join('');
     syncLoader();
   }
@@ -330,7 +333,10 @@
   function renderReview() {
     var yes = checked('pick') === 'yes', qty = state.vehicles.reduce(function (s, v) { return s + v.qty; }, 0);
     var vh = state.vehicles.map(function (v) {
-      return '<li><b>' + esc(v.year + ' ' + v.brand + ' ' + v.model) + '</b><span>' + esc(v.type + ' \u00b7 ' + v.cond + ' \u00b7 ' + v.sec) + (v.lux === 'Yes' ? ' \u00b7 Luxury' : '') + ' \u00b7 Qty ' + v.qty + ' \u00b7 ' + v.papers.length + ' paper(s) \u00b7 ' + v.photos.length + ' photo(s)</span></li>';
+      var photos = ' · Qty ' + v.qty + ' · ' + v.papers.length + ' paper(s) · ' + v.photos.length + ' extra photo(s)' +
+        ' · Front view: ' + (v.frontPhoto ? v.frontPhoto.name : 'not uploaded') +
+        ' · Back view: ' + (v.backPhoto ? v.backPhoto.name : 'not uploaded');
+      return '<li><b>' + esc(v.year + ' ' + v.brand + ' ' + v.model) + '</b><span>' + esc(v.type + ' · ' + v.cond + ' · ' + v.sec) + (v.lux === 'Yes' ? ' · Luxury' : '') + esc(photos) + '</span></li>';
     }).join('');
     var f = upId.get()[0], fb = upIdB.get()[0];
     $('#rev').innerHTML =
@@ -366,11 +372,13 @@
     fd.append('id_type', $('#idType').value);
     fd.append('referral_name', val('rName')); fd.append('referral_phone', val('rPhone')); fd.append('referral_email', val('rEmail'));
     fd.append('vehicles', JSON.stringify(state.vehicles.map(function (v) {
-      return { type: v.type, brand: v.brand, model: v.model, year: v.year, value: v.value, condition: v.cond, security: v.sec, luxury: v.lux, quantity: v.qty, notes: v.notes };
+      return { type: v.type, brand: v.brand, model: v.model, year: v.year, value: v.value, condition: v.cond, security: v.sec, luxury: v.lux, quantity: v.qty, notes: v.notes, front_view_photo: v.frontPhoto ? v.frontPhoto.name : '', back_view_photo: v.backPhoto ? v.backPhoto.name : '' };
     })));
     state.vehicles.forEach(function (v, i) {
       v.papers.forEach(function (f) { fd.append('vehicle_' + i + '_papers', f, f.name); });
       v.photos.forEach(function (f) { fd.append('vehicle_' + i + '_photos', f, f.name); });
+      if (v.frontPhoto) fd.append('vehicle_' + i + '_front_view', v.frontPhoto, v.frontPhoto.name);
+      if (v.backPhoto) fd.append('vehicle_' + i + '_back_view', v.backPhoto, v.backPhoto.name);
     });
     upId.get().forEach(function (f) { fd.append('id_front', f, f.name); });
     upIdB.get().forEach(function (f) { fd.append('id_back', f, f.name); });
