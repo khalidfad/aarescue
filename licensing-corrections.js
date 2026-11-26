@@ -8,10 +8,12 @@
   progress[1].setAttribute('aria-label', 'Go to step 2: Your details');
   progress[2].setAttribute('aria-label', 'Go to step 3: Your application');
   var serviceHeading = application.querySelector('h3');
+  var formHeading = form.closest('.fcard').querySelector('h2');
   var unconditionalFields = Array.prototype.filter.call(form.querySelectorAll('.fd'), function (field) { return !field.hasAttribute('data-show'); });
   function updateTitle() {
     var selected = form.querySelector('input[name="service"]:checked');
     serviceHeading.textContent = selected ? selected.value : 'Your application';
+    formHeading.textContent = selected ? selected.value + ' application' : 'Licensing application';
   }
   form.addEventListener('change', function (event) {
     if (event.target.name !== 'service') return;
