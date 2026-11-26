@@ -270,6 +270,9 @@ figcaption b{display:block;color:var(--t);font-size:.9rem}
 .cp a{margin-left:22px;transition:color .2s}
 .fab{position:fixed;left:20px;bottom:20px;z-index:60;display:flex;align-items:center;gap:8px;padding:14px 22px;border-radius:99px;background:var(--y);color:#111;font-weight:700;font-size:.88rem;box-shadow:0 0 0 0 rgba(255,196,0,.6),0 18px 40px -10px rgba(255,196,0,.7);transform:translateY(140%);transition:transform .5s var(--e);animation:ring 2.4s infinite}
 .fab.show{transform:none}
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:70;display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:#25d366;color:#fff;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.whatsapp-float svg{width:32px;height:32px;fill:currentColor;stroke:none}
+.whatsapp-float:hover,.whatsapp-float:focus-visible{background:#128c47;color:#fff;outline:3px solid #fff;outline-offset:2px}
 
 /* reveal on scroll */
 .js [data-r]{opacity:0;transform:translateY(32px) scale(.985);transition:opacity .9s var(--e) var(--d,0s),transform .9s var(--e) var(--d,0s)}

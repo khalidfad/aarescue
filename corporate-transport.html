@@ -375,6 +375,7 @@
                                                                         required autocomplete="email" data-v="email">
                                                                 <p class="err" id="e-ctr-email"></p>
                                                         </div>
+                                                        <div class="fd c2"><label for="ctr-branch">Preferred AA Rescue branch</label><select id="ctr-branch" name="branch" required><option value="">Choose a branch</option><option>Head Office, Lekki</option><option>Abuja 1, Gudu</option><option>Abuja 2, Gwarinpa</option><option>Allen, Ikeja</option><option>Asaba</option><option>Bayelsa</option><option>Benin</option><option>Chevron, Lekki</option><option>Ikota</option><option>Ikoyi</option><option>Ikeja GRA</option><option>Kaduna</option><option>Kano</option><option>Lekki 1</option><option>Lekki 2</option><option>Magodo</option><option>Ogombo</option><option>Orchid</option><option>Port Harcourt 1</option><option>Port Harcourt 2</option><option>Sangotedo</option><option>Uyo</option><option>Unilag</option><option>Victoria Island</option></select><p class="err" id="e-ctr-branch"></p></div>
                                                         <div class="fd c2"><span class="lb" id="l-ctr-trip">Type of
                                                                         trip</span>
                                                                 <div class="chs" role="radiogroup"
@@ -432,11 +433,13 @@
                                                                         data-future>
                                                                 <p class="err" id="e-ctr-date"></p>
                                                         </div>
+                                                        <div class="fd"><label for="ctr-hours">Extra hours <i>(optional)</i></label><input id="ctr-hours" name="extra_hours" type="number" min="0" max="24" inputmode="numeric" placeholder="0"><p class="err" id="e-ctr-hours"></p></div>
                                                         <div class="fd c2"><label for="ctr-notes">Anything else we
                                                                         should know? <i>(optional)</i></label><textarea
                                                                         id="ctr-notes" name="notes" rows="3"></textarea>
                                                                 <p class="err" id="e-ctr-notes"></p>
                                                         </div>
+                                                        <div class="fd c2 ck"><label><input id="ctr-terms" name="terms" type="checkbox" value="Yes" required><span>I agree to the corporate transport terms and understand that extra hours, pickup location and destination may affect the final price.</span></label><p class="err" id="e-ctr-terms"></p></div>
                                                 </div><button class="b by lg2" type="submit">Request transport</button>
                                                 <p class="fmsg" role="alert"></p>
                                         </form>

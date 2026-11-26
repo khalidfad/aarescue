@@ -133,6 +133,7 @@
         if (dz && dz.hasAttribute('data-req')) {
           target = dz; var d = dzs.filter(function (x) { return x.root === dz; })[0];
           if (d && !d.get().length) text = 'Please upload a file.';
+          else if (d && dz.dataset.min && d.get().length < +dz.dataset.min) text = 'Please upload at least ' + dz.dataset.min + ' files.';
         }
         if (cb && !cb.checked) { text = cb.dataset.msg || 'Please tick this box to continue.'; target = cb; }
         if (text) { n++; if (!first) first = target; }

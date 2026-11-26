@@ -248,9 +248,8 @@ s0.parentNode.insertBefore(s1,s0);
                         aria-hidden="true">/</span><b aria-current="page">Licensing</b></nav>
                 <p class="badge"><svg class="ic">
                         <use href="#i-bolt" /></svg>Licensing</p>
-                <h1>Obtain and maintain your driver’s licence</h1>
-                <p class="sub">Driver’s licence, vehicle papers, insurance and international driving permits, handled
-                    for you from application to renewal.</p>
+                <h1>Drivers and Vehicle Licensing</h1>
+                <p class="sub">Register or renew your authentic licence here. We handle vehicle documents, driver’s licences, insurance and international driving permits.</p>
                 <div class="cta"><a class="b by lg2" href="#form">Start an application</a><a class="b bg2 lg2"
                         href="https://wa.me/message/DL35EKFQTSALC1">WhatsApp the licensing team</a></div>
             </div>
@@ -306,7 +305,7 @@ s0.parentNode.insertBefore(s1,s0);
                                                     permit</small></span></label><label><input type="radio"
                                                 name="service" value="Renew international permit"><span><b>Renew
                                                     international permit</b><small>International driving
-                                                    permit</small></span></label></div>
+                                                    permit</small></span></label><label><input type="radio" name="service" value="Car dealership / customized plate number"><span><b>Car dealership / customized plate</b><small>Vehicle service</small></span></label><label><input type="radio" name="service" value="Tinted permit"><span><b>Tinted permit</b><small>Vehicle service</small></span></label><label><input type="radio" name="service" value="Reprint of faded plate number"><span><b>Reprint of faded plate number</b><small>Vehicle service</small></span></label><label><input type="radio" name="service" value="ECMR"><span><b>ECMR</b><small>Vehicle service</small></span></label></div>
                                     <p class="err" id="e-lic-service"></p>
                                 </div>
                             </div>
@@ -315,9 +314,9 @@ s0.parentNode.insertBefore(s1,s0);
                             <legend class="sr">Your application</legend>
                             <h3>Your application</h3>
                             <div class="gr2">
-                                <div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance"><label for="lic-v_make">Make of car</label><input id="lic-v_make" name="v_make" type="text" required placeholder="e.g. Toyota"><p class="err" id="e-lic-v_make"></p></div><div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance"><label for="lic-v_model">Model</label><input id="lic-v_model" name="v_model" type="text" required placeholder="e.g. Camry"><p class="err" id="e-lic-v_model"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-v_color">Colour</label><input id="lic-v_color" name="v_color" type="text" required placeholder="e.g. Black"><p class="err" id="e-lic-v_color"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-v_engine">Engine number</label><input id="lic-v_engine" name="v_engine" type="text" required ><p class="err" id="e-lic-v_engine"></p></div>
+                                <div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance||Tinted permit||ECMR"><label for="lic-v_make">Make of car</label><input id="lic-v_make" name="v_make" type="text" required placeholder="e.g. Toyota"><p class="err" id="e-lic-v_make"></p></div><div class="fd" data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance||Tinted permit||ECMR"><label for="lic-v_model">Model</label><input id="lic-v_model" name="v_model" type="text" required placeholder="e.g. Camry"><p class="err" id="e-lic-v_model"></p></div><div class="fd" data-show="service=New vehicle registration||Tinted permit"><label for="lic-v_color">Colour</label><input id="lic-v_color" name="v_color" type="text" required placeholder="e.g. Black"><p class="err" id="e-lic-v_color"></p></div><div class="fd" data-show="service=New vehicle registration||Tinted permit"><label for="lic-v_engine">Engine number</label><input id="lic-v_engine" name="v_engine" type="text" required><p class="err" id="e-lic-v_engine"></p></div>
                                 <div class="fd"
-                                    data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance">
+                                    data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance||Tinted permit||ECMR||Car dealership / customized plate number">
                                     <label for="lic-v_year">Year of manufacture</label><select id="lic-v_year"
                                         name="v_year" required>
                                         <option value="">Choose year</option>
@@ -372,17 +371,22 @@ s0.parentNode.insertBefore(s1,s0);
                                     <p class="err" id="e-lic-v_year"></p>
                                 </div>
                                 <div class="fd"
-                                    data-show="service=Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance">
+                                    data-show="service=Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance||Tinted permit||ECMR||Reprint of faded plate number">
                                     <label for="lic-v_plate">Plate number</label><input id="lic-v_plate" name="v_plate"
                                         type="text" required>
                                     <p class="err" id="e-lic-v_plate"></p>
                                 </div>
                                 <div class="fd c2"
-                                    data-show="service=New vehicle registration||Vehicle licence transfer"><label
-                                        for="lic-v_chassis">Chassis number <i>(optional)</i></label><input
-                                        id="lic-v_chassis" name="v_chassis" type="text">
+                                    data-show="service=New vehicle registration||Vehicle licence transfer||Tinted permit"><label
+                                        for="lic-v_chassis">Chassis number</label><input
+                                        id="lic-v_chassis" name="v_chassis" type="text" required>
                                     <p class="err" id="e-lic-v_chassis"></p>
                                 </div>
+                                <div class="fd c2" data-show="service=Car dealership / customized plate number"><label for="lic-custom_plate">Preferred customized plate number</label><input id="lic-custom_plate" name="custom_plate" type="text" required placeholder="Enter your preferred plate number"><p class="err" id="e-lic-custom_plate"></p></div>
+                                <div class="fd c2" data-show="service=Reprint of faded plate number"><label for="lic-faded_plate">Faded or lost plate number</label><input id="lic-faded_plate" name="faded_plate" type="text" required><p class="err" id="e-lic-faded_plate"></p></div>
+                                <div class="fd" data-show="service=Tinted permit"><label for="lic-rc_number">RC number <i>(organisation only)</i></label><input id="lic-rc_number" name="rc_number" type="text"><p class="err" id="e-lic-rc_number"></p></div>
+                                <div class="fd" data-show="service=Tinted permit"><label for="lic-gender">Gender</label><select id="lic-gender" name="gender" required><option value="">Choose one</option><option>Male</option><option>Female</option></select><p class="err" id="e-lic-gender"></p></div>
+                                <div class="fd" data-show="service=Tinted permit"><label for="lic-lga">Local government of residence</label><input id="lic-lga" name="lga" type="text" required><p class="err" id="e-lic-lga"></p></div>
                                 <div class="fd c2"
                                     data-show="service=New vehicle registration||Renew vehicle documents"><span
                                         class="lb" id="l-lic-v_use">Vehicle use</span>
@@ -398,8 +402,7 @@ s0.parentNode.insertBefore(s1,s0);
                                         <label><input type="checkbox" name="v_docs"
                                                 value="Vehicle licence"><span>Vehicle
                                                 licence</span></label><label><input type="checkbox" name="v_docs"
-                                                value="Roadworthiness certificate"><span>Roadworthiness
-                                                certificate</span></label><label><input type="checkbox" name="v_docs"
+                                                value="Proof of ownership"><span>Proof of ownership</span></label><label><input type="checkbox" name="v_docs"
                                                 value="Other"><span>Other</span></label></div>
                                     <p class="err" id="e-lic-v_docs"></p>
                                 </div>
@@ -471,9 +474,9 @@ s0.parentNode.insertBefore(s1,s0);
                                     <p class="err" id="e-lic-photo"></p>
                                 </div>
                                 <div class="fd c2"
-                                    data-show="service=Renew vehicle documents||Renew driver&#x27;s licence||Driver&#x27;s licence re-issuance||Renew international permit">
-                                    <span class="lb">Existing licence or permit <i>(optional)</i></span>
-                                    <div class="dz" data-max="3"><input type="file" id="lic-old_licence"
+                                    data-show="service=Renew driver&#x27;s licence||Driver&#x27;s licence re-issuance||New international permit||Renew international permit">
+                                    <span class="lb">Valid driver’s licence or existing permit</span>
+                                    <div class="dz" data-max="3" data-req><input type="file" id="lic-old_licence"
                                             name="old_licence" accept="image/*,application/pdf"><label
                                             for="lic-old_licence"><svg class="ic">
                                                 <use href="#i-upload" /></svg><b>Upload existing document</b><span>Photo
@@ -484,8 +487,8 @@ s0.parentNode.insertBefore(s1,s0);
                                 </div>
                                 <div class="fd c2"
                                     data-show="service=New vehicle registration||Renew vehicle documents||Vehicle licence transfer||Comprehensive insurance||Third party insurance">
-                                    <span class="lb">Vehicle papers <i>(optional)</i></span>
-                                    <div class="dz" data-multiple data-max="4"><input type="file"
+                                    <span class="lb">Vehicle papers</span>
+                                    <div class="dz" data-multiple data-max="4" data-req><input type="file"
                                             id="lic-vehicle_papers" name="vehicle_papers"
                                             accept="image/*,application/pdf" multiple><label
                                             for="lic-vehicle_papers"><svg class="ic">
@@ -496,13 +499,16 @@ s0.parentNode.insertBefore(s1,s0);
                                     </div>
                                     <p class="err" id="e-lic-vehicle_papers"></p>
                                 </div>
+                                <div class="fd c2" data-show="service=Vehicle licence transfer"><span class="lb">Change of ownership documents</span><div class="dz" data-multiple data-min="5" data-max="5" data-req><input type="file" id="lic-transfer_docs" name="transfer_docs" accept="image/*,application/pdf" multiple><label for="lic-transfer_docs"><svg class="ic"><use href="#i-upload" /></svg><b>Upload the five required documents</b><span>Vehicle licence, proof of ownership, allocation, chassis image and change of ownership letter.</span></label><ul class="fl"></ul></div><p class="err" id="e-lic-transfer_docs"></p></div>
+                                <div class="fd c2" data-show="service=ECMR"><span class="lb">Vehicle licence picture</span><div class="dz" data-max="1" data-req><input type="file" id="lic-ecmr_licence" name="ecmr_licence" accept="image/*,application/pdf"><label for="lic-ecmr_licence"><svg class="ic"><use href="#i-upload" /></svg><b>Upload vehicle licence</b><span>Upload a clear picture or scan of the vehicle licence.</span></label><ul class="fl"></ul></div><p class="err" id="e-lic-ecmr_licence"></p></div>
+                                <div class="fd c2" data-show="service=Tinted permit"><p style="margin:0 0 10px;padding:10px 14px;border-radius:12px;background:rgba(255,196,0,.14);font-size:.88rem"><b>Factory-fitted tinted permit:</b> ₦70,000.</p><span class="lb">Tinted permit vehicle documents</span><div class="dz" data-multiple data-min="4" data-max="4" data-req><input type="file" id="lic-tint_docs" name="tint_docs" accept="image/*,application/pdf" multiple><label for="lic-tint_docs"><svg class="ic"><use href="#i-upload" /></svg><b>Upload the four required items</b><span>Proof of ownership, vehicle licence, passport photo, and clear vehicle photos showing front, back and sides.</span></label><ul class="fl"></ul></div><p class="err" id="e-lic-tint_docs"></p></div>
                             </div>
                         </fieldset>
                         <fieldset class="fstep" data-title="Your details">
                             <legend class="sr">Your details</legend>
                             <h3>Your details</h3>
                             <div class="gr2">
-                                <div class="fd"><label for="lic-first">First name</label><input id="lic-first" name="first" type="text" required autocomplete="given-name"><p class="err" id="e-lic-first"></p></div><div class="fd"><label for="lic-surname">Surname</label><input id="lic-surname" name="surname" type="text" required autocomplete="family-name"><p class="err" id="e-lic-surname"></p></div><div class="fd"><label for="lic-other">Other name <i>(optional)</i></label><input id="lic-other" name="other" type="text" autocomplete="additional-name"><p class="err" id="e-lic-other"></p></div><div class="fd c2" data-show="service=New vehicle registration"><label for="lic-fullname">Full name for the registration (as arranged)</label><input id="lic-fullname" name="fullname" type="text" required placeholder="Exactly as it should appear on the vehicle papers"><p class="err" id="e-lic-fullname"></p></div><div class="fd c2"><label for="lic-address">Residential address</label><input id="lic-address" name="address" type="text" required autocomplete="street-address"><p class="err" id="e-lic-address"></p></div><div class="fd" data-show="service=New vehicle registration"><label for="lic-nin">NIN</label><input id="lic-nin" name="nin" type="text" required inputmode="numeric" maxlength="11" data-v="min:11" data-msg="Enter your 11-digit NIN."><p class="err" id="e-lic-nin"></p></div>
+                                <div class="fd"><label for="lic-first">First name <i>(as on NIN)</i></label><input id="lic-first" name="first" type="text" required autocomplete="given-name"><p class="err" id="e-lic-first"></p></div><div class="fd"><label for="lic-surname">Surname <i>(as on NIN)</i></label><input id="lic-surname" name="surname" type="text" required autocomplete="family-name"><p class="err" id="e-lic-surname"></p></div><div class="fd"><label for="lic-other">Other name <i>(as on NIN)</i></label><input id="lic-other" name="other" type="text" required autocomplete="additional-name"><p class="err" id="e-lic-other"></p></div><div class="fd c2"><label for="lic-fullname">Full name <i>(exactly as on NIN)</i></label><input id="lic-fullname" name="fullname" type="text" required placeholder="Enter your full name exactly as it appears on your NIN"><p class="err" id="e-lic-fullname"></p></div><div class="fd c2"><label for="lic-address">Residential address</label><input id="lic-address" name="address" type="text" required autocomplete="street-address"><p class="err" id="e-lic-address"></p></div><div class="fd"><label for="lic-nin">NIN</label><input id="lic-nin" name="nin" type="text" required inputmode="numeric" maxlength="11" data-v="min:11" data-msg="Enter your 11-digit NIN."><p class="err" id="e-lic-nin"></p></div>
                                 <div class="fd"><label for="lic-phone">Phone number</label><input id="lic-phone"
                                         name="phone" type="tel" required placeholder="0802 555 1111" autocomplete="tel"
                                         data-v="phone" inputmode="tel">
@@ -621,6 +627,8 @@ s0.parentNode.insertBefore(s1,s0);
                             <li><a href="#form" data-pick="Vehicle licence transfer" data-field="service"
                                     data-form="lic">Vehicle licence transfer<svg class="ic">
                                         <use href="#i-arrow" /></svg></a></li>
+                            <li><a href="#form" data-pick="Car dealership / customized plate number" data-field="service" data-form="lic">Car dealership / customized plate<svg class="ic"><use href="#i-arrow" /></svg></a></li>
+                            <li><a href="#form" data-pick="Tinted permit" data-field="service" data-form="lic">Tinted permit<svg class="ic"><use href="#i-arrow" /></svg></a></li>
                         </ul>
                     </div>
                     <div class="lc" data-r><span class="ib2"><svg class="ic">
@@ -638,6 +646,8 @@ s0.parentNode.insertBefore(s1,s0);
                             <li><a href="#form" data-pick="Driver&#x27;s licence re-issuance" data-field="service"
                                     data-form="lic">Driver&#x27;s licence re-issuance<svg class="ic">
                                         <use href="#i-arrow" /></svg></a></li>
+                            <li><a href="#form" data-pick="Reprint of faded plate number" data-field="service" data-form="lic">Reprint of faded plate number<svg class="ic"><use href="#i-arrow" /></svg></a></li>
+                            <li><a href="#form" data-pick="ECMR" data-field="service" data-form="lic">ECMR<svg class="ic"><use href="#i-arrow" /></svg></a></li>
                         </ul>
                     </div>
                     <div class="lc" data-r><span class="ib2"><svg class="ic">
@@ -656,8 +666,7 @@ s0.parentNode.insertBefore(s1,s0);
                     <div class="lc" data-r><span class="ib2"><svg class="ic">
                                 <use href="#i-doc" /></svg></span>
                         <h3>International driving permit</h3>
-                        <p>A fast and efficient service for obtaining an international driving permit. We help with the
-                            application and documentation so you hold a valid document to drive in foreign countries. Processing takes 4 to 5 working days.
+                        <p>A fast and efficient service for obtaining an international driving permit. A valid driver’s licence and NIN are required to process your application. Processing takes 4 to 5 working days.
                         </p>
                         <ul>
                             <li><a href="#form" data-pick="New international permit" data-field="service"
