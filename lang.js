@@ -40,7 +40,7 @@
     'Do you need a driver?': "Avez-vous besoin d'un chauffeur ?", 'Get trained, vetted drivers for your business. Request outsourced drivers today.': 'Obtenez des chauffeurs formés et vérifiés pour votre entreprise. Demandez des chauffeurs externalisés dès aujourd\'hui.',
     'Request a Driver': 'Demander un chauffeur', 'Looking for a job?': 'Vous cherchez un emploi ?', 'See what we offer, apply in two minutes and upload your CV.': 'Découvrez nos offres, postulez en deux minutes et téléchargez votre CV.',
     'Apply for a job': 'Postuler à un emploi', 'Apply for a Job': 'Postuler à un emploi', 'Get Emergency Help': "Obtenir de l'aide d'urgence", 'Read all testimonials': 'Lire tous les témoignages',
-    'Share your experience': 'Partager votre expérience', 'Speak with Sales': "Parler à l'équipe commerciale", 'Sign up': "S'inscrire", 'Log in': 'Se connecter', 'Become a member': 'Devenir membre',
+    'Share your experience': 'Partager votre expérience', 'Speak with our Representative': "Parler à l'équipe commerciale", 'Sign up': "S'inscrire", 'Log in': 'Se connecter', 'Become a member': 'Devenir membre',
     'Looking for staff or drivers?': 'Vous cherchez du personnel ou des chauffeurs ?',
     /* blog */
     'Latest from the blog': 'Dernières nouvelles du blog', 'News, tips and company updates from AA Rescue.': "Actualités, conseils et nouvelles de l'entreprise AA Rescue.",
